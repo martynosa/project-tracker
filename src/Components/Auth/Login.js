@@ -11,17 +11,17 @@ const Login = () => {
   return (
     <>
       <form className={classes.form}>
-        <div className={`${classes.inputGroup} mb-12`}>
+        <div className={`${classes.inputGroup} mb-24`}>
           <label htmlFor="email">Email</label>
           <input type="text" id="email" name="email" />
         </div>
 
-        <div className={`${classes.inputGroup} mb-12`}>
+        <div className={`${classes.inputGroup} mb-24`}>
           <label htmlFor="password">Password</label>
           <input type="text" id="password" name="password" />
         </div>
 
-        <div className={`${classes.linkGroup} mb-24`}>
+        <div className={`${classes.linkGroup} mb-32`}>
           <p>Don't have an account?</p>
           <Link
             to="/register"
