@@ -41,7 +41,7 @@ const Register = () => {
         <button
           type="submit"
           onClick={onSubmitHandler}
-          className={`${classes.btn} ${classes.yellowBtn}`}
+          className={`${classes.btn} ${classes.orangeBtn}`}
         >
           Register
         </button>

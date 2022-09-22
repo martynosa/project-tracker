@@ -1,8 +1,66 @@
-.btn {
-  color: inherit;
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3.2rem;
+}
+
+.heading {
+  font-size: 5.2rem;
+  font-weight: 700;
+}
+
+.heading span {
+  display: block;
+  color: #845ef7;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+}
+
+.secondary {
+  font-size: 2.4rem;
+  margin-bottom: 3.2rem;
+}
+
+.img {
+  height: 60%;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  color: #212529;
+  font-size: 3.2rem;
+  background-color: #ff922b;
   padding: 0.6rem 1.2rem;
-  background-color: blueviolet;
-  border-radius: 10px;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
+  border: none;
+  width: 100%;
+  transition: all 0.3s;
+  box-shadow: 0 0.6rem 0 #d9480f;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.6rem #555;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus-visible {
+  background-color: #ffa94d;
+  outline: none;
+}
+
+.btn:active {
+  transform: translateY(6px);
+  box-shadow: none;
 }

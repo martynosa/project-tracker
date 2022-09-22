@@ -1,6 +1,6 @@
 .form {
   min-width: 32rem;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -97,6 +97,7 @@
 /* PURPLE BUTTON*/
 .purpleBtn {
   background-color: #845ef7;
+  box-shadow: 0 0.6rem 0 #5f3dc4;
 }
 
 .purpleBtn:hover,
@@ -106,15 +107,26 @@
   outline: none;
 }
 
-/* YELLOW BUTTON */
-.yellowBtn {
+.purpleBtn:active {
+  transform: translateY(6px);
+  box-shadow: none;
+}
+
+/* orange BUTTON */
+.orangeBtn {
   background-color: #ff922b;
+  box-shadow: 0 0.6rem 0 #d9480f;
   color: #212529;
 }
 
-.yellowBtn:hover,
-.yellowBtn:active,
-.yellowBtn:focus-visible {
+.orangeBtn:hover,
+.orangeBtn:active,
+.orangeBtn:focus-visible {
   background-color: #ffa94d;
   outline: none;
+}
+
+.orangeBtn:active {
+  transform: translateY(6px);
+  box-shadow: none;
 }

@@ -3,6 +3,7 @@
 }
 
 .nav {
+  position: absolute;
   display: flex;
   align-items: center;
   gap: 1.2rem;
