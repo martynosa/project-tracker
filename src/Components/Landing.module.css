@@ -6,51 +6,45 @@
   padding: 3.2rem;
 }
 
-.heading {
+.headerBox {
+  max-width: 48rem;
+}
+
+.main {
   font-size: 5.2rem;
   font-weight: 700;
 }
 
-.heading span {
+.main span {
   display: block;
   color: #845ef7;
   text-transform: uppercase;
   font-weight: 900;
-  margin-bottom: 1.2rem;
 }
 
 .secondary {
   font-size: 2.4rem;
-  margin-bottom: 3.2rem;
 }
 
 .img {
-  height: 60%;
+  height: 50%;
 }
 
 .btn,
 .btn:link,
 .btn:visited {
   display: flex;
-  gap: 0.6rem;
-  align-items: center;
   justify-content: center;
+  gap: 0.6rem;
   color: #212529;
   font-size: 3.2rem;
+  font-weight: 800;
+  text-decoration: none;
   background-color: #ff922b;
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
-  text-decoration: none;
-  font-weight: 700;
-  border: none;
-  width: 100%;
   transition: all 0.3s;
   box-shadow: 0 0.6rem 0 #d9480f;
-}
-
-.btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 0.6rem #555;
 }
 
 .btn:hover,
@@ -63,4 +57,9 @@
 .btn:active {
   transform: translateY(6px);
   box-shadow: none;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.6rem #555;
 }

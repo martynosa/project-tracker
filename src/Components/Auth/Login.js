@@ -25,7 +25,7 @@ const Login = () => {
           <p>Don't have an account?</p>
           <Link
             to="/register"
-            className={`${classes.link} ${classes.yellowLink}`}
+            className={`${classes.link} ${classes.orangeLink}`}
           >
             Register&nbsp;<ion-icon name="arrow-round-forward"></ion-icon>
           </Link>

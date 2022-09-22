@@ -5,12 +5,12 @@ import classes from './Landing.module.css';
 const Landing = () => {
   return (
     <section className={classes.container}>
-      <div>
-        <h1 className={classes.heading}>
+      <div className={classes.headerBox}>
+        <h1 className={`${classes.main} mb-12`}>
           Reach new productivity<span>peaks</span>
         </h1>
 
-        <p className={classes.secondary}>
+        <p className={`${classes.secondary} mb-32`}>
           Create, track and manage your projects with ease.
         </p>
         <Link to="/register" className={classes.btn}>
