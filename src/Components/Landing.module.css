@@ -61,5 +61,5 @@
 
 .btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 0.6rem #555;
+  box-shadow: 0 0 0 0.4rem #555;
 }

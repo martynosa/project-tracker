@@ -45,8 +45,14 @@ const Login = () => {
       <form className={classes.form}>
         <div className={`${classes.inputGroup} mb-24`}>
           <label htmlFor="email">Email</label>
-          <input type="text" id="email" name="email" onBlur={emailHandler} />
-          {emailErr && (
+          <input
+            type="text"
+            id="email"
+            name="email"
+            onBlur={emailHandler}
+            className={emailErr.status ? classes.errorInput : ''}
+          />
+          {emailErr.status && (
             <p className={classes.errorMessage}>{emailErr.message}</p>
           )}
         </div>
@@ -58,8 +64,9 @@ const Login = () => {
             id="password"
             name="password"
             onBlur={passwordHandler}
+            className={passwordErr.status ? classes.errorInput : ''}
           />
-          {passwordErr && (
+          {passwordErr.status && (
             <p className={classes.errorMessage}>{passwordErr.message}</p>
           )}
         </div>
