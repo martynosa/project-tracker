@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import classes from './Auth.module.css';
 import Button from '../Common/Button';
 import { useNotification } from '../../Contexts/NotificationContext';
+import { emailValidator, passwordValidator } from '../../helpers/validators';
 
 const Login = () => {
   const { openNotification } = useNotification();
@@ -22,26 +23,13 @@ const Login = () => {
 
   const emailHandler = (e) => {
     const email = e.target.value.trim();
-
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-      setEmailErr({ status: true, message: 'Invalid email address!' });
-      return;
-    }
-    setEmailErr({ status: false, message: '' });
+    setEmailErr(emailValidator(email));
     setEmail(email);
   };
 
   const passwordHandler = (e) => {
     const password = e.target.value.trim();
-
-    if (password.length < 6) {
-      setPasswordErr({
-        status: true,
-        message: 'Password with 6 or more characters required!',
-      });
-      return;
-    }
-    setPasswordErr({ status: false, message: '' });
+    setPasswordErr(passwordValidator(password));
     setPassword(password);
   };
 
