@@ -12,8 +12,6 @@ export const NotificationProvider = ({ children }) => {
   const [notificationSettings, setNotificationSettings] =
     useState(defaultSettings);
 
-    console.log(notificationSettings);
-
   const openNotification = (status, message) => {
     setNotificationSettings({ isOpen: true, status, message });
     setTimeout(() => {

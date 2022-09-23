@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import classes from './Auth.module.css';
@@ -7,10 +8,48 @@ import { useNotification } from '../../Contexts/NotificationContext';
 const Login = () => {
   const { openNotification } = useNotification();
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [emailErr, setEmailErr] = useState({
+    status: false,
+    message: '',
+  });
+  const [passwordErr, setPasswordErr] = useState({
+    status: false,
+    message: '',
+  });
+
+  const emailHandler = (e) => {
+    const email = e.target.value.trim();
+
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      setEmailErr({ status: true, message: 'Invalid email address!' });
+      return;
+    }
+    setEmailErr({ status: false, message: '' });
+    setEmail(email);
+  };
+
+  const passwordHandler = (e) => {
+    const password = e.target.value.trim();
+
+    if (password.length < 6) {
+      setPasswordErr({
+        status: true,
+        message: 'Password with 6 or more characters required!',
+      });
+      return;
+    }
+    setPasswordErr({ status: false, message: '' });
+    setPassword(password);
+  };
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
     console.log('submitted');
     openNotification('success', 'Logged in sucessfully!');
+    console.log(email, password);
   };
 
   return (
@@ -18,12 +57,23 @@ const Login = () => {
       <form className={classes.form}>
         <div className={`${classes.inputGroup} mb-24`}>
           <label htmlFor="email">Email</label>
-          <input type="text" id="email" name="email" />
+          <input type="text" id="email" name="email" onBlur={emailHandler} />
+          {emailErr && (
+            <p className={classes.errorMessage}>{emailErr.message}</p>
+          )}
         </div>
 
         <div className={`${classes.inputGroup} mb-24`}>
           <label htmlFor="password">Password</label>
-          <input type="text" id="password" name="password" />
+          <input
+            type="text"
+            id="password"
+            name="password"
+            onBlur={passwordHandler}
+          />
+          {passwordErr && (
+            <p className={classes.errorMessage}>{passwordErr.message}</p>
+          )}
         </div>
 
         <div className={`${classes.linkGroup} mb-32`}>

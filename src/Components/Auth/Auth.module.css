@@ -30,6 +30,11 @@
   outline: none;
 }
 
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 1.2rem;
+}
+
 .linkGroup {
   display: flex;
   font-size: 1.4rem;
