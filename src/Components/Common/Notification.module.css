@@ -1,0 +1,23 @@
+.notification {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.6rem 1.2rem;
+  color: #212529;
+  border-radius: 6px;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 1.4rem;
+  z-index: 1;
+}
+
+.fail {
+  background-color: #ff6b6b;
+  box-shadow: 0 0.4rem 0 #c92a2a;
+}
+
+.success {
+  background-color: #94d82d;
+  box-shadow: 0 0.4rem 0 #5c940d;
+}

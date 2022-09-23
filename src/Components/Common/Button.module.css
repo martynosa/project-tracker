@@ -1,0 +1,58 @@
+/* BUTTON */
+.btn,
+.btn:link,
+.btn:visited {
+  color: inherit;
+  font-family: inherit;
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.6rem #555;
+}
+
+/* VIOLET BUTTON*/
+.violetBtn {
+  background-color: #845ef7;
+  box-shadow: 0 0.6rem 0 #5f3dc4;
+}
+
+.violetBtn:hover,
+.violetBtn:active,
+.violetBtn:focus-visible {
+  background-color: #9775fa;
+  outline: none;
+}
+
+.violetBtn:active {
+  transform: translateY(6px);
+  box-shadow: none;
+}
+
+/* orange BUTTON */
+.orangeBtn {
+  background-color: #ff922b;
+  box-shadow: 0 0.6rem 0 #d9480f;
+  color: #212529;
+}
+
+.orangeBtn:hover,
+.orangeBtn:active,
+.orangeBtn:focus-visible {
+  background-color: #ffa94d;
+  outline: none;
+}
+
+.orangeBtn:active {
+  transform: translateY(6px);
+  box-shadow: none;
+}
