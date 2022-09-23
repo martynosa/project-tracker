@@ -8,14 +8,18 @@ const Notification = () => {
   let className = '';
   let icon = null;
 
-  if (status === 'success') {
-    className = `${classes.notification} ${classes.success}`;
-    icon = <ion-icon name="checkmark"></ion-icon>;
-  }
-
-  if (status === 'fail') {
-    className = `${classes.notification} ${classes.fail}`;
-    icon = <ion-icon name="close"></ion-icon>;
+  switch (status) {
+    case 'success':
+      className = `${classes.notification} ${classes.success}`;
+      icon = <ion-icon name="checkmark"></ion-icon>;
+      break;
+    case 'fail':
+      className = `${classes.notification} ${classes.fail}`;
+      icon = <ion-icon name="close"></ion-icon>;
+      break;
+    default:
+      className = '';
+      icon = null;
   }
 
   if (isOpen) {
