@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 
 import classes from './Auth.module.css';
+import Button from '../Common/Button';
+import { useNotification } from '../../Contexts/NotificationContext';
 
 const Login = () => {
+  const { openNotification } = useNotification();
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
     console.log('submitted');
+    openNotification('success', 'Logged in sucessfully!');
   };
 
   return (
@@ -31,13 +36,12 @@ const Login = () => {
           </Link>
         </div>
 
-        <button
+        <Button
+          text="Log in"
           type="submit"
-          onClick={onSubmitHandler}
-          className={`${classes.btn} ${classes.purpleBtn}`}
-        >
-          Log in
-        </button>
+          color="violet"
+          onClickHandler={onSubmitHandler}
+        />
       </form>
     </>
   );

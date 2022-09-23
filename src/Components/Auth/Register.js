@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import classes from './Auth.module.css';
+import Button from '../Common/Button';
 
 const Register = () => {
   const onSubmitHandler = (e) => {
@@ -33,18 +34,17 @@ const Register = () => {
 
         <div className={`${classes.linkGroup} mb-32`}>
           <p>Already have an account?</p>
-          <Link to="/login" className={`${classes.link} ${classes.purpleLink}`}>
+          <Link to="/login" className={`${classes.link} ${classes.violetLink}`}>
             <ion-icon name="arrow-round-back"></ion-icon>&nbsp;Login
           </Link>
         </div>
 
-        <button
+        <Button
+          text="Register"
           type="submit"
-          onClick={onSubmitHandler}
-          className={`${classes.btn} ${classes.orangeBtn}`}
-        >
-          Register
-        </button>
+          color="orange"
+          onClickHandler={onSubmitHandler}
+        />
       </form>
     </>
   );
