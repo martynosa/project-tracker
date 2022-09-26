@@ -9,16 +9,16 @@ import { emailValidator, passwordValidator } from '../../helpers/validators';
 const Login = () => {
   const { openNotification } = useNotification();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
 
   const [emailErr, setEmailErr] = useState({
     status: false,
-    message: '',
+    message: null,
   });
   const [passwordErr, setPasswordErr] = useState({
     status: false,
-    message: '',
+    message: null,
   });
 
   const emailHandler = (e) => {
@@ -50,7 +50,7 @@ const Login = () => {
             id="email"
             name="email"
             onBlur={emailHandler}
-            className={emailErr.status ? classes.errorInput : ''}
+            className={emailErr.status ? classes.errorInput : undefined}
           />
           {emailErr.status && (
             <p className={classes.errorMessage}>{emailErr.message}</p>
@@ -60,11 +60,11 @@ const Login = () => {
         <div className={`${classes.inputGroup} mb-24`}>
           <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             id="password"
             name="password"
             onBlur={passwordHandler}
-            className={passwordErr.status ? classes.errorInput : ''}
+            className={passwordErr.status ? classes.errorInput : undefined}
           />
           {passwordErr.status && (
             <p className={classes.errorMessage}>{passwordErr.message}</p>

@@ -2,7 +2,17 @@ export const emailValidator = (email) => {
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return { status: true, message: 'Invalid email address!' };
   }
-  return { status: false, message: '' };
+  return { status: false, message: null };
+};
+
+export const nameValidator = (name) => {
+  if (name.length < 3) {
+    return {
+      status: true,
+      message: 'Name with 3 or more characters required!',
+    };
+  }
+  return { status: false, message: null };
 };
 
 export const passwordValidator = (password) => {
@@ -12,5 +22,15 @@ export const passwordValidator = (password) => {
       message: 'Password with 6 or more characters required!',
     };
   }
-  return { status: false, message: '' };
+  return { status: false, message: null };
+};
+
+export const rePasswordValidator = (password, rePassword) => {
+  if (password !== rePassword) {
+    return {
+      status: true,
+      message: 'Repeat password does not match password!',
+    };
+  }
+  return { status: false, message: null };
 };
