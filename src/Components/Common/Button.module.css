@@ -17,7 +17,7 @@
 
 .btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 0.4rem #555;
+  box-shadow: 0 0 0 0.4rem #495057;
 }
 
 /* VIOLET BUTTON*/
@@ -53,6 +53,12 @@
 }
 
 .orangeBtn:active {
+  transform: translateY(6px);
+  box-shadow: none;
+}
+
+.loading {
+  background-color: #495057 !important;
   transform: translateY(6px);
   box-shadow: none;
 }

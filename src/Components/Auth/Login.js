@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 
 import classes from './Auth.module.css';
 import Button from '../Common/Button';
-import { useNotification } from '../../Contexts/NotificationContext';
 import { emailValidator, passwordValidator } from '../../helpers/validators';
 
-const Login = () => {
-  const { openNotification } = useNotification();
+// test
+import { AUTH_URL } from '../../helpers/constants';
+import useFetch from '../../Hooks/useFetch';
 
+const Login = () => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
@@ -20,6 +21,21 @@ const Login = () => {
     status: false,
     message: null,
   });
+
+  // test
+  const [data, setData] = useState(null);
+  const httpConfig = {
+    url: `${AUTH_URL}/login`,
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: { email, password },
+  };
+
+  const { sendRequest, isLoading } = useFetch();
+
+  const consumeData = (data) => {
+    setData(data);
+  };
 
   const emailHandler = (e) => {
     const email = e.target.value.trim();
@@ -33,11 +49,10 @@ const Login = () => {
     setPassword(password);
   };
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
     console.log('submitted');
-    openNotification('success', 'Logged in sucessfully!');
-    console.log(email, password);
+    await sendRequest(httpConfig, consumeData, 'Logged in successfully!');
   };
 
   return (
@@ -86,6 +101,7 @@ const Login = () => {
           type="submit"
           color="violet"
           onClickHandler={onSubmitHandler}
+          isLoading={isLoading}
         />
       </form>
     </>

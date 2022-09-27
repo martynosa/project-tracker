@@ -27,7 +27,7 @@
 
 .inputGroup input:focus {
   outline: none;
-  box-shadow: 0 0 0 0.4rem #555;
+  box-shadow: 0 0 0 0.4rem #495057;
 }
 
 .errorInput {
@@ -54,7 +54,7 @@
 
 .link:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 0.4rem #555;
+  box-shadow: 0 0 0 0.4rem #495057;
 }
 
 /* VIOLET LINK*/
