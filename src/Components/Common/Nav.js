@@ -1,9 +1,12 @@
 import { NavLink, Link, useLocation } from 'react-router-dom';
 
 import classes from './Nav.module.css';
+import { useAuth } from '../../Contexts/AuthContext';
 
 const Nav = () => {
   const location = useLocation();
+
+  const { isAuth, logout } = useAuth();
 
   const backNav = (
     <nav className={classes.nav}>
@@ -41,6 +44,9 @@ const Nav = () => {
       >
         profile
       </NavLink>
+      <p className={`${classes.link} ${classes.logout}`} onClick={logout}>
+        Logout
+      </p>
     </nav>
   );
 
@@ -96,6 +102,7 @@ const Nav = () => {
 
   return (
     <>
+      {isAuth && innerNav}
       {(location.pathname === '/login' || location.pathname === '/register') &&
         backNav}
       {location.pathname === '/' && outerNav}

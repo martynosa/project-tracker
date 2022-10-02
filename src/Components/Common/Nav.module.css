@@ -3,13 +3,16 @@
 }
 
 .nav {
-  position: absolute;
   display: flex;
   align-items: center;
   gap: 1.2rem;
   padding: 1.6rem;
   font-size: 2.4rem;
   font-weight: 700;
+}
+
+.outer {
+  position: absolute;
 }
 
 .link {
@@ -19,10 +22,15 @@
   display: flex;
   gap: 0.6rem;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .link:hover {
   color: #845ef7;
+}
+
+.logout:hover {
+  color: #ff6b6b;
 }
 
 .link:focus-visible {

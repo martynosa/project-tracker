@@ -5,6 +5,8 @@ import Register from './Components/Auth/Register';
 import Nav from './Components/Common/Nav';
 import Notification from './Components/Common/Notification';
 import Projects from './Components/Projects';
+import UserGuard from './Guards/UserGuard';
+import GuestGuard from './Guards/GuesGuard';
 
 function App() {
   return (
@@ -13,10 +15,16 @@ function App() {
       <Notification />
 
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route element={<UserGuard />}>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
+
+        <Route element={<GuestGuard />}>
+          <Route path="/projects" element={<Projects />} />
+        </Route>
+        <Route path="*" element={<Landing />} />
       </Routes>
     </>
   );
