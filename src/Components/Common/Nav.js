@@ -2,14 +2,14 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 
 import classes from './Nav.module.css';
 import { useAuth } from '../../Contexts/AuthContext';
+import { PHOTO_URL } from '../../helpers/constants';
 
 const Nav = () => {
   const location = useLocation();
-
-  const { isAuth, logout } = useAuth();
+  const { user, isAuth, logout } = useAuth();
 
   const backNav = (
-    <nav className={classes.nav}>
+    <nav className={classes.outerNav}>
       <Link to="/" className={classes.link}>
         <ion-icon name="arrow-round-back"></ion-icon>
         Back
@@ -18,40 +18,51 @@ const Nav = () => {
   );
 
   const innerNav = (
-    <nav className={classes.nav}>
-      <NavLink
-        to="/projects"
-        className={({ isActive }) =>
-          isActive ? `${classes.active} ${classes.link}` : classes.link
-        }
-        end
-      >
-        Projects
-      </NavLink>
-      <NavLink
-        to="/create"
-        className={({ isActive }) =>
-          isActive ? `${classes.active} ${classes.link}` : classes.link
-        }
-      >
-        Create project
-      </NavLink>
-      <NavLink
-        to="/profile"
-        className={({ isActive }) =>
-          isActive ? `${classes.active} ${classes.link}` : classes.link
-        }
-      >
-        profile
-      </NavLink>
-      <p className={`${classes.link} ${classes.logout}`} onClick={logout}>
-        Logout
-      </p>
+    <nav className={classes.innerNav}>
+      <div className={classes.innerLinks}>
+        <NavLink
+          to="/projects"
+          className={({ isActive }) =>
+            isActive ? `${classes.active} ${classes.link}` : classes.link
+          }
+          end
+        >
+          Projects
+        </NavLink>
+        <NavLink
+          to="/create"
+          className={({ isActive }) =>
+            isActive ? `${classes.active} ${classes.link}` : classes.link
+          }
+        >
+          Create project
+        </NavLink>
+        <NavLink
+          to="/profile"
+          className={({ isActive }) =>
+            isActive ? `${classes.active} ${classes.link}` : classes.link
+          }
+        >
+          profile
+        </NavLink>
+      </div>
+
+      <div className={classes.userLinks}>
+        <img
+          className={classes.photo}
+          src={`${PHOTO_URL}/${user?.photo}`}
+          alt="employee's mugshot"
+        ></img>
+        <p className={classes.name}>{user?.name}</p>
+        <p className={`${classes.link} ${classes.logout}`} onClick={logout}>
+          Logout
+        </p>
+      </div>
     </nav>
   );
 
   const outerNav = (
-    <nav className={classes.nav}>
+    <nav className={classes.outerNav}>
       <a
         className={classes.link}
         href="https://www.linkedin.com/in/martynosa/"

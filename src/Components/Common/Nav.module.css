@@ -2,17 +2,14 @@
   color: #845ef7 !important;
 }
 
-.nav {
+.outerNav {
+  position: absolute;
   display: flex;
   align-items: center;
   gap: 1.2rem;
   padding: 1.6rem;
   font-size: 2.4rem;
   font-weight: 700;
-}
-
-.outer {
-  position: absolute;
 }
 
 .link {
@@ -36,4 +33,36 @@
 .link:focus-visible {
   outline: none;
   box-shadow: 0 0 0 0.4rem #495057;
+}
+
+/* INNER */
+.innerNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.innerLinks {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.userLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.name {
+  color: #51cf66;
+}
+
+.photo {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 3px solid #845ef7;
 }
