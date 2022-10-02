@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import classes from './Auth.module.css';
 import Button from '../Common/Button';
@@ -10,15 +10,15 @@ import {
   passwordValidator,
   rePasswordValidator,
 } from '../../helpers/validators';
+import { useAuth } from '../../Contexts/AuthContext';
+import useFetch from '../../Hooks/useFetch';
+import { AUTH_URL } from '../../helpers/constants';
 
 const Register = () => {
-  const { openNotification } = useNotification();
-
   const [email, setEmail] = useState(null);
   const [name, setName] = useState(null);
   const [password, setPassword] = useState(null);
   const [rePassword, setRePassword] = useState(null);
-
   const [emailErr, setEmailErr] = useState({
     status: false,
     message: null,
@@ -32,6 +32,19 @@ const Register = () => {
     status: false,
     message: null,
   });
+
+  const { login } = useAuth();
+  const { sendRequest, isLoading } = useFetch();
+
+  const { openNotification } = useNotification();
+  const navigate = useNavigate();
+
+  const httpConfig = {
+    url: `${AUTH_URL}/register`,
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: { email, password, name, rePassword },
+  };
 
   const emailHandler = (e) => {
     const email = e.target.value.trim();
@@ -57,11 +70,16 @@ const Register = () => {
     setRePassword(rePassword);
   };
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log('submitted');
-    openNotification('success', 'Registered sucessfully!');
-    console.log(email, name, password, rePassword);
+    try {
+      const user = await sendRequest(httpConfig);
+      login(user);
+      navigate('/projects');
+      openNotification('success', `Welcome ${user.name}.`);
+    } catch (error) {
+      openNotification('fail', error.message);
+    }
   };
 
   return (
@@ -135,6 +153,7 @@ const Register = () => {
           type="submit"
           color="orange"
           onClickHandler={onSubmitHandler}
+          isLoading={isLoading}
         />
       </form>
     </>

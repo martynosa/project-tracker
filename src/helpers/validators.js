@@ -6,7 +6,7 @@ export const emailValidator = (email) => {
 };
 
 export const nameValidator = (name) => {
-  if (name.length < 3) {
+  if (!name || name.length < 3) {
     return {
       status: true,
       message: 'Name with 3 or more characters required!',
@@ -16,7 +16,7 @@ export const nameValidator = (name) => {
 };
 
 export const passwordValidator = (password) => {
-  if (password.length < 6) {
+  if (!password || password.length < 6) {
     return {
       status: true,
       message: 'Password with 6 or more characters required!',

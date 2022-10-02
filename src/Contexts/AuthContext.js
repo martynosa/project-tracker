@@ -2,14 +2,25 @@ import { createContext, useContext, useState } from 'react';
 
 const authContext = createContext();
 
-export const NotificationProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  const isAuth = !!user.email;
+  const isAuth = !!user;
+
+  const login = (currUser) => {
+    setUser(currUser);
+    localStorage.setItem('project-tracker', JSON.stringify(currUser));
+  };
+
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem('project-tracker');
+  };
 
   const value = {
     user,
-    setUser,
+    login,
+    logout,
     isAuth,
   };
 

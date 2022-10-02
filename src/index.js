@@ -5,13 +5,16 @@ import App from './App';
 import './css/index.css';
 import './css/helpers.css';
 import { NotificationProvider } from './Contexts/NotificationContext';
+import { AuthProvider } from './Contexts/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <NotificationProvider>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </NotificationProvider>
     </BrowserRouter>
   </React.StrictMode>

@@ -4,6 +4,7 @@ import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import Nav from './Components/Common/Nav';
 import Notification from './Components/Common/Notification';
+import Projects from './Components/Projects';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </>
   );
