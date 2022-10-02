@@ -43,7 +43,7 @@ const Register = () => {
     url: `${AUTH_URL}/register`,
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: { email, password, name, rePassword },
+    body: { email, name, password, rePassword },
   };
 
   const emailHandler = (e) => {
@@ -72,6 +72,34 @@ const Register = () => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+
+    if (!email || emailErr.status) {
+      setEmailErr({ status: true, message: 'Invalid email address!' });
+    }
+
+    if (!name || nameErr.status) {
+      setNameErr({
+        status: true,
+        message: 'Name with 3 or more characters required!',
+      });
+    }
+
+    if (!password || passwordErr.status) {
+      setPasswordErr({
+        status: true,
+        message: 'Password with 6 or more characters required!',
+      });
+    }
+
+    if (!rePassword || rePasswordErr.status) {
+      console.log('hi');
+      setRePasswordErr({
+        status: true,
+        message: 'Repeat password does not match password!',
+      });
+      return;
+    }
+
     try {
       const user = await sendRequest(httpConfig);
       login(user);
@@ -91,7 +119,7 @@ const Register = () => {
             type="text"
             id="email"
             name="email"
-            onBlur={emailHandler}
+            onChange={emailHandler}
             className={emailErr.status ? classes.errorInput : undefined}
           />
           {emailErr.status && (
@@ -105,7 +133,7 @@ const Register = () => {
             type="text"
             id="name"
             name="name"
-            onBlur={nameHandler}
+            onChange={nameHandler}
             className={nameErr.status ? classes.errorInput : undefined}
           />
           {nameErr.status && (
@@ -119,7 +147,7 @@ const Register = () => {
             type="password"
             id="password"
             name="password"
-            onBlur={passwordHandler}
+            onChange={passwordHandler}
             className={passwordErr.status ? classes.errorInput : undefined}
           />
           {passwordErr.status && (
@@ -133,7 +161,7 @@ const Register = () => {
             type="password"
             id="rePassword"
             name="rePassword"
-            onBlur={rePasswordHandler}
+            onChange={rePasswordHandler}
             className={rePasswordErr.status ? classes.errorInput : undefined}
           />
           {rePasswordErr.status && (

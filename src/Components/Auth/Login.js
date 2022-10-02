@@ -82,7 +82,7 @@ const Login = () => {
             type="text"
             id="email"
             name="email"
-            onBlur={emailHandler}
+            onChange={emailHandler}
             className={emailErr.status ? classes.errorInput : undefined}
           />
           {emailErr.status && (
@@ -96,7 +96,7 @@ const Login = () => {
             type="password"
             id="password"
             name="password"
-            onBlur={passwordHandler}
+            onChange={passwordHandler}
             className={passwordErr.status ? classes.errorInput : undefined}
           />
           {passwordErr.status && (

@@ -26,7 +26,7 @@ export const passwordValidator = (password) => {
 };
 
 export const rePasswordValidator = (password, rePassword) => {
-  if (password !== rePassword) {
+  if (!rePassword || password !== rePassword) {
     return {
       status: true,
       message: 'Repeat password does not match password!',
