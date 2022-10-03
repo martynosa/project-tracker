@@ -31,7 +31,7 @@ const Profile = () => {
           />
         </form>
 
-        <form className={`${classes.passwordForm} mt-32`}>
+        <form className={`${classes.passwordForm} mt-48`}>
           <div className={`${classes.passwordInputGroup} mb-24`}>
             <label htmlFor="password">Password</label>
             <input id="password" type="password" />
