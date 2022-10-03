@@ -37,14 +37,6 @@ const Nav = () => {
         >
           Create project
         </NavLink>
-        <NavLink
-          to="/profile"
-          className={({ isActive }) =>
-            isActive ? `${classes.active} ${classes.link}` : classes.link
-          }
-        >
-          profile
-        </NavLink>
       </div>
 
       <div className={classes.userLinks}>
@@ -53,7 +45,16 @@ const Nav = () => {
           src={`${PHOTO_URL}/${user?.photo}`}
           alt="employee's mugshot"
         ></img>
-        <p className={classes.name}>{user?.name}</p>
+        <NavLink
+          to="/profile"
+          className={({ isActive }) =>
+            isActive
+              ? `${classes.active} ${classes.link} ${classes.name}`
+              : `${classes.link} ${classes.name}`
+          }
+        >
+          {user?.name}
+        </NavLink>
         <p className={`${classes.link} ${classes.logout}`} onClick={logout}>
           Logout
         </p>

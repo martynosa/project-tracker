@@ -7,6 +7,8 @@ import Notification from './Components/Common/Notification';
 import Projects from './Components/Projects';
 import UserGuard from './Guards/UserGuard';
 import GuestGuard from './Guards/GuesGuard';
+import Profile from './Components/Profile';
+import Create from './Components/Create';
 
 function App() {
   return (
@@ -23,7 +25,10 @@ function App() {
 
         <Route element={<GuestGuard />}>
           <Route path="/projects" element={<Projects />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
+
         <Route path="*" element={<Landing />} />
       </Routes>
     </>
