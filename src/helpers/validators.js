@@ -1,5 +1,5 @@
 export const emailValidator = (email) => {
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+  if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return { status: true, message: 'Invalid email address!' };
   }
   return { status: false, message: null };

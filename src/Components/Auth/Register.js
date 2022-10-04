@@ -11,8 +11,8 @@ import {
   rePasswordValidator,
 } from '../../helpers/validators';
 import { useAuth } from '../../Contexts/AuthContext';
-import useFetch from '../../Hooks/useFetch';
 import { AUTH_URL } from '../../helpers/constants';
+import useFetch from '../../Hooks/useFetch';
 
 const Register = () => {
   const [email, setEmail] = useState(null);
@@ -70,35 +70,25 @@ const Register = () => {
     setRePassword(rePassword);
   };
 
-  const onSubmitHandler = async (e) => {
+  const onRegisterHandler = async (e) => {
     e.preventDefault();
 
-    if (!email || emailErr.status) {
-      setEmailErr({ status: true, message: 'Invalid email address!' });
-    }
+    const emailValidationErr = emailValidator(email);
+    const nameValidationErr = nameValidator(name);
+    const passwordValidationErr = passwordValidator(password);
+    const rePasswordValidationErr = rePasswordValidator(password, rePassword);
+    setEmailErr(emailValidationErr);
+    setNameErr(nameValidationErr);
+    setPasswordErr(passwordValidationErr);
+    setRePasswordErr(rePasswordValidationErr);
 
-    if (!name || nameErr.status) {
-      setNameErr({
-        status: true,
-        message: 'Name with 3 or more characters required!',
-      });
-    }
-
-    if (!password || passwordErr.status) {
-      setPasswordErr({
-        status: true,
-        message: 'Password with 6 or more characters required!',
-      });
-    }
-
-    if (!rePassword || rePasswordErr.status) {
-      console.log('hi');
-      setRePasswordErr({
-        status: true,
-        message: 'Repeat password does not match password!',
-      });
+    if (
+      emailValidationErr.status ||
+      nameValidationErr.status ||
+      passwordValidationErr.status ||
+      rePasswordValidationErr.status
+    )
       return;
-    }
 
     try {
       const user = await sendRequest(httpConfig);
@@ -180,7 +170,7 @@ const Register = () => {
           text="Register"
           type="submit"
           color="orange"
-          onClickHandler={onSubmitHandler}
+          onClickHandler={onRegisterHandler}
           isLoading={isLoading}
         />
       </form>

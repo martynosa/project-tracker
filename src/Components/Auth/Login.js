@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import classes from './Auth.module.css';
 import Button from '../Common/Button';
+import { useNotification } from '../../Contexts/NotificationContext';
 import { emailValidator, passwordValidator } from '../../helpers/validators';
 
+import { useAuth } from '../../Contexts/AuthContext';
 import { AUTH_URL } from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
-import { useAuth } from '../../Contexts/AuthContext';
-import { useNotification } from '../../Contexts/NotificationContext';
 
 const Login = () => {
   const [email, setEmail] = useState(null);
@@ -48,20 +48,15 @@ const Login = () => {
     setPassword(password);
   };
 
-  const onSubmitHandler = async (e) => {
+  const onLoginHandler = async (e) => {
     e.preventDefault();
 
-    if (!email || emailErr.status) {
-      setEmailErr({ status: true, message: `Invalid email address!` });
-    }
+    const emailValidationErr = emailValidator(email);
+    const passwordValidationErr = passwordValidator(password);
+    setEmailErr(emailValidationErr);
+    setPasswordErr(passwordValidationErr);
 
-    if (!password || passwordErr.status) {
-      setPasswordErr({
-        status: true,
-        message: 'Password with 6 or more characters required!',
-      });
-      return;
-    }
+    if (emailValidationErr.status || passwordValidationErr.status) return;
 
     try {
       const user = await sendRequest(httpConfig);
@@ -118,7 +113,7 @@ const Login = () => {
           text="Log in"
           type="submit"
           color="violet"
-          onClickHandler={onSubmitHandler}
+          onClickHandler={onLoginHandler}
           isLoading={isLoading}
         />
       </form>

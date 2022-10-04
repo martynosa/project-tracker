@@ -1,11 +1,43 @@
-import Button from './Common/Button';
+import { useState } from 'react';
+
 import classes from './Profile.module.css';
+import Button from './Common/Button';
+
+import { useNotification } from '../Contexts/NotificationContext';
+import { useAuth } from '../Contexts/AuthContext';
+import { AUTH_URL } from '../helpers/constants';
+import useFetch from '../Hooks/useFetch';
 
 const Profile = () => {
-  const isLoading = false;
+  const { user, updatePhoto } = useAuth();
+  const { sendRequest, isLoading } = useFetch();
 
-  const onUploadPhotoHandler = (e) => {
+  const { openNotification } = useNotification();
+
+  const httpConfig = {
+    url: `${AUTH_URL}/uploadPhoto`,
+    headers: { token: user.token },
+    method: 'POST',
+  };
+
+  const onUploadPhotoHandler = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const photo = formData.get('photo');
+
+    if (photo.size === 0) {
+      openNotification('fail', 'Image not selected!');
+      return;
+    }
+
+    try {
+      const photoUrl = await sendRequest({ ...httpConfig, photo: formData });
+      updatePhoto(photoUrl);
+      openNotification('success', 'Photo uploaded successfully.');
+    } catch (error) {
+      openNotification('fail', error.message);
+    }
   };
 
   const onUpdatePasswordHandler = (e) => {
@@ -16,16 +48,18 @@ const Profile = () => {
     <>
       <h1 className={`${classes.mainHeading} mt-32`}>Profile</h1>
       <section className={classes.container}>
-        <form className={classes.photoUploadform}>
+        <form
+          className={classes.photoUploadform}
+          onSubmit={onUploadPhotoHandler}
+        >
           <div className={classes.photoInputGroup}>
-            <label htmlFor="photoInput">Profile photo</label>
-            <input id="photoInput" type="file" />
+            <label htmlFor="photo">Click here to select image</label>
+            <input id="photo" type="file" name="photo" />
           </div>
           <Button
             text="Upload"
             type="submit"
             color="violet"
-            onClickHandler={onUploadPhotoHandler}
             isLoading={isLoading}
             helper={classes.uploadBtn}
           />
@@ -45,7 +79,7 @@ const Profile = () => {
             <input id="newRepPassword" type="password" />
           </div>
           <Button
-            text="Update"
+            text="Change password"
             type="submit"
             color="green"
             onClickHandler={onUpdatePasswordHandler}
