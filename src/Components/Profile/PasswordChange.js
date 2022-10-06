@@ -1,14 +1,16 @@
 import { useState } from 'react';
 
-import classes from './Profile.module.css';
+import classes from './PasswordChange.module.css';
 import Button from '../Common/Button';
 
-import { useNotification } from '../../Contexts/NotificationContext';
+import InputGroup from '../Common/InputGroup';
+
 import {
   passwordValidator,
   rePasswordValidator,
 } from '../../helpers/validators';
 
+import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
 import { AUTH_URL } from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
@@ -31,7 +33,7 @@ const PasswordChange = () => {
   });
 
   const { user } = useAuth();
-  const { sendRequest, isLoading } = useFetch();
+  const { sendRequest, isLoading, setIsLoading } = useFetch();
 
   const { openNotification } = useNotification();
 
@@ -81,51 +83,37 @@ const PasswordChange = () => {
       setNewRePassword('');
       openNotification('success', 'Password updated sucessfully.');
     } catch (error) {
+      setIsLoading(false);
       openNotification('fail', error.message);
     }
   };
 
   return (
     <form className={`${classes.passwordForm} mt-48`}>
-      <div className={`${classes.passwordInputGroup} mb-24`}>
-        <label htmlFor="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          onChange={passwordHandler}
-          className={passwordErr.status ? classes.errorInput : undefined}
-          value={password}
-        />
-        {passwordErr.status && (
-          <p className={classes.errorMessage}>{passwordErr.message}</p>
-        )}
-      </div>
-      <div className={`${classes.passwordInputGroup} mb-24`}>
-        <label htmlFor="newPassword">New password</label>
-        <input
-          id="newPassword"
-          type="password"
-          onChange={newPasswordHandler}
-          className={newPasswordErr.status ? classes.errorInput : undefined}
-          value={newPassword}
-        />
-        {newPasswordErr.status && (
-          <p className={classes.errorMessage}>{newPasswordErr.message}</p>
-        )}
-      </div>
-      <div className={`${classes.passwordInputGroup} mb-24`}>
-        <label htmlFor="newRePassword">Repeat new password</label>
-        <input
-          id="newRePassword"
-          type="password"
-          onChange={newRePasswordHandler}
-          className={newRePasswordErr.status ? classes.errorInput : undefined}
-          value={newRePassword}
-        />
-        {newRePasswordErr.status && (
-          <p className={classes.errorMessage}>{newRePasswordErr.message}</p>
-        )}
-      </div>
+      <InputGroup
+        label={'password'}
+        type={'password'}
+        onChangeHandler={passwordHandler}
+        error={passwordErr}
+        value={password}
+      />
+
+      <InputGroup
+        label={'new password'}
+        type={'password'}
+        onChangeHandler={newPasswordHandler}
+        error={newPasswordErr}
+        value={newPassword}
+      />
+
+      <InputGroup
+        label={'repeat new password'}
+        type={'password'}
+        onChangeHandler={newRePasswordHandler}
+        error={newRePasswordErr}
+        value={newRePassword}
+      />
+
       <Button
         text="Change password"
         type="submit"

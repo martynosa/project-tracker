@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import classes from './Auth.module.css';
 import Button from '../Common/Button';
 
-import { useNotification } from '../../Contexts/NotificationContext';
+import InputGroup from '../Common/InputGroup';
+import AuthLink from '../Common/AuthLink';
 import { emailValidator, passwordValidator } from '../../helpers/validators';
 
+import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
 import { AUTH_URL } from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
@@ -25,7 +27,7 @@ const Login = () => {
   });
 
   const { login } = useAuth();
-  const { sendRequest, isLoading } = useFetch();
+  const { sendRequest, isLoading, setIsLoading } = useFetch();
 
   const { openNotification } = useNotification();
   const navigate = useNavigate();
@@ -65,6 +67,7 @@ const Login = () => {
       navigate('/projects');
       openNotification('success', `Welcome ${user.name}.`);
     } catch (error) {
+      setIsLoading(false);
       openNotification('fail', error.message);
     }
   };
@@ -72,43 +75,23 @@ const Login = () => {
   return (
     <>
       <form className={classes.form}>
-        <div className={`${classes.inputGroup} mb-24`}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            onChange={emailHandler}
-            className={emailErr.status ? classes.errorInput : undefined}
-          />
-          {emailErr.status && (
-            <p className={classes.errorMessage}>{emailErr.message}</p>
-          )}
-        </div>
+        <InputGroup
+          label={'email'}
+          type={'text'}
+          onChangeHandler={emailHandler}
+          error={emailErr}
+          value={email}
+        />
 
-        <div className={`${classes.inputGroup} mb-24`}>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            onChange={passwordHandler}
-            className={passwordErr.status ? classes.errorInput : undefined}
-          />
-          {passwordErr.status && (
-            <p className={classes.errorMessage}>{passwordErr.message}</p>
-          )}
-        </div>
+        <InputGroup
+          label={'password'}
+          type={'password'}
+          onChangeHandler={passwordHandler}
+          error={passwordErr}
+          value={password}
+        />
 
-        <div className={`${classes.linkGroup} mb-32`}>
-          <p>Don't have an account?</p>
-          <Link
-            to="/register"
-            className={`${classes.link} ${classes.orangeLink}`}
-          >
-            Register&nbsp;<ion-icon name="arrow-round-forward"></ion-icon>
-          </Link>
-        </div>
+        <AuthLink to={'register'} />
 
         <Button
           text="Log in"

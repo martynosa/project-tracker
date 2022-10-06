@@ -1,9 +1,7 @@
+import PageHeader from './Common/PageHeader';
+
 const Projects = () => {
-  return (
-    <>
-      <h1>Projects</h1>
-    </>
-  );
+  return <PageHeader pageTitle={'projects'} />;
 };
 
 export default Projects;

@@ -1,0 +1,34 @@
+.linkGroup {
+  display: flex;
+  font-size: 1.4rem;
+  gap: 0.6rem;
+}
+
+.link {
+  display: flex;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem #495057;
+}
+
+/* VIOLET LINK*/
+.violetLink {
+  color: #845ef7;
+}
+
+.violetLink:hover {
+  color: #9775fa;
+}
+
+/* ORANGE LINK*/
+.orangeLink {
+  color: #ff922b;
+}
+
+.orangeLink:hover {
+  color: #ffa94d;
+}

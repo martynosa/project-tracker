@@ -1,6 +1,7 @@
+import PageHeader from './Common/PageHeader';
+
 const Create = () => {
-    
-  return <h1>Create</h1>;
+  return <PageHeader pageTitle={'create project'} />;
 };
 
 export default Create;

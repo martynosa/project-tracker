@@ -25,7 +25,7 @@ const useFetch = () => {
     setIsLoading(false);
     return result.data;
   };
-  return { sendRequest, isLoading };
+  return { sendRequest, isLoading, setIsLoading };
 };
 
 export default useFetch;

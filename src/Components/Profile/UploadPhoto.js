@@ -1,4 +1,4 @@
-import classes from './Profile.module.css';
+import classes from './UploadPhoto.module.css';
 import Button from '../Common/Button';
 
 import { useNotification } from '../../Contexts/NotificationContext';
@@ -9,7 +9,7 @@ import useFetch from '../../Hooks/useFetch';
 
 const UploadPhoto = () => {
   const { user, updatePhoto } = useAuth();
-  const { sendRequest, isLoading } = useFetch();
+  const { sendRequest, isLoading, setIsLoading } = useFetch();
 
   const { openNotification } = useNotification();
 
@@ -35,6 +35,7 @@ const UploadPhoto = () => {
       updatePhoto(photoUrl);
       openNotification('success', 'Photo uploaded successfully.');
     } catch (error) {
+      setIsLoading(false);
       openNotification('fail', error.message);
     }
   };
