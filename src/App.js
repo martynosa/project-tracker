@@ -7,7 +7,7 @@ import Notification from './Components/Common/Notification';
 import Projects from './Components/Projects';
 import UserGuard from './Guards/UserGuard';
 import GuestGuard from './Guards/GuesGuard';
-import Profile from './Components/Profile';
+import Profile from './Components/Profile/Profile';
 import Create from './Components/Create';
 
 function App() {
