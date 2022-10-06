@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import classes from './Auth.module.css';
 import Button from '../Common/Button';
+
 import { useNotification } from '../../Contexts/NotificationContext';
 import {
   emailValidator,
@@ -10,27 +11,28 @@ import {
   passwordValidator,
   rePasswordValidator,
 } from '../../helpers/validators';
+
 import { useAuth } from '../../Contexts/AuthContext';
 import { AUTH_URL } from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 
 const Register = () => {
-  const [email, setEmail] = useState(null);
-  const [name, setName] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [rePassword, setRePassword] = useState(null);
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [rePassword, setRePassword] = useState('');
   const [emailErr, setEmailErr] = useState({
     status: false,
-    message: null,
+    message: '',
   });
   const [passwordErr, setPasswordErr] = useState({
     status: false,
-    message: null,
+    message: '',
   });
-  const [nameErr, setNameErr] = useState({ status: false, message: null });
+  const [nameErr, setNameErr] = useState({ status: false, message: '' });
   const [rePasswordErr, setRePasswordErr] = useState({
     status: false,
-    message: null,
+    message: '',
   });
 
   const { login } = useAuth();

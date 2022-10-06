@@ -2,6 +2,7 @@ import classes from './Profile.module.css';
 import Button from '../Common/Button';
 
 import { useNotification } from '../../Contexts/NotificationContext';
+
 import { useAuth } from '../../Contexts/AuthContext';
 import { AUTH_URL } from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
