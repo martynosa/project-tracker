@@ -1,9 +1,17 @@
 import classes from './Button.module.css';
 
-const Button = ({ text, type, color, onClickHandler, isLoading, helperClass }) => {
+const Button = ({
+  type,
+  color,
+  onClickHandler,
+  isLoading,
+  helperClass,
+  children,
+}) => {
   const orangeBtn = `${classes.btn} ${classes.orangeBtn}`;
   const violetBtn = `${classes.btn} ${classes.violetBtn}`;
   const greenBtn = `${classes.btn} ${classes.greenBtn}`;
+  const greyBtn = `${classes.btn} ${classes.greyBtn}`;
 
   let className;
 
@@ -16,6 +24,9 @@ const Button = ({ text, type, color, onClickHandler, isLoading, helperClass }) =
       break;
     case 'green':
       className = greenBtn;
+      break;
+    case 'grey':
+      className = greyBtn;
       break;
     default:
       className = violetBtn;
@@ -31,7 +42,7 @@ const Button = ({ text, type, color, onClickHandler, isLoading, helperClass }) =
       onClick={onClickHandler}
       disabled={isLoading}
     >
-      {text}
+      {children}
     </button>
   );
 };

@@ -15,12 +15,17 @@
   transition: all 0.3s;
 }
 
+.btn:active {
+  transform: translateY(6px);
+  box-shadow: none;
+}
+
 .btn:focus-visible {
   outline: none;
   box-shadow: 0 0 0 0.4rem #495057;
 }
 
-/* VIOLET BUTTON*/
+/* violet */
 .violetBtn {
   background-color: #845ef7;
   box-shadow: 0 0.6rem 0 #5f3dc4;
@@ -33,12 +38,7 @@
   outline: none;
 }
 
-.violetBtn:active {
-  transform: translateY(6px);
-  box-shadow: none;
-}
-
-/* orange BUTTON */
+/* orange */
 .orangeBtn {
   background-color: #ff922b;
   box-shadow: 0 0.6rem 0 #d9480f;
@@ -52,12 +52,7 @@
   outline: none;
 }
 
-.orangeBtn:active {
-  transform: translateY(6px);
-  box-shadow: none;
-}
-
-/* green BUTTON */
+/* green*/
 .greenBtn {
   background-color: #51cf66;
   box-shadow: 0 0.6rem 0 #2b8a3e;
@@ -71,9 +66,18 @@
   outline: none;
 }
 
-.greenBtn:active {
-  transform: translateY(6px);
-  box-shadow: none;
+/* grey */
+.greyBtn {
+  background-color: #dee2e6;
+  box-shadow: 0 0.6rem 0 #adb5bd;
+  color: #212529;
+}
+
+.greyBtn:hover,
+.greyBtn:active,
+.greyBtn:focus-visible {
+  background-color: #e9ecef;
+  outline: none;
 }
 
 .loading {

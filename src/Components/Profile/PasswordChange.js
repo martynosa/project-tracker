@@ -73,7 +73,11 @@ const PasswordChange = () => {
     setNewPasswordErr(newPasswordValidationErr);
     setNewRePasswordErr(newRePasswordValidationErr);
 
-    if (passwordErr.status || newPasswordErr.status || newRePasswordErr.status)
+    if (
+      passwordValidationErr.status ||
+      newPasswordValidationErr.status ||
+      newRePasswordValidationErr.status
+    )
       return;
 
     try {
@@ -115,12 +119,13 @@ const PasswordChange = () => {
       />
 
       <Button
-        text="Change password"
         type="submit"
         color="green"
         onClickHandler={onUpdatePasswordHandler}
         isLoading={isLoading}
-      />
+      >
+        Change password
+      </Button>
     </form>
   );
 };

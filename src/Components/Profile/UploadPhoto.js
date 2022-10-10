@@ -47,12 +47,13 @@ const UploadPhoto = () => {
         <input id="photo" type="file" name="photo" />
       </div>
       <Button
-        text="Upload"
         type="submit"
         color="violet"
         isLoading={isLoading}
         helperClass={classes.uploadBtn}
-      />
+      >
+        Upload
+      </Button>
     </form>
   );
 };

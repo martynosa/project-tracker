@@ -143,12 +143,13 @@ const Register = () => {
         <AuthLink to={'login'} />
 
         <Button
-          text="Register"
           type="submit"
           color="orange"
           onClickHandler={onRegisterHandler}
           isLoading={isLoading}
-        />
+        >
+          Register
+        </Button>
       </form>
     </>
   );

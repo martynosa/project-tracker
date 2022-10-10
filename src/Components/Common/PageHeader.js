@@ -11,8 +11,14 @@ const PageHeader = ({ pageTitle }) => {
 
   return (
     <div className={classes.pageHeader}>
-      <button onClick={onBackHandler}>back</button>
-      <h1 className={`${classes.mainHeading} mt-32`}>{pageTitle}</h1>
+      <Button
+        color={'grey'}
+        helperClass={classes.backBtn}
+        onClickHandler={onBackHandler}
+      >
+        <ion-icon name="arrow-round-back"></ion-icon>&nbsp;Back
+      </Button>
+      <h1 className={classes.mainHeading}>{pageTitle}</h1>
     </div>
   );
 };
