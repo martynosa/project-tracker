@@ -51,7 +51,7 @@ const UploadPhoto = () => {
         type="submit"
         color="violet"
         isLoading={isLoading}
-        helper={classes.uploadBtn}
+        helperClass={classes.uploadBtn}
       />
     </form>
   );

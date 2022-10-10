@@ -1,6 +1,6 @@
 import classes from './Button.module.css';
 
-const Button = ({ text, type, color, onClickHandler, isLoading, helper }) => {
+const Button = ({ text, type, color, onClickHandler, isLoading, helperClass }) => {
   const orangeBtn = `${classes.btn} ${classes.orangeBtn}`;
   const violetBtn = `${classes.btn} ${classes.violetBtn}`;
   const greenBtn = `${classes.btn} ${classes.greenBtn}`;
@@ -21,7 +21,7 @@ const Button = ({ text, type, color, onClickHandler, isLoading, helper }) => {
       className = violetBtn;
   }
 
-  if (helper) className = `${className} ${helper}`;
+  if (helperClass) className = `${className} ${helperClass}`;
   if (isLoading) className = `${className} ${classes.loading}`;
 
   return (
