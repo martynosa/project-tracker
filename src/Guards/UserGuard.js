@@ -5,7 +5,7 @@ import { useAuth } from '../Contexts/AuthContext';
 const UserGuard = () => {
   const { isAuth } = useAuth();
 
-  return !isAuth ? <Outlet /> : <Navigate to="/" />;
+  return !isAuth ? <Outlet /> : <Navigate to="/projects" />;
 };
 
 export default UserGuard;
