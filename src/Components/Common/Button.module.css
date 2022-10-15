@@ -4,12 +4,12 @@
 .btn:visited {
   color: inherit;
   font-family: inherit;
-  font-size: 2.4rem;
-  font-weight: 800;
+  font-size: var(--md-fs);
+  font-weight: var(--md-weight);
   text-transform: uppercase;
   text-decoration: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
+  padding: var(--sm-2v-pd);
+  border-radius: var(--default-brdr-rd);
   border: none;
   width: 100%;
   transition: all 0.3s;
@@ -22,67 +22,67 @@
 
 .btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 0.4rem #495057;
+  box-shadow: var(--focus-shdw);
 }
 
 /* violet */
 .violetBtn {
-  background-color: #845ef7;
-  box-shadow: 0 0.6rem 0 #5f3dc4;
+  background-color: var(--violet-btn-bg-color);
+  box-shadow: 0 0.6rem 0 var(--violet-btn-shdw-color);
 }
 
 .violetBtn:hover,
 .violetBtn:active,
 .violetBtn:focus-visible {
-  background-color: #9775fa;
+  background-color: var(--violet-btn-hvr-color);
   outline: none;
 }
 
 /* orange */
 .orangeBtn {
-  background-color: #ff922b;
-  box-shadow: 0 0.6rem 0 #d9480f;
-  color: #212529;
+  background-color: var(--orange-btn-bg-color);
+  box-shadow: 0 0.6rem 0 var(--orange-btn-shdw-color);
+  color: var(--default-dark-color);
 }
 
 .orangeBtn:hover,
 .orangeBtn:active,
 .orangeBtn:focus-visible {
-  background-color: #ffa94d;
+  background-color: var(--orange-btn-hvr-color);
   outline: none;
 }
 
 /* green*/
 .greenBtn {
-  background-color: #51cf66;
-  box-shadow: 0 0.6rem 0 #2b8a3e;
-  color: #212529;
+  background-color: var(--green-btn-bg-color);
+  box-shadow: 0 0.6rem 0 var(--green-btn-shdw-color);
+  color: var(--default-dark-color);
 }
 
 .greenBtn:hover,
 .greenBtn:active,
 .greenBtn:focus-visible {
-  background-color: #69db7c;
+  background-color: var(--green-btn-hvr-color);
   outline: none;
 }
 
 /* grey */
 .greyBtn {
-  background-color: #dee2e6;
-  box-shadow: 0 0.6rem 0 #adb5bd;
-  color: #212529;
+  background-color: var(--grey-btn-bg-color);
+  box-shadow: 0 0.6rem 0 var(--grey-btn-shdw-color);
+  color: var(--default-dark-color);
 }
 
 .greyBtn:hover,
 .greyBtn:active,
 .greyBtn:focus-visible {
-  background-color: #e9ecef;
+  background-color: var(--grey-btn-hvr-color);
   outline: none;
 }
 
 .loading {
-  color: #212529;
-  background-color: #495057 !important;
+  color: var(--inactive-btn-font-color);
+  background-color: var(--inactive-btn-bg-color) !important;
   transform: translateY(6px);
   box-shadow: none;
 }

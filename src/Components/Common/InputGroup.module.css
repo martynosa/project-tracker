@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: var(--sm-gap);
 }
 
 .inputGroup label {
@@ -12,23 +12,23 @@
 .inputGroup input {
   font-family: inherit;
   font-size: inherit;
-  background-color: #dee2e6;
-  border-radius: 6px;
-  padding: 0.6rem 1.2rem;
+  background-color: var(--input-bg-color);
+  border-radius: var(--default-brdr-rd);
+  padding: var(--default-2v-pd);
   border: none;
   transition: all 0.3s;
 }
 
 .inputGroup input:focus {
   outline: none;
-  box-shadow: 0 0 0 0.4rem #495057;
+  box-shadow: var(--focus-shdw);
 }
 
 .errorInput {
-  box-shadow: 0 0 0 0.4rem #ff6b6b;
+  box-shadow: var(--error-shdw);
 }
 
 .errorMessage {
-  color: #ff6b6b;
-  font-size: 1.2rem;
+  color: var(--error-color);
+  font-size: var(--mn-fs);
 }

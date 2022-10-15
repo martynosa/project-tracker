@@ -1,8 +1,15 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import classes from './Landing.module.css';
+import Button from './Common/Button';
 
 const Landing = () => {
+  const navigate = useNavigate();
+
+  const onGetStartedHandler = () => {
+    navigate('/register');
+  };
+
   return (
     <section className={classes.container}>
       <div className={classes.headerBox}>
@@ -13,9 +20,9 @@ const Landing = () => {
         <p className={`${classes.secondary} mb-32`}>
           Create, track and manage your projects with ease.
         </p>
-        <Link to="/register" className={classes.btn}>
+        <Button color={'orange'} onClickHandler={onGetStartedHandler}>
           Get started&nbsp;<ion-icon name="arrow-round-forward"></ion-icon>
-        </Link>
+        </Button>
       </div>
 
       <img

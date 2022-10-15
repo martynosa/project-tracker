@@ -5,7 +5,7 @@ import classes from './Auth.module.css';
 import Button from '../Common/Button';
 
 import InputGroup from '../Common/InputGroup';
-import AuthLink from '../Common/AuthLink';
+import AuthLink from './AuthLink';
 import { emailValidator, passwordValidator } from '../../helpers/validators';
 
 import { useNotification } from '../../Contexts/NotificationContext';

@@ -1,7 +1,7 @@
 .linkGroup {
   display: flex;
-  font-size: 1.4rem;
-  gap: 0.6rem;
+  font-size: var(--sm-fs);
+  gap: var(--sm-gap);
 }
 
 .link {
@@ -12,23 +12,23 @@
 
 .link:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 0.4rem #495057;
+  box-shadow: var(--focus-shdw);
 }
 
 /* VIOLET LINK*/
 .violetLink {
-  color: #845ef7;
+  color: var(--violet-btn-bg-color);
 }
 
 .violetLink:hover {
-  color: #9775fa;
+  color: var(--violet-btn-hvr-color);
 }
 
 /* ORANGE LINK*/
 .orangeLink {
-  color: #ff922b;
+  color: var(--orange-btn-bg-color);
 }
 
 .orangeLink:hover {
-  color: #ffa94d;
+  color: var(--orange-btn-hvr-color);
 }

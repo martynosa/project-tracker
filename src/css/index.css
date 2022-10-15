@@ -15,7 +15,8 @@ body {
   /* LIGHT THEME */
   /* color: #495057;
   background-color: #f1f3f5; */
+
   /* DARK THEME */
-  color: #dee2e6;
-  background-color: #212529;
+  color: var(--default-light-color);
+  background-color: var(--default-dark-bg-color);
 }
