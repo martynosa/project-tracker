@@ -79,7 +79,7 @@ const Create = () => {
           error={nameErr}
         />
 
-        <KeywordGroup addKeyword={addKeyword} />
+        <KeywordGroup addKeyword={addKeyword} keywords={keywords} />
 
         <KeywordTags
           keywords={keywords}

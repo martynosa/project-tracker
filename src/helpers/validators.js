@@ -50,6 +50,16 @@ export const keywordValidator = (keyword) => {
   return defaultErr;
 };
 
+export const dupKeywordValidator = (keyword, keywords) => {
+  if (keywords.includes(keyword)) {
+    return {
+      status: true,
+      message: 'Duplicate keyword!',
+    };
+  }
+  return defaultErr;
+};
+
 export const keywordsValidator = (keywords) => {
   if (keywords.length <= 0 || keywords.length > 5) {
     return {

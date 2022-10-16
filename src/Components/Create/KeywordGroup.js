@@ -2,9 +2,13 @@ import { useState } from 'react';
 
 import classes from './KeywordGroup.module.css';
 import Button from '../Common/Button';
-import { defaultErr, keywordValidator } from '../../helpers/validators';
+import {
+  defaultErr,
+  keywordValidator,
+  dupKeywordValidator,
+} from '../../helpers/validators';
 
-const KeywordGroup = ({ addKeyword }) => {
+const KeywordGroup = ({ addKeyword, keywords }) => {
   const [keyword, setKeyword] = useState('');
   const [keywordErr, setKeywordErr] = useState(defaultErr);
 
@@ -16,10 +20,17 @@ const KeywordGroup = ({ addKeyword }) => {
 
   const onAddHandler = () => {
     const keywordValidationErr = keywordValidator(keyword);
+    const dupKeywordValidationErr = dupKeywordValidator(keyword, keywords);
     if (keywordValidationErr.status) {
       setKeywordErr(keywordValidationErr);
       return;
     }
+
+    if (dupKeywordValidationErr.status) {
+      setKeywordErr(dupKeywordValidationErr);
+      return;
+    }
+
     addKeyword(keyword);
     setKeyword('');
   };

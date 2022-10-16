@@ -39,4 +39,5 @@
   align-items: center;
   justify-content: center;
   gap: var(--sm-gap);
+  margin-top: 0.6rem;
 }
