@@ -7,6 +7,7 @@ import Button from '../Common/Button';
 import InputGroup from '../Common/InputGroup';
 import AuthLink from './AuthLink';
 import {
+  defaultErr,
   emailValidator,
   nameValidator,
   passwordValidator,
@@ -23,19 +24,11 @@ const Register = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [rePassword, setRePassword] = useState('');
-  const [emailErr, setEmailErr] = useState({
-    status: false,
-    message: '',
-  });
-  const [passwordErr, setPasswordErr] = useState({
-    status: false,
-    message: '',
-  });
-  const [nameErr, setNameErr] = useState({ status: false, message: '' });
-  const [rePasswordErr, setRePasswordErr] = useState({
-    status: false,
-    message: '',
-  });
+
+  const [emailErr, setEmailErr] = useState(defaultErr);
+  const [passwordErr, setPasswordErr] = useState(defaultErr);
+  const [nameErr, setNameErr] = useState(defaultErr);
+  const [rePasswordErr, setRePasswordErr] = useState(defaultErr);
 
   const { login } = useAuth();
   const { sendRequest, isLoading, setIsLoading } = useFetch();

@@ -1,17 +1,14 @@
-import { useId } from 'react';
-import classes from './Textarea.module.css';
+import classes from './DescriptionGroup.module.css';
 
-const Textarea = ({ label, onChangeHandler, error, value }) => {
-  const inputId = useId();
-
+const DescriptionGroup = ({ label, onChangeHandler, error, value }) => {
   const errorStatus = error?.status || false;
   const errorMessage = error?.message || '';
 
   return (
-    <div className={`${classes.textAreaGroup} mb-24`}>
-      <label htmlFor={inputId}>{label}</label>
+    <div className={`${classes.descriptionGroup} mb-24`}>
+      <label htmlFor="description">{label}</label>
       <textarea
-        id={inputId}
+        id="description"
         onChange={onChangeHandler}
         className={errorStatus ? classes.errorInput : undefined}
         value={value}
@@ -21,4 +18,4 @@ const Textarea = ({ label, onChangeHandler, error, value }) => {
   );
 };
 
-export default Textarea;
+export default DescriptionGroup;

@@ -8,7 +8,7 @@ import Projects from './Components/Projects';
 import UserGuard from './Guards/UserGuard';
 import GuestGuard from './Guards/GuesGuard';
 import Profile from './Components/Profile/Profile';
-import Create from './Components/Create';
+import Create from './Components/Create/Create';
 
 function App() {
   return (

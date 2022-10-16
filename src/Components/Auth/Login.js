@@ -3,10 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 import classes from './Auth.module.css';
 import Button from '../Common/Button';
-
 import InputGroup from '../Common/InputGroup';
 import AuthLink from './AuthLink';
-import { emailValidator, passwordValidator } from '../../helpers/validators';
+import {
+  defaultErr,
+  emailValidator,
+  passwordValidator,
+} from '../../helpers/validators';
 
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
@@ -17,14 +20,8 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const [emailErr, setEmailErr] = useState({
-    status: false,
-    message: '',
-  });
-  const [passwordErr, setPasswordErr] = useState({
-    status: false,
-    message: '',
-  });
+  const [emailErr, setEmailErr] = useState(defaultErr);
+  const [passwordErr, setPasswordErr] = useState(defaultErr);
 
   const { login } = useAuth();
   const { sendRequest, isLoading, setIsLoading } = useFetch();

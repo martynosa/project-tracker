@@ -1,18 +1,15 @@
-.textAreaGroup {
+.keywordsGroup {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: var(--sm-gap);
 }
 
-.textAreaGroup label {
+.keywordsGroup label {
   text-transform: capitalize;
 }
 
-.textAreaGroup textarea {
-  width: 100%;
-  height: 100px;
-  resize: none;
+.keywordsGroup input {
   font-family: inherit;
   font-size: inherit;
   background-color: var(--input-bg-color);
@@ -20,9 +17,10 @@
   padding: var(--default-2v-pd);
   border: none;
   transition: all 0.3s;
+  transform: translateY(6px);
 }
 
-.textAreaGroup textarea:focus {
+.keywordsGroup input:focus {
   outline: none;
   box-shadow: var(--focus-shdw);
 }
@@ -34,4 +32,12 @@
 .errorMessage {
   color: var(--error-color);
   font-size: var(--mn-fs);
+}
+
+.keywordBtn {
+  font-size: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sm-gap);
 }
