@@ -67,7 +67,6 @@ const Create = () => {
         })}
 
         <DescriptionGroup
-          label={'description'}
           onChangeHandler={descriptionHandler}
           error={descriptionErr}
         />
