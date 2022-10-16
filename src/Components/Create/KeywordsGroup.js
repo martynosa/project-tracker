@@ -37,7 +37,7 @@ const KeywordsGroup = ({ addKeyword }) => {
         />
         <Button
           type={'button'}
-          color={'green'}
+          color={'violet'}
           onClickHandler={onClickHandler}
           helperClass={classes.keywordBtn}
         >
