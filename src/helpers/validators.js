@@ -50,8 +50,8 @@ export const keywordValidator = (keyword) => {
   return defaultErr;
 };
 
-export const keywordsValidator = (keywordArr) => {
-  if (keywordArr.length <= 0) {
+export const keywordsValidator = (keywords) => {
+  if (keywords.length <= 0 || keywords.length > 5) {
     return {
       status: true,
       message: 'Add 1 to 5 keywords!',

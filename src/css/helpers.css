@@ -1,5 +1,13 @@
 /* MARGINS */
 /* BOTTOM */
+.mb-03 {
+  margin-bottom: 0.3rem;
+}
+
+.mb-06 {
+  margin-bottom: 0.6rem;
+}
+
 .mb-12 {
   margin-bottom: 1.2rem;
 }
@@ -17,6 +25,14 @@
 }
 
 /* TOP */
+.mt-03 {
+  margin-top: 0.3rem;
+}
+
+.mt-06 {
+  margin-top: 0.6rem;
+}
+
 .mt-12 {
   margin-top: 1.2rem;
 }

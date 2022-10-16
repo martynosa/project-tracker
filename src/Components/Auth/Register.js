@@ -101,7 +101,6 @@ const Register = () => {
       <form className={classes.form}>
         <InputGroup
           label={'email'}
-          type={'text'}
           onChangeHandler={emailHandler}
           error={emailErr}
           value={email}
@@ -109,7 +108,6 @@ const Register = () => {
 
         <InputGroup
           label={'name'}
-          type={'text'}
           onChangeHandler={nameHandler}
           error={nameErr}
           value={name}

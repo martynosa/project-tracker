@@ -12,7 +12,9 @@ const DescriptionGroup = ({ onChangeHandler, error }) => {
         onChange={onChangeHandler}
         className={errorStatus ? classes.errorInput : undefined}
       ></textarea>
-      {errorStatus && <p className={classes.errorMessage}>{errorMessage}</p>}
+      {errorStatus && (
+        <p className={`${classes.errorMessage} mt-03`}>{errorMessage}</p>
+      )}
     </div>
   );
 };

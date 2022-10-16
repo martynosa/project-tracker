@@ -72,7 +72,6 @@ const Login = () => {
       <form className={classes.form}>
         <InputGroup
           label={'email'}
-          type={'text'}
           onChangeHandler={emailHandler}
           error={emailErr}
           value={email}

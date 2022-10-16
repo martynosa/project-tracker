@@ -1,7 +1,7 @@
 .keywordGroup {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   gap: var(--sm-gap);
 }
 
@@ -17,7 +17,6 @@
   padding: var(--default-2v-pd);
   border: none;
   transition: all 0.3s;
-  transform: translateY(6px);
 }
 
 .keywordGroup input:focus {

@@ -25,27 +25,25 @@ const KeywordGroup = ({ addKeyword }) => {
   };
 
   return (
-    <div className="mb-24">
+    <div className={`${classes.keywordGroup} mb-24`}>
       <label htmlFor="keyword">Keyword</label>
-      <div className={`${classes.keywordGroup} mb-12`}>
-        <input
-          id="keyword"
-          type="test"
-          onChange={onKeywordChange}
-          className={keywordErr.status ? classes.errorInput : undefined}
-          value={keyword}
-        />
-        <Button
-          color={'violet'}
-          onClickHandler={onAddHandler}
-          helperClass={classes.keywordBtn}
-        >
-          <ion-icon name="add"></ion-icon> Add
-        </Button>
-      </div>
+      <input
+        id="keyword"
+        type="test"
+        onChange={onKeywordChange}
+        className={keywordErr.status ? classes.errorInput : undefined}
+        value={keyword}
+      />
       {keywordErr.status && (
-        <p className={classes.errorMessage}>{keywordErr.message}</p>
+        <p className={`${classes.errorMessage} mt-03`}>{keywordErr.message}</p>
       )}
+      <Button
+        color={'violet'}
+        onClickHandler={onAddHandler}
+        helperClass={classes.keywordBtn}
+      >
+        <ion-icon name="add"></ion-icon> Add
+      </Button>
     </div>
   );
 };

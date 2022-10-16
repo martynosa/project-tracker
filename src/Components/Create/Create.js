@@ -4,6 +4,7 @@ import classes from './Create.module.css';
 import {
   defaultErr,
   descriptionValidator,
+  keywordsValidator,
   nameValidator,
 } from '../../helpers/validators';
 import InputGroup from '../Common/InputGroup';
@@ -46,13 +47,27 @@ const Create = () => {
   };
 
   const onCreateHandler = () => {
+    const nameValidationErr = nameValidator(name);
+    const keywordsValidationErr = keywordsValidator(keywords);
+    const descriptionValidationErr = descriptionValidator(description);
+    setNameErr(nameValidationErr);
+    setKeywordsErr(keywordsValidationErr);
+    setDescriptionErr(descriptionValidationErr);
+
     const project = {
       name,
       keywords,
       description,
     };
 
-    console.log(project);
+    if (
+      nameValidationErr.status ||
+      keywordsValidationErr.status ||
+      descriptionValidationErr.status
+    )
+      return;
+
+    console.log('created ->', project);
   };
 
   return (
@@ -60,14 +75,17 @@ const Create = () => {
       <form className={classes.form}>
         <InputGroup
           label={'name'}
-          type={'text'}
           onChangeHandler={nameHandler}
           error={nameErr}
         />
 
         <KeywordGroup addKeyword={addKeyword} />
 
-        <KeywordTags keywords={keywords} removeKeyword={removeKeyword} />
+        <KeywordTags
+          keywords={keywords}
+          error={keywordsErr}
+          removeKeyword={removeKeyword}
+        />
 
         <DescriptionGroup
           onChangeHandler={descriptionHandler}
