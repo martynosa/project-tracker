@@ -14,7 +14,7 @@ const KeywordGroup = ({ addKeyword }) => {
     setKeyword(keyword);
   };
 
-  const onClickHandler = () => {
+  const onAddHandler = () => {
     const keywordValidationErr = keywordValidator(keyword);
     if (keywordValidationErr.status) {
       setKeywordErr(keywordValidationErr);
@@ -37,7 +37,7 @@ const KeywordGroup = ({ addKeyword }) => {
         />
         <Button
           color={'violet'}
-          onClickHandler={onClickHandler}
+          onClickHandler={onAddHandler}
           helperClass={classes.keywordBtn}
         >
           <ion-icon name="add"></ion-icon> Add

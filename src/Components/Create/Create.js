@@ -59,7 +59,7 @@ const Create = () => {
     <>
       <form className={classes.form}>
         <InputGroup
-          label={'Name'}
+          label={'name'}
           type={'text'}
           onChangeHandler={nameHandler}
           error={nameErr}

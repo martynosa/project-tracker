@@ -40,13 +40,13 @@ const Tag = ({ keyword, removeKeyword }) => {
       className = `${className} ${classes.pink}`;
   }
 
-  const onClickHandler = (e) => {
+  const onRemoveHandler = (e) => {
     const keyword = e.target.textContent;
     removeKeyword(keyword);
   };
 
   return (
-    <span className={className} onClick={onClickHandler}>
+    <span className={className} onClick={onRemoveHandler}>
       {keyword}
     </span>
   );
