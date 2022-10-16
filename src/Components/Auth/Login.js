@@ -48,9 +48,7 @@ const Login = () => {
     setPassword(password);
   };
 
-  const onLoginHandler = async (e) => {
-    e.preventDefault();
-
+  const onLoginHandler = async () => {
     const emailValidationErr = emailValidator(email);
     const passwordValidationErr = passwordValidator(password);
     setEmailErr(emailValidationErr);
@@ -91,7 +89,6 @@ const Login = () => {
         <AuthLink to={'register'} />
 
         <Button
-          type="submit"
           color="violet"
           onClickHandler={onLoginHandler}
           isLoading={isLoading}

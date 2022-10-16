@@ -60,9 +60,7 @@ const PasswordChange = () => {
     body: { password, newPassword, newRePassword },
   };
 
-  const onUpdatePasswordHandler = async (e) => {
-    e.preventDefault();
-
+  const onPasswordChangeHandler = async () => {
     const passwordValidationErr = passwordValidator(password);
     const newPasswordValidationErr = passwordValidator(newPassword);
     const newRePasswordValidationErr = rePasswordValidator(
@@ -119,9 +117,8 @@ const PasswordChange = () => {
       />
 
       <Button
-        type="submit"
         color="green"
-        onClickHandler={onUpdatePasswordHandler}
+        onClickHandler={onPasswordChangeHandler}
         isLoading={isLoading}
       >
         Change password

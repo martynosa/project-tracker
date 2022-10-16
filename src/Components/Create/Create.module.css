@@ -1,5 +1,5 @@
 .form {
-  min-width: 32rem;
+  max-width: 32rem;
   position: fixed;
   top: 50%;
   left: 50%;

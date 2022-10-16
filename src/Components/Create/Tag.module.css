@@ -1,0 +1,53 @@
+.tag {
+  text-transform: uppercase;
+  padding: var(--sm-2v-pd);
+  border-radius: var(--default-brdr-rd);
+}
+
+.red {
+  background-color: var(--red-tag-color);
+}
+
+.pink {
+  background-color: var(--pink-tag-color);
+}
+
+.grape {
+  background-color: var(--grape-tag-color);
+}
+
+.violet {
+  background-color: var(--violet-tag-color);
+}
+
+.indigo {
+  background-color: var(--indigo-tag-color);
+}
+
+.blue {
+  background-color: var(--blue-tag-color);
+}
+
+.cyan {
+  background-color: var(--cyan-tag-color);
+}
+
+.teal {
+  background-color: var(--teal-tag-color);
+}
+
+.green {
+  background-color: var(--green-tag-color);
+}
+
+.lime {
+  background-color: var(--lime-tag-color);
+}
+
+.yellow {
+  background-color: var(--yelow-tag-color);
+}
+
+.orange {
+  background-color: var(--orange-tag-color);
+}

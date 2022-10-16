@@ -67,9 +67,7 @@ const Register = () => {
     setRePassword(rePassword);
   };
 
-  const onRegisterHandler = async (e) => {
-    e.preventDefault();
-
+  const onRegisterHandler = async () => {
     const emailValidationErr = emailValidator(email);
     const nameValidationErr = nameValidator(name);
     const passwordValidationErr = passwordValidator(password);
@@ -136,7 +134,6 @@ const Register = () => {
         <AuthLink to={'login'} />
 
         <Button
-          type="submit"
           color="orange"
           onClickHandler={onRegisterHandler}
           isLoading={isLoading}

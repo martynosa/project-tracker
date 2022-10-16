@@ -1,15 +1,15 @@
-.keywordsGroup {
+.keywordGroup {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--sm-gap);
 }
 
-.keywordsGroup label {
+.keywordGroup label {
   text-transform: capitalize;
 }
 
-.keywordsGroup input {
+.keywordGroup input {
   font-family: inherit;
   font-size: inherit;
   background-color: var(--input-bg-color);
@@ -20,7 +20,7 @@
   transform: translateY(6px);
 }
 
-.keywordsGroup input:focus {
+.keywordGroup input:focus {
   outline: none;
   box-shadow: var(--focus-shdw);
 }

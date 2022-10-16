@@ -1,0 +1,6 @@
+.keywordTagGroup {
+  width: 32rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sm-gap);
+}

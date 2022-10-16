@@ -8,6 +8,8 @@ const Button = ({
   helperClass,
   children,
 }) => {
+  const typeBtn = type || 'button';
+
   const orangeBtn = `${classes.btn} ${classes.orangeBtn}`;
   const violetBtn = `${classes.btn} ${classes.violetBtn}`;
   const greenBtn = `${classes.btn} ${classes.greenBtn}`;
@@ -37,7 +39,7 @@ const Button = ({
 
   return (
     <button
-      type={type}
+      type={typeBtn}
       className={className}
       onClick={onClickHandler}
       disabled={isLoading}

@@ -8,8 +8,9 @@ import {
 } from '../../helpers/validators';
 import InputGroup from '../Common/InputGroup';
 import DescriptionGroup from './DescriptionGroup';
-import KeywordsGroup from './KeywordsGroup';
+import KeywordGroup from './KeywordGroup';
 import Button from '../Common/Button';
+import KeywordTags from './KeywordTags';
 
 const Create = () => {
   const [name, setName] = useState('');
@@ -38,9 +39,13 @@ const Create = () => {
     });
   };
 
-  const onCreateHandler = (e) => {
-    e.preventDefault();
+  const removeKeyword = (keyword) => {
+    setKeywords((state) => {
+      return state.filter((k) => k !== keyword);
+    });
+  };
 
+  const onCreateHandler = () => {
     const project = {
       name,
       keywords,
@@ -60,22 +65,16 @@ const Create = () => {
           error={nameErr}
         />
 
-        <KeywordsGroup addKeyword={addKeyword} />
+        <KeywordGroup addKeyword={addKeyword} />
 
-        {keywords.map((k) => {
-          return <p>{k}</p>;
-        })}
+        <KeywordTags keywords={keywords} removeKeyword={removeKeyword} />
 
         <DescriptionGroup
           onChangeHandler={descriptionHandler}
           error={descriptionErr}
         />
 
-        <Button
-          type={'submit'}
-          color={'green'}
-          onClickHandler={onCreateHandler}
-        >
+        <Button color={'green'} onClickHandler={onCreateHandler}>
           Create
         </Button>
       </form>

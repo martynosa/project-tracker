@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import classes from './KeywordsGroup.module.css';
+import classes from './KeywordGroup.module.css';
 import Button from '../Common/Button';
 import { defaultErr, keywordValidator } from '../../helpers/validators';
 
-const KeywordsGroup = ({ addKeyword }) => {
+const KeywordGroup = ({ addKeyword }) => {
   const [keyword, setKeyword] = useState('');
   const [keywordErr, setKeywordErr] = useState(defaultErr);
 
@@ -27,7 +27,7 @@ const KeywordsGroup = ({ addKeyword }) => {
   return (
     <div className="mb-24">
       <label htmlFor="keyword">Keyword</label>
-      <div className={`${classes.keywordsGroup} mb-12`}>
+      <div className={`${classes.keywordGroup} mb-12`}>
         <input
           id="keyword"
           type="test"
@@ -36,7 +36,6 @@ const KeywordsGroup = ({ addKeyword }) => {
           value={keyword}
         />
         <Button
-          type={'button'}
           color={'violet'}
           onClickHandler={onClickHandler}
           helperClass={classes.keywordBtn}
@@ -51,4 +50,4 @@ const KeywordsGroup = ({ addKeyword }) => {
   );
 };
 
-export default KeywordsGroup;
+export default KeywordGroup;

@@ -21,7 +21,6 @@ const UploadPhoto = () => {
 
   const onUploadPhotoHandler = async (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
     const photo = formData.get('photo');
 
@@ -47,7 +46,7 @@ const UploadPhoto = () => {
         <input id="photo" type="file" name="photo" />
       </div>
       <Button
-        type="submit"
+        type={'submit'}
         color="violet"
         isLoading={isLoading}
         helperClass={classes.uploadBtn}
