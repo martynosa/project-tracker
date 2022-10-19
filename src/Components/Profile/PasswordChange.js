@@ -11,7 +11,6 @@ import {
 } from '../../helpers/validators';
 
 import { useNotification } from '../../Contexts/NotificationContext';
-import { useAuth } from '../../Contexts/AuthContext';
 import { AUTH_URL } from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 
@@ -32,7 +31,6 @@ const PasswordChange = () => {
     message: null,
   });
 
-  const { user } = useAuth();
   const { sendRequest, isLoading, setIsLoading } = useFetch();
 
   const { openNotification } = useNotification();
@@ -56,8 +54,9 @@ const PasswordChange = () => {
   const httpConfig = {
     url: `${AUTH_URL}/updatePassword`,
     method: 'PATCH',
-    headers: { 'Content-Type': 'application/json', token: user.token },
+    headers: { 'Content-Type': 'application/json' },
     body: { password, newPassword, newRePassword },
+    isAuthorized: true,
   };
 
   const onPasswordChangeHandler = async () => {

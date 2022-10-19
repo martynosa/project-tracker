@@ -8,15 +8,15 @@ import { AUTH_URL } from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 
 const UploadPhoto = () => {
-  const { user, updatePhoto } = useAuth();
+  const { updatePhoto } = useAuth();
   const { sendRequest, isLoading, setIsLoading } = useFetch();
 
   const { openNotification } = useNotification();
 
   const httpConfig = {
     url: `${AUTH_URL}/uploadPhoto`,
-    headers: { token: user.token },
     method: 'POST',
+    isAuthorzied: true,
   };
 
   const onUploadPhotoHandler = async (e) => {

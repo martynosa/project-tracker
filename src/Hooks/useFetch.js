@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useAuth } from '../Contexts/AuthContext';
 
 const useFetch = () => {
+  const { user } = useAuth();
+
   const [isLoading, setIsLoading] = useState(false);
 
   const sendRequest = async (config) => {
@@ -13,6 +16,8 @@ const useFetch = () => {
     };
 
     if (config.photo) options.body = config.photo;
+    if (config.isAuthorized)
+      options.headers = { ...options.headers, token: user.token };
 
     const response = await fetch(config.url, options);
     const result = await response.json();

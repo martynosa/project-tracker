@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import classes from './Create.module.css';
 import {
@@ -13,6 +14,10 @@ import KeywordGroup from './KeywordGroup';
 import Button from '../Common/Button';
 import KeywordTags from './KeywordTags';
 
+import { useNotification } from '../../Contexts/NotificationContext';
+import { ITEM_URL } from '../../helpers/constants';
+import useFetch from '../../Hooks/useFetch';
+
 const Create = () => {
   const [name, setName] = useState('');
   const [keywords, setKeywords] = useState([]);
@@ -21,6 +26,19 @@ const Create = () => {
   const [nameErr, setNameErr] = useState(defaultErr);
   const [keywordsErr, setKeywordsErr] = useState(defaultErr);
   const [descriptionErr, setDescriptionErr] = useState(defaultErr);
+
+  const { sendRequest, isLoading, setIsLoading } = useFetch();
+
+  const { openNotification } = useNotification();
+  const navigate = useNavigate();
+
+  const httpConfig = {
+    url: `${ITEM_URL}`,
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: { name, keywords, description },
+    isAuthorized: true,
+  };
 
   const nameHandler = (e) => {
     const name = e.target.value.trim();
@@ -46,19 +64,13 @@ const Create = () => {
     });
   };
 
-  const onCreateHandler = () => {
+  const onCreateHandler = async () => {
     const nameValidationErr = nameValidator(name);
     const keywordsValidationErr = keywordsValidator(keywords);
     const descriptionValidationErr = descriptionValidator(description);
     setNameErr(nameValidationErr);
     setKeywordsErr(keywordsValidationErr);
     setDescriptionErr(descriptionValidationErr);
-
-    const project = {
-      name,
-      keywords,
-      description,
-    };
 
     if (
       nameValidationErr.status ||
@@ -67,7 +79,14 @@ const Create = () => {
     )
       return;
 
-    console.log('created ->', project);
+    try {
+      const createdItem = await sendRequest(httpConfig);
+      navigate('/projects');
+      openNotification('success', `${createdItem.name} successfully created.`);
+    } catch (error) {
+      setIsLoading(false);
+      openNotification('fail', error.message);
+    }
   };
 
   return (
@@ -92,7 +111,11 @@ const Create = () => {
           error={descriptionErr}
         />
 
-        <Button color={'green'} onClickHandler={onCreateHandler}>
+        <Button
+          color={'green'}
+          onClickHandler={onCreateHandler}
+          isLoading={isLoading}
+        >
           Create
         </Button>
       </form>
