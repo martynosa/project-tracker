@@ -13,11 +13,11 @@ const Landing = () => {
   return (
     <section className={classes.container}>
       <div className={classes.headerBox}>
-        <h1 className={`${classes.main} mb-12`}>
+        <h1 className={classes.main}>
           Reach new productivity<span>peaks</span>
         </h1>
 
-        <p className={`${classes.secondary} mb-32`}>
+        <p className={classes.secondary}>
           Create, track and manage your projects with ease.
         </p>
         <Button color={'orange'} onClickHandler={onGetStartedHandler}>

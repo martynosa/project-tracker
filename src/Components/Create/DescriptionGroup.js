@@ -5,16 +5,14 @@ const DescriptionGroup = ({ onChangeHandler, error }) => {
   const errorMessage = error?.message || '';
 
   return (
-    <div className={`${classes.descriptionGroup} mb-24`}>
+    <div className={classes.descriptionGroup}>
       <label htmlFor="description">description</label>
       <textarea
         id="description"
         onChange={onChangeHandler}
         className={errorStatus ? classes.errorInput : undefined}
       ></textarea>
-      {errorStatus && (
-        <p className={`${classes.errorMessage} mt-03`}>{errorMessage}</p>
-      )}
+      {errorStatus && <p className={classes.errorMessage}>{errorMessage}</p>}
     </div>
   );
 };

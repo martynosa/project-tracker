@@ -22,7 +22,7 @@ const AuthLink = ({ to }) => {
   );
 
   return (
-    <div className={`${classes.linkGroup} mb-32`}>
+    <div className={classes.linkGroup}>
       {to === 'login' && toLogin}
       {to === 'register' && toRegister}
     </div>

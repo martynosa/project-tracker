@@ -3,6 +3,7 @@
   justify-content: space-between;
   flex-direction: column;
   gap: var(--sm-gap);
+  margin-bottom: var(--m-24);
 }
 
 .keywordGroup label {
@@ -31,6 +32,7 @@
 .errorMessage {
   color: var(--error-color);
   font-size: var(--mn-fs);
+  margin-top: var(--m-03);
 }
 
 .keywordBtn {
@@ -39,5 +41,5 @@
   align-items: center;
   justify-content: center;
   gap: var(--sm-gap);
-  margin-top: 0.6rem;
+  margin-top: var(--m-06);
 }

@@ -91,7 +91,7 @@ const PasswordChange = () => {
   };
 
   return (
-    <form className={`${classes.passwordForm} mt-48`}>
+    <form className={classes.passwordForm}>
       <InputGroup
         label={'password'}
         type={'password'}

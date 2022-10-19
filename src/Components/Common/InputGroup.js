@@ -10,7 +10,7 @@ const InputGroup = ({ label, type, onChangeHandler, error, value }) => {
   const errorMessage = error?.message || '';
 
   return (
-    <div className={`${classes.inputGroup} mb-24`}>
+    <div className={classes.inputGroup}>
       <label htmlFor={inputId}>{label}</label>
       <input
         id={inputId}
@@ -19,9 +19,7 @@ const InputGroup = ({ label, type, onChangeHandler, error, value }) => {
         className={errorStatus ? classes.errorInput : undefined}
         value={value}
       />
-      {errorStatus && (
-        <p className={`${classes.errorMessage} mt-03`}>{errorMessage}</p>
-      )}
+      {errorStatus && <p className={classes.errorMessage}>{errorMessage}</p>}
     </div>
   );
 };

@@ -13,6 +13,7 @@
 .main {
   font-size: var(--mx-fs);
   font-weight: var(--md-weight);
+  margin-bottom: var(--m-12);
 }
 
 .main span {
@@ -24,6 +25,7 @@
 
 .secondary {
   font-size: var(--md-fs);
+  margin-bottom: var(--m-48);
 }
 
 .img {

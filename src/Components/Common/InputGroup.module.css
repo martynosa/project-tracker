@@ -3,6 +3,7 @@
   justify-content: space-between;
   flex-direction: column;
   gap: var(--sm-gap);
+  margin-bottom: var(--m-24);
 }
 
 .inputGroup label {
@@ -31,4 +32,5 @@
 .errorMessage {
   color: var(--error-color);
   font-size: var(--mn-fs);
+  margin-top: var(--m-03);
 }

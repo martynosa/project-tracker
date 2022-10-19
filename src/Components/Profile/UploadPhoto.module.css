@@ -1,6 +1,7 @@
 .uploadPhotoform {
   display: grid;
   grid-template-columns: 3fr 1fr;
+  margin-bottom: var(--m-48);
 }
 
 .photoInputGroup {

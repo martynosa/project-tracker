@@ -10,7 +10,7 @@ const KeywordTags = ({ keywords, error, removeKeyword }) => {
   const errorMessage = error?.message || '';
 
   return (
-    <div className={`${classes.keywordTagGroup} mb-24`}>
+    <div className={classes.keywordTagGroup}>
       <div className={classes.keywordTagList}>
         {keywords.map((k, index) => (
           <Tag
@@ -20,9 +20,7 @@ const KeywordTags = ({ keywords, error, removeKeyword }) => {
           />
         ))}
       </div>
-      {errorStatus && (
-        <p className={`${classes.errorMessage} mt-03`}>{errorMessage}</p>
-      )}
+      {errorStatus && <p className={classes.errorMessage}>{errorMessage}</p>}
     </div>
   );
 };
