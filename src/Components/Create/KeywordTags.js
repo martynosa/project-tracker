@@ -1,7 +1,7 @@
 import { useId } from 'react';
 
 import classes from './KeywordTags.module.css';
-import Tag from './Tag';
+import Tag from '../Common/Tag';
 
 const KeywordTags = ({ keywords, error, removeKeyword }) => {
   const id = useId();

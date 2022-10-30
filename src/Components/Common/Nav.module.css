@@ -7,7 +7,7 @@
   position: absolute;
   display: flex;
   align-items: center;
-  gap: var(--mx-gap);
+  gap: var(--md-gap);
   padding: var(--default-1v-pd);
   font-size: var(--md-fs);
   font-weight: var(--md-weight);
@@ -46,13 +46,13 @@
 
 .innerLinks {
   display: flex;
-  gap: var(--mx-gap);
+  gap: var(--md-gap);
 }
 
 .userLinks {
   display: flex;
   align-items: center;
-  gap: var(--mx-gap);
+  gap: var(--md-gap);
 }
 
 .name {

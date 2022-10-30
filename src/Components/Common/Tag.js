@@ -42,6 +42,7 @@ const Tag = ({ keyword, removeKeyword }) => {
 
   const onRemoveHandler = (e) => {
     const keyword = e.target.textContent;
+    if (!removeKeyword) return;
     removeKeyword(keyword);
   };
 
