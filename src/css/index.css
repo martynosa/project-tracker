@@ -21,4 +21,13 @@ body {
   /* DARK THEME */
   color: var(--default-light-color);
   background-color: var(--default-dark-bg-color);
+
+  /* DOTS */
+  /* background: white; */
+  /* background-image: radial-gradient(
+    circle at 1px 1px,
+    #343a40 1px,
+    transparent 0
+  );
+  background-size: 50px 50px; */
 }
