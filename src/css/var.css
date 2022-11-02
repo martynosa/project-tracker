@@ -13,6 +13,7 @@
   --violet-color: #845ef7;
   --green-color: #51cf66;
   --blue-color: #339af0;
+  --orange-color: #ff922b;
 
   --error-color: #ff6b6b;
   --input-bg-color: #dee2e6;
@@ -98,4 +99,9 @@
   --lime-tag-color: #5c940d;
   --yelow-tag-color: #e67700;
   --orange-tag-color: #d9480f;
+
+  /* CARD_SHADOW_COLOR */
+  --new-card-shadow: #1864ab;
+  --inProgress-card-shadow: #d9480f;
+  --completed-card-shadow: #2b8a3e;
 }

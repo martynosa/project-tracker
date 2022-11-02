@@ -1,0 +1,10 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: var(--bg-gap);
+  padding: var(--bg-2v-pd);
+}

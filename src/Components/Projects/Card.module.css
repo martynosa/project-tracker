@@ -1,0 +1,80 @@
+.card {
+  max-width: 30rem;
+  color: var(--dark-color);
+  padding: var(--md-2v-pd);
+  border-radius: var(--default-brdr-rd);
+  font-size: var(--default-fs);
+  transition: all 0.3s;
+  margin-bottom: var(--m-24);
+}
+
+.cardTitle {
+  font-size: var(--md-fs);
+  margin-bottom: var(--m-24);
+}
+
+.cardDescription {
+  margin-bottom: var(--m-24);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sm-gap);
+  margin-bottom: var(--m-12);
+}
+
+.card:hover {
+  background-color: var(--violet-color);
+  transform: translate(-6px, 6px);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.new {
+  background-color: var(--blue-color);
+  box-shadow: -6px 6px 0 var(--new-card-shadow);
+}
+
+.inProgress {
+  background-color: var(--orange-color);
+  box-shadow: -6px 6px 0 var(--inProgress-card-shadow);
+}
+
+.completed {
+  background-color: var(--green-color);
+  box-shadow: -6px 6px 0 var(--completed-card-shadow);
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--bg-gap);
+  font-size: var(--md-fs);
+}
+
+.btnBack {
+  display: flex;
+  align-items: center;
+  width: unset;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btnBack:hover {
+  transform: translateX(-6px) scale(1.1);
+}
+
+.btnForward {
+  display: flex;
+  align-items: center;
+  width: unset;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btnForward:hover {
+  transform: translateX(6px) scale(1.1);
+}
