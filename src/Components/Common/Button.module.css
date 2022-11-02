@@ -42,7 +42,7 @@
 .orangeBtn {
   background-color: var(--orange-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--orange-btn-shdw-color);
-  color: var(--default-dark-color);
+  color: var(--dark-color);
 }
 
 .orangeBtn:hover,
@@ -56,7 +56,7 @@
 .greenBtn {
   background-color: var(--green-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--green-btn-shdw-color);
-  color: var(--default-dark-color);
+  color: var(--dark-color);
 }
 
 .greenBtn:hover,
@@ -70,7 +70,7 @@
 .greyBtn {
   background-color: var(--grey-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--grey-btn-shdw-color);
-  color: var(--default-dark-color);
+  color: var(--dark-color);
 }
 
 .greyBtn:hover,

@@ -8,19 +8,19 @@
   --mn-fs: 1.2rem;
 
   /* COLOR */
-  --default-light-color: #dee2e6;
-  --default-dark-color: #343a40;
-  --default-violet-color: #845ef7;
-  --default-green-color: #51cf66;
-  --default-blue-color: #339af0;
+  --light-color: #dee2e6;
+  --dark-color: #343a40;
+  --violet-color: #845ef7;
+  --green-color: #51cf66;
+  --blue-color: #339af0;
 
   --error-color: #ff6b6b;
   --input-bg-color: #dee2e6;
   --violet-hvr-color: #9775fa;
 
   /* BACKGROUND_COLOR */
-  --default-light-bg-color: #f1f3f5;
-  --default-dark-bg-color: #212529;
+  --light-bg-color: #f1f3f5;
+  --dark-bg-color: #212529;
 
   /* SHADOW */
   --focus-shdw: 0 0 0 0.4rem #495057;

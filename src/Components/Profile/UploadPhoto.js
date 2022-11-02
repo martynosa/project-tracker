@@ -42,7 +42,7 @@ const UploadPhoto = () => {
   return (
     <form className={classes.uploadPhotoform} onSubmit={onUploadPhotoHandler}>
       <div className={classes.photoInputGroup}>
-        <label htmlFor="photo">Click here to select image</label>
+        <label htmlFor="photo">Select photo</label>
         <input id="photo" type="file" name="photo" />
       </div>
       <Button

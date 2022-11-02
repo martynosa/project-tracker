@@ -18,7 +18,7 @@
 
 .main span {
   display: block;
-  color: var(--default-violet-color);
+  color: var(--violet-color);
   text-transform: uppercase;
   font-weight: var(--mx-weight);
 }

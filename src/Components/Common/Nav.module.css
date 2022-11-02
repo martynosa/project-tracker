@@ -1,5 +1,5 @@
 .active {
-  color: var(--default-violet-color) !important;
+  color: var(--violet-color) !important;
 }
 
 /* OUTER */
@@ -56,14 +56,14 @@
 }
 
 .name {
-  color: var(--default-green-color);
+  color: var(--green-color);
 }
 
 .photo {
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
-  border: 3px solid var(--default-violet-color);
+  border: 3px solid var(--violet-color);
 }
 
 .name:hover {

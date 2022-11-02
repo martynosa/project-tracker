@@ -2,13 +2,13 @@
   display: flex;
   gap: var(--sm-gap);
   padding: var(--default-2v-pd);
-  color: var(--darkest-color);
+  color: var(--dark-color);
   border-radius: var(--default-brdr-rd);
   position: fixed;
   top: 50px;
   left: 50%;
   transform: translate(-50%);
-  font-size: var(--sm-fs);
+  font-size: var(--default-fs);
   z-index: 1;
 }
 

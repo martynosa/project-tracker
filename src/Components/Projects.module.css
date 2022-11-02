@@ -11,12 +11,12 @@
 
 .card {
   max-width: 30rem;
-  background-color: var(--default-green-color);
-  color: var(--default-dark-color);
+  background-color: var(--green-color);
+  color: var(--dark-color);
   padding: var(--md-2v-pd);
   border-radius: var(--default-brdr-rd);
   font-size: var(--default-fs);
-  box-shadow: -0.6rem 0.6rem 0 var(--green-btn-shdw-color);
+  box-shadow: -6px 6px 0 var(--green-btn-shdw-color);
   transition: all 0.3s;
   margin-bottom: var(--m-24);
 }
@@ -35,11 +35,10 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--sm-gap);
-  color: var(--default-light-color);
 }
 
 .card:hover {
-  background-color: var(--default-violet-color);
+  background-color: var(--violet-color);
   transform: translate(-6px, 6px);
   box-shadow: none;
   cursor: pointer;

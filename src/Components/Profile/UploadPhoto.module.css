@@ -6,9 +6,9 @@
 
 .photoInputGroup {
   background-color: var(--input-bg-color);
-  color: var(--darkest-color);
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+  color: var(--dark-color);
+  border-top-left-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
   padding: var(--default-2v-pd);
   transform: translateY(6px);
 }
@@ -27,7 +27,7 @@
 }
 
 .uploadBtn {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   font-size: 1.9rem;
 }

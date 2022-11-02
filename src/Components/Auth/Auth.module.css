@@ -5,5 +5,4 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: var(--default-fs);
-  font-weight: var(--sm-weight);
 }

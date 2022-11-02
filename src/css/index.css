@@ -20,8 +20,8 @@ body {
   background-color: #f1f3f5; */
 
   /* DARK THEME */
-  color: var(--default-light-color);
-  background-color: var(--default-dark-bg-color);
+  color: var(--light-color);
+  background-color: var(--dark-bg-color);
 
   /* DOTS */
   /* background: white; */
