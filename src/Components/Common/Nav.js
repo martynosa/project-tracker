@@ -1,12 +1,20 @@
 import { NavLink, Link, useLocation } from 'react-router-dom';
 
 import classes from './Nav.module.css';
+import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
 import { PHOTO_URL } from '../../helpers/constants';
 
 const Nav = () => {
   const location = useLocation();
+
+  const { openNotification } = useNotification();
   const { user, isAuth, logout } = useAuth();
+
+  const onLogoutHandler = () => {
+    logout();
+    openNotification('success', `Logged out successfully`);
+  };
 
   const backNav = (
     <nav className={classes.outerNav}>
@@ -55,7 +63,10 @@ const Nav = () => {
         >
           {user?.name}
         </NavLink>
-        <p className={`${classes.link} ${classes.logout}`} onClick={logout}>
+        <p
+          className={`${classes.link} ${classes.logout}`}
+          onClick={onLogoutHandler}
+        >
           Logout
         </p>
       </div>
