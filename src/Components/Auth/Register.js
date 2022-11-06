@@ -39,7 +39,6 @@ const Register = () => {
   const httpConfig = {
     url: `${AUTH_URL}/register`,
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
     body: { email, name, password, rePassword },
   };
 

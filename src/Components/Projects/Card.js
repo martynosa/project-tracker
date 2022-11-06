@@ -3,31 +3,25 @@ import Tag from '../Common/Tag';
 import Button from '../Common/Button';
 
 const Card = ({ project }) => {
-  //   const { title, description, tags } = project;
+  console.log(project);
+  const { name, description, keywords } = project;
   let className = `${classes.card} ${classes[project.status]}`;
 
   return (
     <div className={className}>
       <header className={classes.cardHeader}>
-        <h3 className={classes.title}>Title</h3>
+        <h3 className={classes.title}>{name}</h3>
         <Button helperClass={classes.btnTrash}>
           <ion-icon name="trash"></ion-icon>
         </Button>
       </header>
 
-      <p className={classes.cardDescription}>
-        When a card is checked, it will show a checked icon and change its
-        foreground color. There is no default behavior for enabling/disabling
-        the checked state. An example of how to do it in response to a long
-        click is shown below.
-      </p>
+      <p className={classes.cardDescription}>{description}</p>
 
       <div className={classes.tags}>
-        <Tag keyword={'tagged'} />
-        <Tag keyword={'tricked'} />
-        <Tag keyword={'tred'} />
-        <Tag keyword={'trapped'} />
-        <Tag keyword={'trapped'} />
+        {keywords.map((k) => (
+          <Tag keyword={k} />
+        ))}
       </div>
 
       <div className={classes.btnGroup}>

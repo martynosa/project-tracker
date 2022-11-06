@@ -35,7 +35,6 @@ const Create = () => {
   const httpConfig = {
     url: `${ITEM_URL}`,
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
     body: { name, keywords, description },
     isAuthorized: true,
   };

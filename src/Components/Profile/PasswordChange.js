@@ -54,7 +54,6 @@ const PasswordChange = () => {
   const httpConfig = {
     url: `${AUTH_URL}/updatePassword`,
     method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
     body: { password, newPassword, newRePassword },
     isAuthorized: true,
   };

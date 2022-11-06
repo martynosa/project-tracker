@@ -6,20 +6,32 @@ const useFetch = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const sendRequest = async (config) => {
+  const sendRequest = async ({
+    url,
+    method,
+    headers,
+    body,
+    photo,
+    isAuthorized,
+  }) => {
     setIsLoading(true);
 
     const options = {
-      method: config.method ? config.method : 'GET',
-      headers: config.headers ? config.headers : {},
-      body: config.body ? JSON.stringify(config.body) : null,
+      method: method ? method : 'GET',
+      headers: headers ? headers : { 'Content-Type': 'application/json' },
+      body: body ? JSON.stringify(body) : null,
     };
 
-    if (config.photo) options.body = config.photo;
-    if (config.isAuthorized)
-      options.headers = { ...options.headers, token: user.token };
+    if (photo) {
+      options.body = photo;
+      options.headers = {};
+    }
 
-    const response = await fetch(config.url, options);
+    if (isAuthorized) {
+      options.headers = { ...options.headers, token: user.token };
+    }
+
+    const response = await fetch(url, options);
     const result = await response.json();
 
     if (result.status === 'error') {

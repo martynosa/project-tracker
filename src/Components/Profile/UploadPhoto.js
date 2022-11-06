@@ -16,7 +16,7 @@ const UploadPhoto = () => {
   const httpConfig = {
     url: `${AUTH_URL}/uploadPhoto`,
     method: 'POST',
-    isAuthorzied: true,
+    isAuthorized: true,
   };
 
   const onUploadPhotoHandler = async (e) => {

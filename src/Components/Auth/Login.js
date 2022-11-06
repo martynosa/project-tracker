@@ -32,7 +32,6 @@ const Login = () => {
   const httpConfig = {
     url: `${AUTH_URL}/login`,
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
     body: { email, password },
   };
 
