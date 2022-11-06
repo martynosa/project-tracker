@@ -5,6 +5,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  gap: var(--bg-gap);
+  column-gap: var(--bg-gap);
   padding: var(--bg-2v-pd);
 }

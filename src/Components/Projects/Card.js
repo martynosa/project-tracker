@@ -8,7 +8,12 @@ const Card = ({ project }) => {
 
   return (
     <div className={className}>
-      <h3 className={classes.cardTitle}>Title</h3>
+      <header className={classes.cardHeader}>
+        <h3 className={classes.title}>Title</h3>
+        <Button helperClass={classes.btnTrash}>
+          <ion-icon name="trash"></ion-icon>
+        </Button>
+      </header>
 
       <p className={classes.cardDescription}>
         When a card is checked, it will show a checked icon and change its

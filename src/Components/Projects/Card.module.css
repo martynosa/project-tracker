@@ -8,13 +8,32 @@
   margin-bottom: var(--m-24);
 }
 
-.cardTitle {
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--m-12);
   font-size: var(--md-fs);
-  margin-bottom: var(--m-24);
+}
+
+.title {
+  font-size: inherit;
+}
+
+.btnTrash {
+  display: flex;
+  align-items: center;
+  width: unset;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.btnTrash:hover {
+  transform: translateX(-6px) scale(1.1);
 }
 
 .cardDescription {
-  margin-bottom: var(--m-24);
+  margin-bottom: var(--m-12);
 }
 
 .tags {
