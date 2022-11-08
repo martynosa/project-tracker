@@ -132,7 +132,7 @@ const Register = () => {
 
         <Button
           color="orange"
-          onClickHandler={onRegisterHandler}
+          onClick={onRegisterHandler}
           isLoading={isLoading}
         >
           Register

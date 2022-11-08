@@ -20,7 +20,7 @@ const Landing = () => {
         <p className={classes.secondary}>
           Create, track and manage your projects with ease.
         </p>
-        <Button color={'orange'} onClickHandler={onGetStartedHandler}>
+        <Button color={'orange'} onClick={onGetStartedHandler}>
           Get started&nbsp;<ion-icon name="arrow-round-forward"></ion-icon>
         </Button>
       </div>

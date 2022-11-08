@@ -86,11 +86,7 @@ const Login = () => {
 
         <AuthLink to={'register'} />
 
-        <Button
-          color="violet"
-          onClickHandler={onLoginHandler}
-          isLoading={isLoading}
-        >
+        <Button color="violet" onClick={onLoginHandler} isLoading={isLoading}>
           Login
         </Button>
       </form>

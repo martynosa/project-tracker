@@ -110,11 +110,7 @@ const Create = () => {
           error={descriptionErr}
         />
 
-        <Button
-          color={'green'}
-          onClickHandler={onCreateHandler}
-          isLoading={isLoading}
-        >
+        <Button color={'green'} onClick={onCreateHandler} isLoading={isLoading}>
           Create
         </Button>
       </form>

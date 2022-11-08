@@ -116,7 +116,7 @@ const PasswordChange = () => {
 
       <Button
         color="green"
-        onClickHandler={onPasswordChangeHandler}
+        onClick={onPasswordChangeHandler}
         isLoading={isLoading}
       >
         Change password

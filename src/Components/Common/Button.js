@@ -1,13 +1,6 @@
 import classes from './Button.module.css';
 
-const Button = ({
-  type,
-  color,
-  onClickHandler,
-  isLoading,
-  helperClass,
-  children,
-}) => {
+const Button = ({ type, color, onClick, isLoading, helperClass, children }) => {
   const typeBtn = type || 'button';
 
   const orangeBtn = `${classes.btn} ${classes.orangeBtn}`;
@@ -41,7 +34,7 @@ const Button = ({
     <button
       type={typeBtn}
       className={className}
-      onClick={onClickHandler}
+      onClick={onClick}
       disabled={isLoading}
     >
       {children}

@@ -1,34 +1,10 @@
 import { useState, useEffect } from 'react';
 
-import { ITEM_URL } from '../../helpers/constants';
-import useFetch from '../../Hooks/useFetch';
-
 import classes from './Projects.module.css';
 import Card from './Card';
 
-const project = {
-  status: 'new',
-  title: 'Title',
-  description:
-    'When a card is checked, it will show a checked icon and change it foreground color.',
-  tags: ['tagged', 'tricked', 'trapped'],
-};
-
-const projectInProgress = {
-  status: 'inProgress',
-  title: 'Title',
-  description:
-    'When a card is checked, it will show a checked icon and change it foreground color.',
-  tags: ['tagged', 'tricked', 'trapped'],
-};
-
-const projectCompleted = {
-  status: 'completed',
-  title: 'Title',
-  description:
-    'When a card is checked, it will show a checked icon and change it foreground color.',
-  tags: ['tagged', 'tricked', 'trapped'],
-};
+import { ITEM_URL } from '../../helpers/constants';
+import useFetch from '../../Hooks/useFetch';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);

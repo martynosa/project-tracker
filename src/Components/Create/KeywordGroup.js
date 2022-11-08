@@ -50,7 +50,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
       )}
       <Button
         color={'violet'}
-        onClickHandler={onAddHandler}
+        onClick={onAddHandler}
         helperClass={classes.keywordBtn}
       >
         <ion-icon name="add"></ion-icon> Add
