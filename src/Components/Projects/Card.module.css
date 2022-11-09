@@ -69,7 +69,6 @@
 .btnGroup {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   gap: var(--bg-gap);
   font-size: var(--md-fs);
 }
@@ -80,6 +79,8 @@
   width: unset;
   box-shadow: none;
   background-color: transparent;
+  margin-left: 2.4rem;
+  margin-right: auto;
 }
 
 .btnBack:hover {
@@ -92,6 +93,8 @@
   width: unset;
   box-shadow: none;
   background-color: transparent;
+  margin-right: 2.4rem;
+  margin-left: auto;
 }
 
 .btnForward:hover {

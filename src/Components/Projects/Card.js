@@ -5,23 +5,71 @@ import Button from '../Common/Button';
 import useFetch from '../../Hooks/useFetch';
 import { ITEM_URL } from '../../helpers/constants';
 
-const Card = ({ project }) => {
-  console.log(project);
-  const { _id, name, description, keywords } = project;
-  let className = `${classes.card} ${classes[project.status]}`;
+import { useNotification } from '../../Contexts/NotificationContext';
+
+const Card = ({ project, updateProject, deleteProject }) => {
+  const { _id, name, description, keywords, status } = project;
+  let className = `${classes.card} ${classes[status]}`;
 
   const { sendRequest, isLoading, setIsLoading } = useFetch();
 
+  const { openNotification } = useNotification();
+
   const deleteHandler = async () => {
-    console.log('deleted');
+    try {
+      sendRequest({
+        url: `${ITEM_URL}/${_id}`,
+        method: 'DELETE',
+        isAuthorized: true,
+      });
+      deleteProject(_id);
+      openNotification('success', 'Project deleted successfully.');
+    } catch (error) {
+      openNotification('fail', error.message);
+    }
   };
 
-  const upgradeStatusHandler = () => {
-    console.log('updated');
-  };
+  const changeStatus = async (type) => {
+    let updatedStatus;
+    let message;
 
-  const degradeStatusHandler = () => {
-    console.log('degraded');
+    if (type === 'upgrade') {
+      if (project.status === 'new') {
+        updatedStatus = 'inProgress';
+        message = 'Project started.';
+      }
+
+      if (project.status === 'inProgress') {
+        updatedStatus = 'completed';
+        message = 'Project completed.';
+      }
+    }
+
+    if (type === 'degrade') {
+      if (project.status === 'completed') {
+        updatedStatus = 'inProgress';
+        message = 'Project restarted.';
+      }
+
+      if (project.status === 'inProgress') {
+        updatedStatus = 'new';
+        message = 'New project.';
+      }
+    }
+
+    try {
+      const newProject = await sendRequest({
+        url: `${ITEM_URL}/${_id}`,
+        method: 'PUT',
+        body: { status: updatedStatus },
+        isAuthorized: true,
+      });
+      console.log(newProject);
+      updateProject(newProject);
+      openNotification('success', message);
+    } catch (error) {
+      openNotification('fail', error.message);
+    }
   };
 
   return (
@@ -36,18 +84,29 @@ const Card = ({ project }) => {
       <p className={classes.cardDescription}>{description}</p>
 
       <div className={classes.tags}>
-        {keywords.map((k) => (
-          <Tag keyword={k} />
+        {keywords.map((k, index) => (
+          <Tag key={`${_id}-${index}`} keyword={k} />
         ))}
       </div>
 
       <div className={classes.btnGroup}>
-        <Button helperClass={classes.btnBack} onClick={degradeStatusHandler}>
-          <ion-icon name="arrow-back"></ion-icon>
-        </Button>
-        <Button helperClass={classes.btnForward} onClick={upgradeStatusHandler}>
-          <ion-icon name="arrow-forward"></ion-icon>
-        </Button>
+        {status !== 'new' && (
+          <Button
+            helperClass={classes.btnBack}
+            onClick={() => changeStatus('degrade')}
+          >
+            <ion-icon name="arrow-back"></ion-icon>
+          </Button>
+        )}
+
+        {status !== 'completed' && (
+          <Button
+            helperClass={classes.btnForward}
+            onClick={() => changeStatus('upgrade')}
+          >
+            <ion-icon name="arrow-forward"></ion-icon>
+          </Button>
+        )}
       </div>
     </div>
   );
