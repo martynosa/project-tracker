@@ -64,7 +64,6 @@ const Card = ({ project, updateProject, deleteProject }) => {
         body: { status: updatedStatus },
         isAuthorized: true,
       });
-      console.log(newProject);
       updateProject(newProject);
       openNotification('success', message);
     } catch (error) {
