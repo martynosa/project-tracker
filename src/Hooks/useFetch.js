@@ -36,7 +36,7 @@ const useFetch = () => {
       setIsLoading(false);
       return result.data;
     },
-    [user.token]
+    [user]
   );
 
   return { sendRequest, isLoading, setIsLoading };
