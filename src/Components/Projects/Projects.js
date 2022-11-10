@@ -9,7 +9,7 @@ import useFetch from '../../Hooks/useFetch';
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
-  const { sendRequest, isLoading, setIsLoading } = useFetch();
+  const { sendRequest } = useFetch();
 
   const newProjects = projects.filter((p) => p.status === 'new');
   const inProgressProjects = projects.filter((p) => p.status === 'inProgress');
