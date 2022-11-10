@@ -11,7 +11,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
   const { _id, name, description, keywords, status } = project;
   let className = `${classes.card} ${classes[status]}`;
 
-  const { sendRequest, isLoading, setIsLoading } = useFetch();
+  const { sendRequest } = useFetch();
 
   const { openNotification } = useNotification();
 
