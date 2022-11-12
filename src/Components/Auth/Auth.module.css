@@ -9,5 +9,5 @@
   align-items: center;
   justify-content: center;
 
-  padding: var(--bg-1v-pd);
+  padding: var(--default-1v-pd);
 }
