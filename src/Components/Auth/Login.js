@@ -68,7 +68,7 @@ const Login = () => {
 
   return (
     <div className={classes.container}>
-      <form>
+      <form className={classes.form}>
         <InputGroup
           label={'email'}
           onChangeHandler={emailHandler}
