@@ -47,7 +47,8 @@ const Login = () => {
     setPassword(password);
   };
 
-  const onLoginHandler = async () => {
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
     const emailValidationErr = emailValidator(email);
     const passwordValidationErr = passwordValidator(password);
     setEmailErr(emailValidationErr);
@@ -68,7 +69,7 @@ const Login = () => {
 
   return (
     <div className={classes.container}>
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={onSubmitHandler}>
         <InputGroup
           label={'email'}
           onChangeHandler={emailHandler}
@@ -86,7 +87,7 @@ const Login = () => {
 
         <AuthLink to={'register'} />
 
-        <Button color="violet" onClick={onLoginHandler} isLoading={isLoading}>
+        <Button type={'submit'} color="violet" isLoading={isLoading}>
           Login
         </Button>
       </form>

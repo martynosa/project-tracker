@@ -33,11 +33,7 @@
 }
 
 /* TESTING MOBILE */
-@media (max-width: 50rem) {
-  .container {
-    flex-direction: column-reverse;
-  }
-
+@media (max-width: 64rem) {
   .img {
     display: none;
   }

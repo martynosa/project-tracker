@@ -11,7 +11,7 @@ const Nav = () => {
   const { openNotification } = useNotification();
   const { user, isAuth, logout } = useAuth();
 
-  const onLogoutHandler = () => {
+  const logoutHandler = () => {
     logout();
     openNotification('success', `Logged out successfully`);
   };
@@ -65,7 +65,7 @@ const Nav = () => {
         </NavLink>
         <p
           className={`${classes.link} ${classes.logout}`}
-          onClick={onLogoutHandler}
+          onClick={logoutHandler}
         >
           Logout
         </p>

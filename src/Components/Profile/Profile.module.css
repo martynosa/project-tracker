@@ -1,7 +1,14 @@
 .container {
   min-width: 32rem;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  min-height: calc(100vh - var(--nav-height));
+
+  font-size: var(--default-fs);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forms {
+  padding: var(--default-1v-pd);
 }

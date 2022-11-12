@@ -12,13 +12,13 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
   const [keyword, setKeyword] = useState('');
   const [keywordErr, setKeywordErr] = useState(defaultErr);
 
-  const onKeywordChange = (e) => {
+  const keywordChangeHandler = (e) => {
     const keyword = e.target.value.trim();
     setKeywordErr(keywordValidator(keyword));
     setKeyword(keyword);
   };
 
-  const onAddHandler = () => {
+  const addHandler = () => {
     const keywordValidationErr = keywordValidator(keyword);
     const dupKeywordValidationErr = dupKeywordValidator(keyword, keywords);
     if (keywordValidationErr.status) {
@@ -41,7 +41,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
       <input
         id="keyword"
         type="test"
-        onChange={onKeywordChange}
+        onChange={keywordChangeHandler}
         className={keywordErr.status ? classes.errorInput : undefined}
         value={keyword}
       />
@@ -50,7 +50,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
       )}
       <Button
         color={'violet'}
-        onClick={onAddHandler}
+        onClick={addHandler}
         helperClass={classes.keywordBtn}
       >
         <ion-icon name="add"></ion-icon> Add

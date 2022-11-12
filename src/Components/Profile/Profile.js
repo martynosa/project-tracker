@@ -7,8 +7,10 @@ const Profile = () => {
   return (
     <>
       <section className={classes.container}>
-        <UploadPhoto />
-        <PasswordChange />
+        <div className={classes.forms}>
+          <UploadPhoto />
+          <PasswordChange />
+        </div>
       </section>
     </>
   );

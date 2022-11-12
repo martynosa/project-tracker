@@ -19,7 +19,7 @@ const UploadPhoto = () => {
     isAuthorized: true,
   };
 
-  const onUploadPhotoHandler = async (e) => {
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const photo = formData.get('photo');
@@ -40,7 +40,7 @@ const UploadPhoto = () => {
   };
 
   return (
-    <form className={classes.uploadPhotoform} onSubmit={onUploadPhotoHandler}>
+    <form className={classes.uploadPhotoform} onSubmit={onSubmitHandler}>
       <div className={classes.photoInputGroup}>
         <label htmlFor="photo">Select photo</label>
         <input id="photo" type="file" name="photo" />

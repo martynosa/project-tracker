@@ -66,7 +66,8 @@ const Register = () => {
     setRePassword(rePassword);
   };
 
-  const onRegisterHandler = async () => {
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
     const emailValidationErr = emailValidator(email);
     const nameValidationErr = nameValidator(name);
     const passwordValidationErr = passwordValidator(password);
@@ -97,7 +98,7 @@ const Register = () => {
 
   return (
     <div className={classes.container}>
-      <form className={classes.form}>
+      <form className={classes.form} onSubmit={onSubmitHandler}>
         <InputGroup
           label={'email'}
           onChangeHandler={emailHandler}
@@ -130,11 +131,7 @@ const Register = () => {
 
         <AuthLink to={'login'} />
 
-        <Button
-          color="orange"
-          onClick={onRegisterHandler}
-          isLoading={isLoading}
-        >
+        <Button type={'submit'} color="orange" isLoading={isLoading}>
           Register
         </Button>
       </form>

@@ -63,7 +63,8 @@ const Create = () => {
     });
   };
 
-  const onCreateHandler = async () => {
+  const onSumbitHandler = async (e) => {
+    e.preventDefault();
     const nameValidationErr = nameValidator(name);
     const keywordsValidationErr = keywordsValidator(keywords);
     const descriptionValidationErr = descriptionValidator(description);
@@ -89,8 +90,8 @@ const Create = () => {
   };
 
   return (
-    <>
-      <form className={classes.form}>
+    <div className={classes.container}>
+      <form className={classes.form} onSubmit={onSumbitHandler}>
         <InputGroup
           label={'name'}
           onChangeHandler={nameHandler}
@@ -110,11 +111,11 @@ const Create = () => {
           error={descriptionErr}
         />
 
-        <Button color={'green'} onClick={onCreateHandler} isLoading={isLoading}>
+        <Button type={'submit'} color={'green'} isLoading={isLoading}>
           Create
         </Button>
       </form>
-    </>
+    </div>
   );
 };
 

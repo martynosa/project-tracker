@@ -6,7 +6,7 @@ import Button from './Common/Button';
 const Landing = () => {
   const navigate = useNavigate();
 
-  const onGetStartedHandler = () => {
+  const getStartedHandler = () => {
     navigate('/register');
   };
 
@@ -20,7 +20,7 @@ const Landing = () => {
         <p className={classes.secondary}>
           Create, track and manage your projects with ease.
         </p>
-        <Button color={'orange'} onClick={onGetStartedHandler}>
+        <Button color={'orange'} onClick={getStartedHandler}>
           Get started&nbsp;<ion-icon name="arrow-round-forward"></ion-icon>
         </Button>
       </div>

@@ -58,7 +58,8 @@ const PasswordChange = () => {
     isAuthorized: true,
   };
 
-  const onPasswordChangeHandler = async () => {
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
     const passwordValidationErr = passwordValidator(password);
     const newPasswordValidationErr = passwordValidator(newPassword);
     const newRePasswordValidationErr = rePasswordValidator(
@@ -89,7 +90,7 @@ const PasswordChange = () => {
   };
 
   return (
-    <form className={classes.passwordForm}>
+    <form className={classes.passwordForm} onSubmit={onSubmitHandler}>
       <InputGroup
         label={'password'}
         type={'password'}
@@ -114,11 +115,7 @@ const PasswordChange = () => {
         value={newRePassword}
       />
 
-      <Button
-        color="green"
-        onClick={onPasswordChangeHandler}
-        isLoading={isLoading}
-      >
+      <Button type={'submit'} color="green" isLoading={isLoading}>
         Change password
       </Button>
     </form>
