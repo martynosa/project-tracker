@@ -11,7 +11,7 @@
   padding: var(--default-1v-pd);
   font-size: var(--md-fs);
   font-weight: var(--md-weight);
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .outer {
