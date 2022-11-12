@@ -3,7 +3,7 @@
 }
 
 .nav {
-  height: 6.2rem;
+  height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,7 +11,7 @@
   padding: var(--default-1v-pd);
   font-size: var(--md-fs);
   font-weight: var(--md-weight);
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 
 .outer {

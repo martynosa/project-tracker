@@ -1,8 +1,8 @@
 .container {
-  font-size: var(--default-fs);
-
   min-width: 32rem;
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - var(--nav-height));
+
+  font-size: var(--default-fs);
 
   display: flex;
   flex-direction: column;
