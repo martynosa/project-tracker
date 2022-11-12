@@ -82,7 +82,7 @@ const PasswordChange = () => {
       setPassword('');
       setNewPassword('');
       setNewRePassword('');
-      openNotification('success', 'Password updated sucessfully.');
+      openNotification('success', 'Password updated.');
     } catch (error) {
       setIsLoading(false);
       openNotification('fail', error.message);

@@ -23,7 +23,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
         isAuthorized: true,
       });
       deleteProject(_id);
-      openNotification('success', 'Project deleted successfully.');
+      openNotification('success', 'Project deleted.');
     } catch (error) {
       openNotification('fail', error.message);
     }

@@ -13,7 +13,7 @@ const Nav = () => {
 
   const logoutHandler = () => {
     logout();
-    openNotification('success', `Logged out successfully`);
+    openNotification('success', 'Logged out.');
   };
 
   const backNav = (

@@ -82,7 +82,7 @@ const Create = () => {
     try {
       const createdItem = await sendRequest(httpConfig);
       navigate('/projects');
-      openNotification('success', `${createdItem.name} successfully created.`);
+      openNotification('success', `${createdItem.name} created.`);
     } catch (error) {
       setIsLoading(false);
       openNotification('fail', error.message);
