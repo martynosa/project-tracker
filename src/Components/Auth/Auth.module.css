@@ -1,8 +1,21 @@
-.form {
+/* .form {
   min-width: 32rem;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+} */
+
+.container {
   font-size: var(--default-fs);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 32rem;
+  min-height: 100vh;
+  /* background-color: antiquewhite; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
