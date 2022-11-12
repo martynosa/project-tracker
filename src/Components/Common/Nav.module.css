@@ -24,8 +24,8 @@
   text-decoration: none;
   display: flex;
   gap: var(--sm-gap);
-  transition: all 0.3s;
   cursor: pointer;
+  transition: var(--animation);
 }
 
 .link:hover {

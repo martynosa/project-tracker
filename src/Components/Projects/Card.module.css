@@ -4,7 +4,7 @@
   padding: var(--md-2v-pd);
   border-radius: var(--default-brdr-rd);
   font-size: var(--default-fs);
-  transition: all 0.3s;
+  transition: var(--animation);
   margin-bottom: var(--m-24);
 }
 

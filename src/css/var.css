@@ -1,5 +1,7 @@
 :root {
+  /* GENERAL */
   --nav-height: 6.2rem;
+  --animation: all 0.3s ease-in-out;
 
   /* FONT_SIZE */
   --mx-fs: 5.2rem;
