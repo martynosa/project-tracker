@@ -1,7 +1,7 @@
 .container {
   max-width: 960px;
   margin: 0 auto;
-  min-height: calc(100vh - 62px);
+  min-height: calc(100vh - var(--nav-height));
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;

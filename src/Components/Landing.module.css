@@ -32,6 +32,7 @@
   height: 50%;
 }
 
+/* TESTING MOBILE */
 @media (max-width: 50rem) {
   .container {
     flex-direction: column-reverse;
