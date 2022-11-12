@@ -96,8 +96,8 @@ const Register = () => {
   };
 
   return (
-    <>
-      <form className={classes.form}>
+    <div className={classes.container}>
+      <form>
         <InputGroup
           label={'email'}
           onChangeHandler={emailHandler}
@@ -138,7 +138,7 @@ const Register = () => {
           Register
         </Button>
       </form>
-    </>
+    </div>
   );
 };
 

@@ -17,7 +17,7 @@ const Nav = () => {
   };
 
   const backNav = (
-    <nav className={classes.outerNav}>
+    <nav className={classes.nav}>
       <Link to="/" className={classes.link}>
         <ion-icon name="arrow-round-back"></ion-icon>
         Back
@@ -26,7 +26,7 @@ const Nav = () => {
   );
 
   const innerNav = (
-    <nav className={classes.innerNav}>
+    <nav className={classes.nav}>
       <div className={classes.innerLinks}>
         <NavLink
           to="/projects"
@@ -74,7 +74,7 @@ const Nav = () => {
   );
 
   const outerNav = (
-    <nav className={classes.outerNav}>
+    <nav className={`${classes.nav} ${classes.outer}`}>
       <a
         className={classes.link}
         href="https://www.linkedin.com/in/martynosa/"
