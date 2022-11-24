@@ -3,7 +3,7 @@ import Tag from '../Common/Tag';
 import Button from '../Common/Button';
 
 import useFetch from '../../Hooks/useFetch';
-import { ITEM_URL } from '../../helpers/constants';
+import URL from '../../helpers/constants';
 
 import { useNotification } from '../../Contexts/NotificationContext';
 
@@ -18,7 +18,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
   const deleteHandler = async () => {
     try {
       sendRequest({
-        url: `${ITEM_URL}/${_id}`,
+        url: `${URL.ITEM_URL}/${_id}`,
         method: 'DELETE',
         isAuthorized: true,
       });

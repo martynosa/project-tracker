@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import classes from './Projects.module.css';
 import Card from './Card';
 
-import { ITEM_URL } from '../../helpers/constants';
+import URL from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 
 const Projects = () => {
@@ -31,7 +31,7 @@ const Projects = () => {
 
   useEffect(() => {
     const httpConfig = {
-      url: `${ITEM_URL}`,
+      url: `${URL.ITEM_URL}`,
       isAuthorized: true,
     };
 

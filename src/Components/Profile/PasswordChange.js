@@ -11,7 +11,7 @@ import {
 } from '../../helpers/validators';
 
 import { useNotification } from '../../Contexts/NotificationContext';
-import { AUTH_URL } from '../../helpers/constants';
+import URL from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 
 const PasswordChange = () => {
@@ -52,7 +52,7 @@ const PasswordChange = () => {
   };
 
   const httpConfig = {
-    url: `${AUTH_URL}/updatePassword`,
+    url: `${URL.AUTH_URL}/updatePassword`,
     method: 'PATCH',
     body: { password, newPassword, newRePassword },
     isAuthorized: true,

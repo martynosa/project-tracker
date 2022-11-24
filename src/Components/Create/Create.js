@@ -15,7 +15,7 @@ import Button from '../Common/Button';
 import KeywordTags from './KeywordTags';
 
 import { useNotification } from '../../Contexts/NotificationContext';
-import { ITEM_URL } from '../../helpers/constants';
+import URL from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 
 const Create = () => {
@@ -33,7 +33,7 @@ const Create = () => {
   const navigate = useNavigate();
 
   const httpConfig = {
-    url: `${ITEM_URL}`,
+    url: `${URL.ITEM_URL}`,
     method: 'POST',
     body: { name, keywords, description },
     isAuthorized: true,

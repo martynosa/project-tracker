@@ -13,7 +13,7 @@ import {
 
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
-import { AUTH_URL } from '../../helpers/constants';
+import URL from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 
 const Login = () => {
@@ -30,7 +30,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const httpConfig = {
-    url: `${AUTH_URL}/login`,
+    url: `${URL.AUTH_URL}/login`,
     method: 'POST',
     body: { email, password },
   };
@@ -66,6 +66,8 @@ const Login = () => {
       openNotification('fail', error.message);
     }
   };
+
+  console.log(process.env);
 
   return (
     <div className={classes.container}>

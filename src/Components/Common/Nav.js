@@ -3,7 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import classes from './Nav.module.css';
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
-import { PHOTO_URL } from '../../helpers/constants';
+import URL from '../../helpers/constants';
 
 const Nav = () => {
   const location = useLocation();
@@ -50,7 +50,7 @@ const Nav = () => {
       <div className={classes.userLinks}>
         <img
           className={classes.photo}
-          src={`${PHOTO_URL}/${user?.photo}`}
+          src={`${URL.PHOTO_URL}/${user?.photo}`}
           alt="employee's mugshot"
         ></img>
         <NavLink

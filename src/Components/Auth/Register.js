@@ -16,7 +16,7 @@ import {
 
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
-import { AUTH_URL } from '../../helpers/constants';
+import URL from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 
 const Register = () => {
@@ -37,7 +37,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const httpConfig = {
-    url: `${AUTH_URL}/register`,
+    url: `${URL.AUTH_URL}/register`,
     method: 'POST',
     body: { email, name, password, rePassword },
   };

@@ -4,7 +4,7 @@ import Button from '../Common/Button';
 import { useNotification } from '../../Contexts/NotificationContext';
 
 import { useAuth } from '../../Contexts/AuthContext';
-import { AUTH_URL } from '../../helpers/constants';
+import URL from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 
 const UploadPhoto = () => {
@@ -14,7 +14,7 @@ const UploadPhoto = () => {
   const { openNotification } = useNotification();
 
   const httpConfig = {
-    url: `${AUTH_URL}/uploadPhoto`,
+    url: `${URL.AUTH_URL}/uploadPhoto`,
     method: 'POST',
     isAuthorized: true,
   };
