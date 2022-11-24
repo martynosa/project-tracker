@@ -67,8 +67,6 @@ const Login = () => {
     }
   };
 
-  console.log(process.env);
-
   return (
     <div className={classes.container}>
       <form className={classes.form} onSubmit={onSubmitHandler}>
