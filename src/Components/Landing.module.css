@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: var(--bg-1v-pd);
+  padding: var(--default-1v-pd);
 }
 
 .headerBox {
@@ -30,11 +30,4 @@
 
 .img {
   height: 50%;
-}
-
-/* TESTING MOBILE */
-@media (max-width: 64rem) {
-  .img {
-    display: none;
-  }
 }

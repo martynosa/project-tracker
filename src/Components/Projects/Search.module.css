@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: center;
   gap: var(--sm-gap);
-  margin-bottom: var(--m-48);
 }
 
 .searchGroup ion-icon {

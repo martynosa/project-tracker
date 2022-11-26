@@ -1,5 +1,4 @@
 .container {
-  min-width: 32rem;
   min-height: calc(100vh - var(--nav-height));
 
   font-size: var(--default-fs);
@@ -10,5 +9,6 @@
 }
 
 .form {
-  padding: var(--default-1v-pd);
+  min-width: 32rem;
+  padding: var(--default-2v-pd);
 }

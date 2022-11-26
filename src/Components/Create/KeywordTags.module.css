@@ -1,5 +1,4 @@
 .keywordTagGroup {
-  width: 32rem;
   display: flex;
   flex-direction: column;
   margin-bottom: var(--m-24);

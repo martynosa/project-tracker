@@ -1,5 +1,5 @@
 .card {
-  width: 30rem;
+  width: 28rem;
   color: var(--dark-color);
   padding: var(--md-2v-pd);
   border-radius: var(--default-brdr-rd);
@@ -100,4 +100,16 @@
 
 .btnForward:hover {
   transform: translateX(6px) scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: 22rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 32rem;
+  }
 }
