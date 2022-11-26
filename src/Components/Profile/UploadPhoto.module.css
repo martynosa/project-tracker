@@ -16,6 +16,7 @@
 .photoInputGroup label {
   font-size: var(--default-fs);
   text-transform: uppercase;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,5 +29,4 @@
 .uploadBtn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  font-size: 1.9rem;
 }

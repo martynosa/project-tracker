@@ -1,9 +1,10 @@
 .container {
   min-height: calc(100vh - var(--nav-height) - var(--m-48));
+  padding: var(--default-1v-pd);
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: var(--default-1v-pd);
 }
 
 .headerBox {

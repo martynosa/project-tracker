@@ -1,12 +1,15 @@
 .linkGroup {
+  font-size: var(--sm-fs);
+
   display: flex;
   gap: var(--sm-gap);
-  font-size: var(--sm-fs);
+
   margin-bottom: var(--m-48);
 }
 
 .link {
   display: flex;
+
   text-decoration: none;
   transition: var(--animation);
 }

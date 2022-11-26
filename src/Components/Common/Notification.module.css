@@ -1,11 +1,12 @@
 .notification {
+  color: var(--dark-color);
+  padding: var(--default-2v-pd);
+  border-radius: var(--default-brdr-rd);
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--sm-gap);
-  padding: var(--default-2v-pd);
-  color: var(--dark-color);
-  border-radius: var(--default-brdr-rd);
 }
 
 .fail {

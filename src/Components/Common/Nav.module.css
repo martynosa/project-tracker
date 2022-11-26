@@ -30,8 +30,10 @@
   color: inherit;
   text-transform: uppercase;
   text-decoration: none;
+
   display: flex;
   gap: var(--sm-gap);
+
   cursor: pointer;
   transition: var(--animation);
 }
@@ -59,6 +61,7 @@
 
 .name {
   color: var(--green-color);
+
   display: flex;
   align-items: center;
   justify-content: center;
