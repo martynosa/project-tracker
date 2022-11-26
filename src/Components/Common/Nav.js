@@ -1,6 +1,9 @@
 import { NavLink, Link, useLocation } from 'react-router-dom';
 
 import classes from './Nav.module.css';
+
+import Notification from './Notification';
+
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
 import URL from '../../helpers/constants';
@@ -22,12 +25,15 @@ const Nav = () => {
         <ion-icon name="arrow-round-back"></ion-icon>
         Back
       </Link>
+      <div className={classes.notificationContainer}>
+        <Notification />
+      </div>
     </nav>
   );
 
   const innerNav = (
     <nav className={classes.nav}>
-      <div className={classes.innerLinks}>
+      <div className={classes.pageLinks}>
         <NavLink
           to="/projects"
           className={({ isActive }) =>
@@ -45,6 +51,10 @@ const Nav = () => {
         >
           Create project
         </NavLink>
+      </div>
+
+      <div className={classes.notificationContainer}>
+        <Notification />
       </div>
 
       <div className={classes.userLinks}>
@@ -75,51 +85,56 @@ const Nav = () => {
 
   const outerNav = (
     <nav className={`${classes.nav} ${classes.outer}`}>
-      <a
-        className={classes.link}
-        href="https://www.linkedin.com/in/martynosa/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <ion-icon name="logo-linkedin"></ion-icon>
-        LinkedIn
-      </a>
-      <a
-        className={classes.link}
-        href="https://github.com/martynosa/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <ion-icon name="logo-github"></ion-icon>
-        Github
-      </a>
-      <a
-        className={classes.link}
-        href="https://martynosa-react-weather.netlify.app/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <ion-icon name="partly-sunny"></ion-icon>
-        Weather
-      </a>
-      <a
-        className={classes.link}
-        href="https://martynosa-sharingan.netlify.app/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <ion-icon name="eye"></ion-icon>
-        Sharingan
-      </a>
-      <a
-        className={classes.link}
-        href="https://martynosa-omnifood.netlify.app/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <ion-icon name="pizza"></ion-icon>
-        Omnifood
-      </a>
+      <div className={classes.externalLinks}>
+        <a
+          className={classes.link}
+          href="https://www.linkedin.com/in/martynosa/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+          LinkedIn
+        </a>
+        <a
+          className={classes.link}
+          href="https://github.com/martynosa/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <ion-icon name="logo-github"></ion-icon>
+          Github
+        </a>
+        <a
+          className={classes.link}
+          href="https://martynosa-react-weather.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <ion-icon name="partly-sunny"></ion-icon>
+          Weather
+        </a>
+        <a
+          className={classes.link}
+          href="https://martynosa-sharingan.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <ion-icon name="eye"></ion-icon>
+          Sharingan
+        </a>
+        <a
+          className={classes.link}
+          href="https://martynosa-omnifood.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <ion-icon name="pizza"></ion-icon>
+          Omnifood
+        </a>
+      </div>
+      <div className={classes.notificationContainer}>
+        <Notification />
+      </div>
     </nav>
   );
 

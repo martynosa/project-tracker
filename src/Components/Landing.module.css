@@ -1,5 +1,5 @@
 .container {
-  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100vh - var(--nav-height) - var(--m-48));
   display: flex;
   align-items: center;
   justify-content: space-evenly;

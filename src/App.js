@@ -3,7 +3,6 @@ import Landing from './Components/Landing';
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import Nav from './Components/Common/Nav';
-import Notification from './Components/Common/Notification';
 import Projects from './Components/Projects/Projects';
 import UserGuard from './Guards/UserGuard';
 import GuestGuard from './Guards/GuesGuard';
@@ -14,7 +13,6 @@ function App() {
   return (
     <>
       <Nav />
-      <Notification />
 
       <Routes>
         <Route element={<UserGuard />}>

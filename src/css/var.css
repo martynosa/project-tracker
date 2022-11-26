@@ -1,6 +1,6 @@
 :root {
   /* GENERAL */
-  --nav-height: 6.2rem;
+  --nav-height: 4.8rem;
   --animation: all 0.3s ease-in-out;
 
   /* FONT_SIZE */
@@ -37,16 +37,17 @@
   /* FONT_WEIGHT */
   --mx-weight: 900;
   --md-weight: 700;
-  --sm-weight: 500;
-  --default-weight: 400;
+  --default-weight: 500;
+  --sm-weight: 400;
 
   /* GAP */
-  --bg-gap: 2.4rem;
-  --md-gap: 1.2rem;
+  --bg-gap: 4.8rem;
+  --md-gap: 2.4rem;
+  --default-gap: 1.2rem;
   --sm-gap: 0.6rem;
 
   /* PADDING */
-  --bg-1v-pd: 3.6rem;
+  --bg-1v-pd: 4.8rem;
   --md-1v-pd: 2.4rem;
   --default-1v-pd: 1.6rem;
   --sm-1v-pd: 1.2rem;

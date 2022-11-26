@@ -4,18 +4,26 @@
 
 .nav {
   height: var(--nav-height);
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: space-between;
-  gap: var(--bg-gap);
-  padding: var(--default-1v-pd);
-  font-size: var(--md-fs);
+  padding: var(--default-2v-pd);
+  font-size: var(--default-fs);
   font-weight: var(--md-weight);
-  flex-wrap: wrap;
 }
 
-.outer {
-  justify-content: unset;
+.notificationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.externalLinks {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--default-gap);
 }
 
 .link {
@@ -37,15 +45,16 @@
   box-shadow: var(--focus-shdw);
 }
 
-.innerLinks {
+.pageLinks {
   display: flex;
-  gap: var(--md-gap);
+  gap: var(--default-gap);
 }
 
 .userLinks {
   display: flex;
   align-items: center;
-  gap: var(--md-gap);
+  justify-content: flex-end;
+  gap: var(--default-gap);
 }
 
 .name {
