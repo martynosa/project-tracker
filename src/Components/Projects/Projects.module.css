@@ -2,9 +2,12 @@
   max-width: 960px;
   margin: 0 auto;
   min-height: calc(100vh - var(--nav-height));
+  padding: var(--bg-2v-pd);
+}
+
+.projectsContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   column-gap: var(--bg-gap);
-  padding: var(--bg-2v-pd);
 }

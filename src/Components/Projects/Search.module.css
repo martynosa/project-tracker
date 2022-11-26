@@ -1,17 +1,18 @@
-.inputGroup {
+.searchGroup {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: var(--sm-gap);
-  margin-bottom: var(--m-24);
+  margin-bottom: var(--m-48);
 }
 
-.inputGroup label {
-  text-transform: capitalize;
+.searchGroup ion-icon {
+  font-size: var(--md-fs);
 }
 
-.inputGroup input {
+.searchInput {
   font-family: inherit;
-  font-size: inherit;
+  font-size: var(--default-fs);
   background-color: var(--input-bg-color);
   border-radius: var(--default-brdr-rd);
   padding: var(--default-2v-pd);
@@ -20,16 +21,7 @@
   transition: var(--animation);
 }
 
-.inputGroup input:focus {
+.searchInput:focus {
   outline: none;
   box-shadow: var(--focus-shdw);
-}
-
-.errorInput {
-  box-shadow: var(--error-shdw);
-}
-
-.errorMessage {
-  color: var(--error-color);
-  font-size: var(--mn-fs);
 }

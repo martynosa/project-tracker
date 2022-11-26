@@ -59,7 +59,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
 
     try {
       const newProject = await sendRequest({
-        url: `${ITEM_URL}/${_id}`,
+        url: `${URL.ITEM_URL}/${_id}`,
         method: 'PUT',
         body: { status: updatedStatus },
         isAuthorized: true,

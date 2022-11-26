@@ -6,6 +6,7 @@ import Button from '../Common/Button';
 import InputGroup from '../Common/InputGroup';
 
 import {
+  defaultErr,
   passwordValidator,
   rePasswordValidator,
 } from '../../helpers/validators';
@@ -18,18 +19,9 @@ const PasswordChange = () => {
   const [password, setPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [newRePassword, setNewRePassword] = useState('');
-  const [passwordErr, setPasswordErr] = useState({
-    status: false,
-    message: null,
-  });
-  const [newPasswordErr, setNewPasswordErr] = useState({
-    status: false,
-    message: null,
-  });
-  const [newRePasswordErr, setNewRePasswordErr] = useState({
-    status: false,
-    message: null,
-  });
+  const [passwordErr, setPasswordErr] = useState(defaultErr);
+  const [newPasswordErr, setNewPasswordErr] = useState(defaultErr);
+  const [newRePasswordErr, setNewRePasswordErr] = useState(defaultErr);
 
   const { sendRequest, isLoading, setIsLoading } = useFetch();
 

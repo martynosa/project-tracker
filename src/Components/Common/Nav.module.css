@@ -29,7 +29,7 @@
 }
 
 .link:hover {
-  color: var(--violet-hvr-color);
+  color: var(--hvr-color);
 }
 
 .link:focus-visible {
@@ -50,6 +50,9 @@
 
 .name {
   color: var(--green-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .photo {
@@ -60,7 +63,7 @@
 }
 
 .name:hover {
-  color: var(--violet-hvr-color);
+  color: var(--hvr-color);
 }
 
 .logout:hover {

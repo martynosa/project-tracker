@@ -48,11 +48,6 @@ const Nav = () => {
       </div>
 
       <div className={classes.userLinks}>
-        <img
-          className={classes.photo}
-          src={`${URL.PHOTO_URL}/${user?.photo}`}
-          alt="employee's mugshot"
-        ></img>
         <NavLink
           to="/profile"
           className={({ isActive }) =>
@@ -61,6 +56,11 @@ const Nav = () => {
               : `${classes.link} ${classes.name}`
           }
         >
+          <img
+            className={classes.photo}
+            src={`${URL.PHOTO_URL}/${user?.photo}`}
+            alt="employee's mugshot"
+          ></img>
           {user?.name}
         </NavLink>
         <p
