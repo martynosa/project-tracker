@@ -1,5 +1,5 @@
 .container {
-  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100vh - (var(--nav-height) + var(--notification-height)));
 
   display: flex;
   flex-direction: column;
@@ -18,6 +18,10 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    gap: var(--default-gap);
+  }
+
   .projectsContainer {
     grid-template-columns: 1fr;
   }

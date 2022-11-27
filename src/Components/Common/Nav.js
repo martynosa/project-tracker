@@ -2,8 +2,6 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 
 import classes from './Nav.module.css';
 
-import Notification from './Notification';
-
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
 import URL from '../../helpers/constants';
@@ -25,60 +23,55 @@ const Nav = () => {
         <ion-icon name="arrow-round-back"></ion-icon>
         Back
       </Link>
-      <div className={classes.notificationContainer}>
-        <Notification />
-      </div>
     </nav>
   );
 
   const innerNav = (
     <nav className={classes.nav}>
-      <div className={classes.pageLinks}>
-        <NavLink
-          to="/projects"
-          className={({ isActive }) =>
-            isActive ? `${classes.active} ${classes.link}` : classes.link
-          }
-          end
-        >
-          Projects
-        </NavLink>
-        <NavLink
-          to="/create"
-          className={({ isActive }) =>
-            isActive ? `${classes.active} ${classes.link}` : classes.link
-          }
-        >
-          Create project
-        </NavLink>
-      </div>
+      <div className={classes.innerLinks}>
+        <div className={classes.pageLinks}>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              isActive ? `${classes.active} ${classes.link}` : classes.link
+            }
+            end
+          >
+            Projects
+          </NavLink>
+          <NavLink
+            to="/create"
+            className={({ isActive }) =>
+              isActive ? `${classes.active} ${classes.link}` : classes.link
+            }
+          >
+            Create project
+          </NavLink>
+        </div>
 
-      <div className={classes.notificationContainer}>
-        <Notification />
-      </div>
-
-      <div className={classes.userLinks}>
-        <NavLink
-          to="/profile"
-          className={({ isActive }) =>
-            isActive
-              ? `${classes.active} ${classes.link} ${classes.name}`
-              : `${classes.link} ${classes.name}`
-          }
-        >
-          <img
-            className={classes.photo}
-            src={`${URL.PHOTO_URL}/${user?.photo}`}
-            alt="employee's mugshot"
-          ></img>
-          {user?.name}
-        </NavLink>
-        <p
-          className={`${classes.link} ${classes.logout}`}
-          onClick={logoutHandler}
-        >
-          Logout
-        </p>
+        <div className={classes.userLinks}>
+          <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              isActive
+                ? `${classes.active} ${classes.link} ${classes.name}`
+                : `${classes.link} ${classes.name}`
+            }
+          >
+            <img
+              className={classes.photo}
+              src={`${URL.PHOTO_URL}/${user?.photo}`}
+              alt="employee's mugshot"
+            ></img>
+            {user?.name}
+          </NavLink>
+          <p
+            className={`${classes.link} ${classes.logout}`}
+            onClick={logoutHandler}
+          >
+            Logout
+          </p>
+        </div>
       </div>
     </nav>
   );
@@ -131,9 +124,6 @@ const Nav = () => {
           <ion-icon name="pizza"></ion-icon>
           Omnifood
         </a>
-      </div>
-      <div className={classes.notificationContainer}>
-        <Notification />
       </div>
     </nav>
   );

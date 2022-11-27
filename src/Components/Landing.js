@@ -25,11 +25,13 @@ const Landing = () => {
         </Button>
       </div>
 
-      <img
-        className={classes.img}
-        src="../../imgs/landing-4.webp"
-        alt="people brainstorming"
-      />
+      <div className={classes.imgBox}>
+        <img
+          className={classes.img}
+          src="../../imgs/landing-4.webp"
+          alt="people brainstorming"
+        />
+      </div>
     </section>
   );
 };

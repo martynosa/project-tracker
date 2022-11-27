@@ -1,5 +1,5 @@
 .container {
-  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100vh - (var(--nav-height) + var(--notification-height)));
 
   font-size: var(--default-fs);
 

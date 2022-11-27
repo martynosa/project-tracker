@@ -1,6 +1,16 @@
+.notificationContainer {
+  height: var(--notification-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--animation);
+}
+
 .notification {
+  font-size: var(--sm-fs);
   color: var(--dark-color);
-  padding: var(--default-2v-pd);
+  padding: var(--sm-2v-pd);
   border-radius: var(--default-brdr-rd);
 
   display: flex;
@@ -17,4 +27,8 @@
 .success {
   background-color: var(--sccss-not-bg-color);
   box-shadow: var(--sccss-not-shdw-color);
+}
+
+.show {
+  opacity: 1;
 }

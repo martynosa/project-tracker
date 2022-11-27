@@ -1,6 +1,7 @@
 :root {
   /* GENERAL */
   --nav-height: 4.8rem;
+  --notification-height: 4.8rem;
   --animation: all 0.3s ease-in-out;
 
   /* FONT_SIZE */

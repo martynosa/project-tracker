@@ -24,14 +24,23 @@ const Notification = () => {
 
   if (isOpen) {
     return (
-      <div className={className}>
-        {icon}
-        {message}
+      <div className={`${classes.notificationContainer} ${classes.show}`}>
+        <div className={className}>
+          {icon}
+          {message}
+        </div>
       </div>
     );
   }
 
-  return;
+  return (
+    <div className={classes.notificationContainer}>
+      <div className={className}>
+        {icon}
+        {message}
+      </div>
+    </div>
+  );
 };
 
 export default Notification;

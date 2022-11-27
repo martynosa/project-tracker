@@ -4,19 +4,13 @@
 
 .nav {
   height: var(--nav-height);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--default-2v-pd);
   font-size: var(--default-fs);
   font-weight: var(--md-weight);
-}
+  padding: var(--default-2v-pd);
 
-.notificationContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .externalLinks {
@@ -36,6 +30,7 @@
 
   cursor: pointer;
   transition: var(--animation);
+  justify-self: flex-start;
 }
 
 .link:hover {
@@ -80,4 +75,34 @@
 
 .logout:hover {
   color: var(--error-color);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .externalLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+  }
+
+  .innerLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sm-gap);
+  }
+
+  .pageLinks {
+    justify-content: center;
+  }
+
+  .userLinks {
+    justify-content: center;
+  }
 }
