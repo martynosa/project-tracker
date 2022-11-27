@@ -9,6 +9,6 @@
 }
 
 .forms {
-  min-width: 32rem;
+  max-width: 32rem;
   padding: var(--default-2v-pd);
 }
