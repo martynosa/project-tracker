@@ -1,6 +1,6 @@
-const AUTH_URL = 'https://heroku-project-tracker.herokuapp.com/auth';
-const PHOTO_URL = 'https://heroku-project-tracker.herokuapp.com/users';
-const ITEM_URL = 'https://heroku-project-tracker.herokuapp.com/items';
+const AUTH_URL = 'https://project-tracker-server.up.railway.app/auth';
+const PHOTO_URL = 'https://project-tracker-server.up.railway.app/users';
+const ITEM_URL = 'https://project-tracker-server.up.railway.app/items';
 
 const DEV_AUTH_URL = 'http://localhost:5000/auth';
 const DEV_PHOTO_URL = 'http://localhost:5000/users';
