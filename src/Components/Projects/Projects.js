@@ -4,6 +4,7 @@ import classes from './Projects.module.css';
 
 import Card from './Card';
 import Search from './Search';
+import Loading from '../Common/Loading';
 
 import URL from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
@@ -14,7 +15,7 @@ const Projects = () => {
 
   const [search, setSearch] = useState('');
 
-  const { sendRequest } = useFetch();
+  const { isLoading, sendRequest } = useFetch();
 
   const filteredP = searchService(projects, search);
 
@@ -54,6 +55,7 @@ const Projects = () => {
   return (
     <div className={classes.container}>
       <Search searchHandler={searchHandler} />
+      {isLoading && <Loading />}
       <div className={classes.projectsContainer}>
         <div className={classes.newContainer}>
           {newP.map((p) => (

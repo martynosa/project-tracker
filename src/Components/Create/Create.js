@@ -80,6 +80,7 @@ const Create = () => {
       return;
 
     try {
+      openNotification('loading');
       const createdItem = await sendRequest(httpConfig);
       navigate('/projects');
       openNotification('success', `${createdItem.name} created.`);

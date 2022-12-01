@@ -57,6 +57,7 @@ const Login = () => {
     if (emailValidationErr.status || passwordValidationErr.status) return;
 
     try {
+      openNotification('loading');
       const user = await sendRequest(httpConfig);
       login(user);
       navigate('/projects');
