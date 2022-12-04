@@ -36,7 +36,7 @@ const Login = () => {
   };
 
   const emailHandler = (e) => {
-    const email = e.target.value.trim();
+    const email = e.target.value.trim().toLowerCase();
     setEmailErr(emailValidator(email));
     setEmail(email);
   };

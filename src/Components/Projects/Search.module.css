@@ -10,8 +10,6 @@
 }
 
 .searchInput {
-  font-family: inherit;
-  font-size: var(--default-fs);
   background-color: var(--input-bg-color);
   border-radius: var(--default-brdr-rd);
   padding: var(--default-2v-pd);

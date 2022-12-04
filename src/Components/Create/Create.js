@@ -40,7 +40,7 @@ const Create = () => {
   };
 
   const nameHandler = (e) => {
-    const name = e.target.value.trim();
+    const name = e.target.value.trim().toLowerCase();
     setNameErr(nameValidator(name));
     setName(name);
   };

@@ -29,14 +29,6 @@
   margin-bottom: var(--m-48);
 }
 
-.imgBox {
-  width: 50%;
-}
-
-.img {
-  width: 100%;
-}
-
 @media (max-width: 1280px) {
   .container {
     max-width: 64rem;

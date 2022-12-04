@@ -3,9 +3,6 @@
 .btn:link,
 .btn:visited {
   color: inherit;
-  font-family: inherit;
-  font-size: var(--default-fs);
-  font-weight: var(--md-weight);
   text-transform: uppercase;
   text-decoration: none;
   padding: var(--sm-2v-pd);

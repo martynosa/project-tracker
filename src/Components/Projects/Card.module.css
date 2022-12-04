@@ -3,7 +3,6 @@
   color: var(--dark-color);
   padding: var(--md-2v-pd);
   border-radius: var(--default-brdr-rd);
-  font-size: var(--default-fs);
   transition: var(--animation);
   margin-bottom: var(--m-24);
 }
@@ -19,22 +18,8 @@
 }
 
 .title {
-  font-size: inherit;
+  text-transform: uppercase;
   overflow: hidden;
-}
-
-.btnTrash {
-  font-size: inherit;
-  width: unset;
-  box-shadow: none;
-  background-color: transparent;
-
-  display: flex;
-  align-items: center;
-}
-
-.btnTrash:hover {
-  transform: translateX(-6px) scale(1.1);
 }
 
 .cardDescription {
@@ -75,13 +60,11 @@
 }
 
 .btnGroup {
-  font-size: var(--md-fs);
-
   display: flex;
 }
 
 .btnBack {
-  font-size: inherit;
+  font-size: var(--md-fs);
   width: unset;
   box-shadow: none;
   background-color: transparent;
@@ -98,7 +81,7 @@
 }
 
 .btnForward {
-  font-size: inherit;
+  font-size: var(--md-fs);
   width: unset;
   box-shadow: none;
   background-color: transparent;
@@ -112,6 +95,20 @@
 
 .btnForward:hover {
   transform: translateX(6px) scale(1.1);
+}
+
+.btnTrash {
+  font-size: var(--md-fs);
+  width: unset;
+  box-shadow: none;
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+}
+
+.btnTrash:hover {
+  transform: translateX(-6px) scale(1.1);
 }
 
 @media (max-width: 1024px) {

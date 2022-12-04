@@ -14,8 +14,6 @@
 .descriptionGroup textarea {
   height: 100px;
   resize: none;
-  font-family: inherit;
-  font-size: inherit;
   background-color: var(--input-bg-color);
   border-radius: var(--default-brdr-rd);
   padding: var(--default-2v-pd);

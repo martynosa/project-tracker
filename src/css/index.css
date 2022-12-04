@@ -4,7 +4,21 @@
 * {
   padding: 0;
   margin: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
 }
 
 html {
@@ -14,6 +28,7 @@ html {
 body {
   font-family: 'Rubik', sans-serif;
   line-height: 1;
+  font-size: var(--default-fs);
 
   /* LIGHT THEME */
   /* color: #495057;
@@ -22,15 +37,6 @@ body {
   /* DARK THEME */
   color: var(--light-color);
   background-color: var(--dark-bg-color);
-
-  /* DOTS */
-  /* background: white; */
-  /* background-image: radial-gradient(
-    circle at 1px 1px,
-    #343a40 1px,
-    transparent 0
-  );
-  background-size: 50px 50px; */
 }
 
 ::-webkit-scrollbar {

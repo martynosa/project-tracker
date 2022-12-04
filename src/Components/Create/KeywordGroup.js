@@ -13,7 +13,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
   const [keywordErr, setKeywordErr] = useState(defaultErr);
 
   const keywordChangeHandler = (e) => {
-    const keyword = e.target.value.trim();
+    const keyword = e.target.value.trim().toLowerCase();
     setKeywordErr(keywordValidator(keyword));
     setKeyword(keyword);
   };

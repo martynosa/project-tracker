@@ -43,13 +43,13 @@ const Register = () => {
   };
 
   const emailHandler = (e) => {
-    const email = e.target.value.trim();
+    const email = e.target.value.trim().toLowerCase();
     setEmailErr(emailValidator(email));
     setEmail(email);
   };
 
   const nameHandler = (e) => {
-    const name = e.target.value.trim();
+    const name = e.target.value.trim().toLowerCase();
     setNameErr(nameValidator(name));
     setName(name);
   };
