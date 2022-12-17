@@ -5,7 +5,7 @@ import classes from './AuthLink.module.css';
 const AuthLink = ({ to }) => {
   const toLogin = (
     <>
-      <p>Already have an Account?</p>
+      <p>Already have an account?</p>
       <Link to="/login" className={`${classes.link} ${classes.violetLink}`}>
         <ion-icon name="arrow-round-back"></ion-icon>&nbsp;Login
       </Link>
