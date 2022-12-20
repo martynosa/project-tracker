@@ -5,6 +5,7 @@
   color: inherit;
   text-transform: uppercase;
   text-decoration: none;
+  background-color: transparent;
   padding: var(--sm-2v-pd);
   border-radius: var(--default-brdr-rd);
   border: none;
@@ -67,24 +68,10 @@
   outline: none;
 }
 
-/* grey */
-.greyBtn {
-  background-color: var(--grey-btn-bg-color);
-  box-shadow: 0 0.6rem 0 var(--grey-btn-shdw-color);
-  color: var(--dark-color);
-}
-
-.greyBtn:hover,
-.greyBtn:active,
-.greyBtn:focus-visible {
-  background-color: var(--grey-btn-hvr-color);
-  outline: none;
-}
-
 /* loading */
 .loading {
-  color: var(--inactive-btn-font-color);
-  background-color: var(--inactive-btn-bg-color) !important;
+  color: var(--loading-font-color);
+  background-color: var(--loading-bg-color) !important;
   transform: translateY(6px);
   box-shadow: none;
 }

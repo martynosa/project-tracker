@@ -32,13 +32,6 @@ const Create = () => {
   const { openNotification } = useNotification();
   const navigate = useNavigate();
 
-  const httpConfig = {
-    url: `${URL.ITEM_URL}`,
-    method: 'POST',
-    body: { name, keywords, description },
-    isAuthorized: true,
-  };
-
   const nameHandler = (e) => {
     const name = e.target.value.trim().toLowerCase();
     setNameErr(nameValidator(name));
@@ -80,7 +73,12 @@ const Create = () => {
       return;
 
     try {
-      const createdItem = await sendRequest(httpConfig);
+      const createdItem = await sendRequest({
+        url: `${URL.ITEM_URL}`,
+        method: 'POST',
+        body: { name, keywords, description },
+        isAuthorized: true,
+      });
       navigate('/projects');
       openNotification('success', `${createdItem.name} created.`);
     } catch (error) {

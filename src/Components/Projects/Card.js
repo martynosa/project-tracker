@@ -1,6 +1,5 @@
 import classes from './Card.module.css';
 import Tag from '../Common/Tag';
-import Button from '../Common/Button';
 
 import useFetch from '../../Hooks/useFetch';
 import URL from '../../helpers/constants';
@@ -9,15 +8,18 @@ import { useNotification } from '../../Contexts/NotificationContext';
 
 const Card = ({ project, updateProject, deleteProject }) => {
   const { _id, name, description, keywords, status } = project;
-  let className = `${classes.card} ${classes[status]}`;
 
-  const { sendRequest } = useFetch();
+  const { sendRequest, setIsLoading, isLoading } = useFetch();
 
-  const { openNotification, setIsLoading } = useNotification();
+  const { openNotification } = useNotification();
+
+  let cardClassName = isLoading
+    ? `${classes.card} ${classes[status]} ${classes.loading}`
+    : `${classes.card} ${classes[status]}`;
 
   const deleteHandler = async () => {
     try {
-      sendRequest({
+      await sendRequest({
         url: `${URL.ITEM_URL}/${_id}`,
         method: 'DELETE',
         isAuthorized: true,
@@ -74,15 +76,19 @@ const Card = ({ project, updateProject, deleteProject }) => {
   };
 
   return (
-    <div className={className}>
-      <header className={classes.cardHeader}>
+    <div className={cardClassName}>
+      <header className={classes.header}>
         <h3 className={classes.title}>{name}</h3>
-        <Button helperClass={classes.btnTrash} onClick={deleteHandler}>
+        <button
+          className={`${classes.btn} ${classes.trash}`}
+          onClick={deleteHandler}
+          disabled={isLoading}
+        >
           <ion-icon name="trash"></ion-icon>
-        </Button>
+        </button>
       </header>
 
-      <p className={classes.cardDescription}>{description}</p>
+      <p className={classes.description}>{description}</p>
 
       <div className={classes.tags}>
         {keywords.map((k, index) => (
@@ -92,21 +98,23 @@ const Card = ({ project, updateProject, deleteProject }) => {
 
       <div className={classes.btnGroup}>
         {status !== 'new' && (
-          <Button
-            helperClass={classes.btnBack}
+          <button
+            className={`${classes.btn} ${classes.back}`}
             onClick={() => changeStatus('degrade')}
+            disabled={isLoading}
           >
             <ion-icon name="arrow-back"></ion-icon>
-          </Button>
+          </button>
         )}
 
         {status !== 'completed' && (
-          <Button
-            helperClass={classes.btnForward}
+          <button
+            className={`${classes.btn} ${classes.forward}`}
             onClick={() => changeStatus('upgrade')}
+            disabled={isLoading}
           >
             <ion-icon name="arrow-forward"></ion-icon>
-          </Button>
+          </button>
         )}
       </div>
     </div>

@@ -6,7 +6,6 @@ const Button = ({ type, color, onClick, isLoading, helperClass, children }) => {
   const orangeBtn = `${classes.btn} ${classes.orangeBtn}`;
   const violetBtn = `${classes.btn} ${classes.violetBtn}`;
   const greenBtn = `${classes.btn} ${classes.greenBtn}`;
-  const greyBtn = `${classes.btn} ${classes.greyBtn}`;
 
   let className;
 
@@ -20,11 +19,8 @@ const Button = ({ type, color, onClick, isLoading, helperClass, children }) => {
     case 'green':
       className = greenBtn;
       break;
-    case 'grey':
-      className = greyBtn;
-      break;
     default:
-      className = violetBtn;
+      className = classes.btn;
   }
 
   if (helperClass) className = `${className} ${helperClass}`;

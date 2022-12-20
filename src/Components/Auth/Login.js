@@ -29,12 +29,6 @@ const Login = () => {
   const { openNotification } = useNotification();
   const navigate = useNavigate();
 
-  const httpConfig = {
-    url: `${URL.AUTH_URL}/login`,
-    method: 'POST',
-    body: { email, password },
-  };
-
   const emailHandler = (e) => {
     const email = e.target.value.trim().toLowerCase();
     setEmailErr(emailValidator(email));
@@ -57,7 +51,11 @@ const Login = () => {
     if (emailValidationErr.status || passwordValidationErr.status) return;
 
     try {
-      const user = await sendRequest(httpConfig);
+      const user = await sendRequest({
+        url: `${URL.AUTH_URL}/login`,
+        method: 'POST',
+        body: { email, password },
+      });
       login(user);
       navigate('/projects');
       openNotification('success', `Welcome ${user.name}.`);

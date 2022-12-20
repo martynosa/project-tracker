@@ -78,12 +78,8 @@
   --green-btn-shdw-color: #2b8a3e;
   --green-btn-hvr-color: #69db7c;
 
-  --grey-btn-bg-color: #dee2e6;
-  --grey-btn-shdw-color: #adb5bd;
-  --grey-btn-hvr-color: #f1f3f5;
-
-  --inactive-btn-font-color: #212529;
-  --inactive-btn-bg-color: #495057;
+  --loading-font-color: #212529;
+  --loading-bg-color: #495057;
 
   /* NOTIFICATION_COLOR */
   --err-not-bg-color: #ff6b6b;

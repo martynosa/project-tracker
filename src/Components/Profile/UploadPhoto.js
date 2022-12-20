@@ -13,12 +13,6 @@ const UploadPhoto = () => {
 
   const { openNotification } = useNotification();
 
-  const httpConfig = {
-    url: `${URL.AUTH_URL}/uploadPhoto`,
-    method: 'POST',
-    isAuthorized: true,
-  };
-
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -30,7 +24,12 @@ const UploadPhoto = () => {
     }
 
     try {
-      const photoUrl = await sendRequest({ ...httpConfig, photo: formData });
+      const photoUrl = await sendRequest({
+        url: `${URL.AUTH_URL}/uploadPhoto`,
+        method: 'POST',
+        isAuthorized: true,
+        photo: formData,
+      });
       updatePhoto(photoUrl);
       openNotification('success', 'Photo uploaded.');
     } catch (error) {

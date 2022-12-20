@@ -36,12 +36,6 @@ const Register = () => {
   const { openNotification } = useNotification();
   const navigate = useNavigate();
 
-  const httpConfig = {
-    url: `${URL.AUTH_URL}/register`,
-    method: 'POST',
-    body: { email, name, password, rePassword },
-  };
-
   const emailHandler = (e) => {
     const email = e.target.value.trim().toLowerCase();
     setEmailErr(emailValidator(email));
@@ -86,7 +80,11 @@ const Register = () => {
       return;
 
     try {
-      const user = await sendRequest(httpConfig);
+      const user = await sendRequest({
+        url: `${URL.AUTH_URL}/register`,
+        method: 'POST',
+        body: { email, name, password, rePassword },
+      });
       login(user);
       navigate('/projects');
       openNotification('success', `Welcome ${user.name}.`);

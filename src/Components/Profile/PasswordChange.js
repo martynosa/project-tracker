@@ -43,13 +43,6 @@ const PasswordChange = () => {
     setNewRePassword(newRePassword);
   };
 
-  const httpConfig = {
-    url: `${URL.AUTH_URL}/updatePassword`,
-    method: 'PATCH',
-    body: { password, newPassword, newRePassword },
-    isAuthorized: true,
-  };
-
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     const passwordValidationErr = passwordValidator(password);
@@ -70,7 +63,12 @@ const PasswordChange = () => {
       return;
 
     try {
-      await sendRequest(httpConfig);
+      await sendRequest({
+        url: `${URL.AUTH_URL}/updatePassword`,
+        method: 'PATCH',
+        body: { password, newPassword, newRePassword },
+        isAuthorized: true,
+      });
       setPassword('');
       setNewPassword('');
       setNewRePassword('');

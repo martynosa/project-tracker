@@ -15,12 +15,12 @@ import { useNotification } from '../../Contexts/NotificationContext';
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
-  const [search, setSearch] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const { sendRequest, isLoading, setIsLoading } = useFetch();
   const { openNotification } = useNotification();
 
-  const filteredP = searchService(projects, search);
+  const filteredP = searchService(projects, searchQuery);
 
   const newP = filteredP.filter((p) => p.status === 'new');
   const inProgressP = filteredP.filter((p) => p.status === 'inProgress');
@@ -41,16 +41,14 @@ const Projects = () => {
   };
 
   const searchHandler = (e) => {
-    setSearch(e.target.value);
+    setSearchQuery(e.target.value);
   };
 
   useEffect(() => {
-    const httpConfig = {
+    sendRequest({
       url: `${URL.ITEM_URL}`,
       isAuthorized: true,
-    };
-
-    sendRequest(httpConfig)
+    })
       .then((data) => {
         setProjects(data);
       })
