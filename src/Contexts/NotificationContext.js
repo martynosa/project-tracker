@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useCallback } from 'react';
 
 const notificationContext = createContext();
 
@@ -12,14 +12,14 @@ export const NotificationProvider = ({ children }) => {
   const [notificationSettings, setNotificationSettings] =
     useState(defaultSettings);
 
-  const openNotification = (status, message) => {
+  const openNotification = useCallback((status, message) => {
     setNotificationSettings({ isOpen: true, status, message });
     setTimeout(() => {
       setNotificationSettings((prevState) => {
         return { ...prevState, isOpen: false };
       });
     }, 2000);
-  };
+  }, []);
 
   const value = { notificationSettings, openNotification };
 

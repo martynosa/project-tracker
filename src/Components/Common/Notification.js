@@ -2,8 +2,6 @@ import { useNotification } from '../../Contexts/NotificationContext';
 
 import classes from './Notification.module.css';
 
-import Loading from './Loading';
-
 const Notification = () => {
   const { notificationSettings } = useNotification();
   let { isOpen, status, message } = notificationSettings;
@@ -19,10 +17,6 @@ const Notification = () => {
     case 'fail':
       className = `${classes.notification} ${classes.fail}`;
       icon = <ion-icon name="close"></ion-icon>;
-      break;
-    case 'loading':
-      className = `${classes.notification} ${classes.loading}`;
-      message = <Loading />;
       break;
     default:
       className = '';

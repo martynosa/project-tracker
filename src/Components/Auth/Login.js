@@ -24,7 +24,7 @@ const Login = () => {
   const [passwordErr, setPasswordErr] = useState(defaultErr);
 
   const { login } = useAuth();
-  const { sendRequest, isLoading } = useFetch();
+  const { sendRequest, isLoading, setIsLoading } = useFetch();
 
   const { openNotification } = useNotification();
   const navigate = useNavigate();
@@ -57,12 +57,12 @@ const Login = () => {
     if (emailValidationErr.status || passwordValidationErr.status) return;
 
     try {
-      openNotification('loading');
       const user = await sendRequest(httpConfig);
       login(user);
       navigate('/projects');
       openNotification('success', `Welcome ${user.name}.`);
     } catch (error) {
+      setIsLoading(false);
       openNotification('fail', error.message);
     }
   };

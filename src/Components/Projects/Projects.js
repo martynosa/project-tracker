@@ -10,12 +10,15 @@ import URL from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
 import searchService from '../../helpers/searchService';
 
+import { useNotification } from '../../Contexts/NotificationContext';
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   const [search, setSearch] = useState('');
 
-  const { isLoading, sendRequest } = useFetch();
+  const { sendRequest, isLoading, setIsLoading } = useFetch();
+  const { openNotification } = useNotification();
 
   const filteredP = searchService(projects, search);
 
@@ -47,10 +50,15 @@ const Projects = () => {
       isAuthorized: true,
     };
 
-    sendRequest(httpConfig).then((data) => {
-      setProjects(data);
-    });
-  }, [sendRequest]);
+    sendRequest(httpConfig)
+      .then((data) => {
+        setProjects(data);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        openNotification('fail', error.message);
+      });
+  }, [sendRequest, setIsLoading, openNotification]);
 
   return (
     <div className={classes.container}>

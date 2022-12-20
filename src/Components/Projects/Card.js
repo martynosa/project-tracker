@@ -13,7 +13,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
 
   const { sendRequest } = useFetch();
 
-  const { openNotification } = useNotification();
+  const { openNotification, setIsLoading } = useNotification();
 
   const deleteHandler = async () => {
     try {
@@ -25,6 +25,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
       deleteProject(_id);
       openNotification('success', 'Project deleted.');
     } catch (error) {
+      setIsLoading(false);
       openNotification('fail', error.message);
     }
   };
@@ -67,6 +68,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
       updateProject(newProject);
       openNotification('success', message);
     } catch (error) {
+      setIsLoading(false);
       openNotification('fail', error.message);
     }
   };

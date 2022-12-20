@@ -30,7 +30,6 @@ const UploadPhoto = () => {
     }
 
     try {
-      openNotification('loading');
       const photoUrl = await sendRequest({ ...httpConfig, photo: formData });
       updatePhoto(photoUrl);
       openNotification('success', 'Photo uploaded.');

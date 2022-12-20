@@ -70,7 +70,6 @@ const PasswordChange = () => {
       return;
 
     try {
-      openNotification('loading');
       await sendRequest(httpConfig);
       setPassword('');
       setNewPassword('');
