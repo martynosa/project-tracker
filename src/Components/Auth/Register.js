@@ -31,7 +31,7 @@ const Register = () => {
   const [rePasswordErr, setRePasswordErr] = useState(defaultErr);
 
   const { login } = useAuth();
-  const { sendRequest, isLoading, setIsLoading } = useFetch();
+  const { sendRequest, isLoading } = useFetch();
 
   const { openNotification } = useNotification();
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ const Register = () => {
   };
 
   const nameHandler = (e) => {
-    const name = e.target.value.trim().toLowerCase();
+    const name = e.target.value;
     setNameErr(nameValidator(name));
     setName(name);
   };
@@ -92,7 +92,6 @@ const Register = () => {
       navigate('/projects');
       openNotification('success', `Welcome ${user.name}.`);
     } catch (error) {
-      setIsLoading(false);
       openNotification('fail', error.message);
     }
   };

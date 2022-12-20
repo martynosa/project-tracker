@@ -27,7 +27,7 @@ const Create = () => {
   const [keywordsErr, setKeywordsErr] = useState(defaultErr);
   const [descriptionErr, setDescriptionErr] = useState(defaultErr);
 
-  const { sendRequest, isLoading, setIsLoading } = useFetch();
+  const { sendRequest, isLoading } = useFetch();
 
   const { openNotification } = useNotification();
   const navigate = useNavigate();
@@ -85,7 +85,6 @@ const Create = () => {
       navigate('/projects');
       openNotification('success', `${createdItem.name} created.`);
     } catch (error) {
-      setIsLoading(false);
       openNotification('fail', error.message);
     }
   };
