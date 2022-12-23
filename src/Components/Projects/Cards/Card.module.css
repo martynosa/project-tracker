@@ -7,7 +7,7 @@
   margin-bottom: var(--m-24);
 }
 
-.card:hover {
+.card:hover:not(.loading) {
   background-color: var(--violet-color);
   transform: translate(-6px, 6px);
   box-shadow: none;
