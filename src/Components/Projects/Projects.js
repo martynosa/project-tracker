@@ -7,7 +7,7 @@ import Search from './Search';
 import Loading from '../Common/Loading';
 import Divider from '../Common/Divider';
 
-import URL from '../../helpers/constants';
+import URL from '../../helpers/environment';
 import useFetch from '../../Hooks/useFetch';
 import searchService from '../../helpers/searchService';
 

@@ -15,7 +15,7 @@ import {
 
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
-import URL from '../../helpers/constants';
+import URL from '../../helpers/environment';
 import useFetch from '../../Hooks/useFetch';
 
 const Register = () => {

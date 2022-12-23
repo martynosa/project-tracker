@@ -2,7 +2,7 @@ import classes from './Card.module.css';
 import Tag from '../Common/Tag';
 
 import useFetch from '../../Hooks/useFetch';
-import URL from '../../helpers/constants';
+import URL from '../../helpers/environment';
 
 import { useNotification } from '../../Contexts/NotificationContext';
 
