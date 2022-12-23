@@ -105,7 +105,7 @@ const PasswordChange = () => {
         value={newRePassword}
       />
 
-      <Button type={'submit'} color="green" isLoading={isLoading}>
+      <Button type={'submit'} color="orange" isLoading={isLoading}>
         Change password
       </Button>
     </form>

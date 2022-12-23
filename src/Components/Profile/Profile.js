@@ -11,7 +11,7 @@ const Profile = () => {
         <div className={classes.forms}>
           <Divider color={'violet'} />
           <UploadPhoto />
-          <Divider color={'green'} />
+          <Divider color={'orange'} />
           <PasswordChange />
         </div>
       </section>

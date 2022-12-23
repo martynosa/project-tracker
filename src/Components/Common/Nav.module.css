@@ -59,26 +59,21 @@
   gap: var(--default-gap);
 }
 
-.name {
-  color: var(--green-color);
+.photo {
+  height: 3.2rem;
+  width: 3.2rem;
+  border-radius: 50%;
+  border: 3px solid var(--orange-color);
+}
 
+.name {
+  color: var(--orange-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.photo {
-  height: 3.2rem;
-  width: 3.2rem;
-  border-radius: 50%;
-  border: 3px solid var(--violet-color);
-}
-
-.name:hover {
-  color: var(--hvr-color);
-}
-
-.logout:hover {
+.logout {
   color: var(--error-color);
 }
 
