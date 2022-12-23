@@ -12,6 +12,7 @@ import DescriptionGroup from './DescriptionGroup';
 import KeywordGroup from './KeywordGroup';
 import Button from '../Common/Button';
 import KeywordTags from './KeywordTags';
+import Divider from '../Common/Divider';
 
 import { useNotification } from '../../Contexts/NotificationContext';
 import URL from '../../helpers/constants';
@@ -89,6 +90,7 @@ const Create = () => {
   return (
     <div className={classes.container}>
       <form className={classes.form} onSubmit={onSumbitHandler}>
+        <Divider color={'green'} />
         <InputGroup
           label={'name'}
           onChangeHandler={nameHandler}

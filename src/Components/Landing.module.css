@@ -2,7 +2,7 @@
   max-width: 128rem;
   margin: 0 auto;
   min-height: calc(100vh - (var(--nav-height) + var(--notification-height)));
-  padding: var(--default-1v-pd);
+  padding: var(--bg-2v-pd);
 
   display: flex;
   align-items: center;

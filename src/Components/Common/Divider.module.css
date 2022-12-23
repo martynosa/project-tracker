@@ -1,0 +1,23 @@
+.divider {
+  width: 60px;
+  margin: 0 auto;
+  height: 4px;
+  border-radius: var(--default-brdr-rd);
+  margin-bottom: var(--m-12);
+}
+
+.blue {
+  background-color: var(--blue-color);
+}
+
+.orange {
+  background-color: var(--orange-color);
+}
+
+.green {
+  background-color: var(--green-color);
+}
+
+.violet {
+  background-color: var(--violet-color);
+}

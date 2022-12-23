@@ -7,5 +7,6 @@
 }
 
 .form {
-  min-width: 32rem;
+  width: 32rem;
+  padding: var(--default-2v-pd);
 }

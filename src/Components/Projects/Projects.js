@@ -5,6 +5,7 @@ import classes from './Projects.module.css';
 import Card from './Card';
 import Search from './Search';
 import Loading from '../Common/Loading';
+import Divider from '../Common/Divider';
 
 import URL from '../../helpers/constants';
 import useFetch from '../../Hooks/useFetch';
@@ -65,7 +66,7 @@ const Projects = () => {
       {isLoading && <Loading />}
       <div className={classes.projectsContainer}>
         <div className={classes.newContainer}>
-          <div className={`${classes.divider} ${classes.new}`}></div>
+          <Divider color={'blue'} />
           <AddCard />
           {newP.map((p) => (
             <Card
@@ -78,7 +79,7 @@ const Projects = () => {
         </div>
 
         <div className={classes.inProgressContainer}>
-          <div className={`${classes.divider} ${classes.inProgress}`}></div>
+          <Divider color={'orange'} />
           {inProgressP.map((p) => (
             <Card
               key={p._id}
@@ -90,7 +91,7 @@ const Projects = () => {
         </div>
 
         <div className={classes.completedContainer}>
-          <div className={`${classes.divider} ${classes.completed}`}></div>
+          <Divider color={'green'} />
           {completedP.map((p) => (
             <Card
               key={p._id}
