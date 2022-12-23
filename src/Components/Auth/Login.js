@@ -13,7 +13,7 @@ import {
 
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
-import URL from '../../helpers/environment';
+import URL from '../../environment';
 import useFetch from '../../Hooks/useFetch';
 
 const Login = () => {

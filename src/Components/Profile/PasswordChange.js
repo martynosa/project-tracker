@@ -12,7 +12,7 @@ import {
 } from '../../helpers/validators';
 
 import { useNotification } from '../../Contexts/NotificationContext';
-import URL from '../../helpers/environment';
+import URL from '../../environment';
 import useFetch from '../../Hooks/useFetch';
 
 const PasswordChange = () => {

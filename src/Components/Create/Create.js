@@ -15,7 +15,7 @@ import KeywordTags from './KeywordTags';
 import Divider from '../Common/Divider';
 
 import { useNotification } from '../../Contexts/NotificationContext';
-import URL from '../../helpers/environment';
+import URL from '../../environment';
 import useFetch from '../../Hooks/useFetch';
 
 const Create = () => {

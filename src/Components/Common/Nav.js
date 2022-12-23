@@ -4,7 +4,7 @@ import classes from './Nav.module.css';
 
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
-import URL from '../../helpers/environment';
+import URL from '../../environment';
 
 const Nav = () => {
   const location = useLocation();
