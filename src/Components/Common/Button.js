@@ -16,7 +16,7 @@ const Button = ({ type, color, onClick, isLoading, helperClass, children }) => {
       className = `${classes.btn} ${classes.violetBtn}`;
       break;
     default:
-      className = classes.btn;
+      className = `${classes.btn} ${classes.violetBtn}`;
   }
 
   if (helperClass) className = `${className} ${helperClass}`;

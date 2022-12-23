@@ -36,6 +36,9 @@ const Tag = ({ keyword, removeKeyword }) => {
     case 13:
       className = `${className} ${classes.yellow}`;
       break;
+    case 14:
+      className = `${className} ${classes.pink}`;
+      break;
     default:
       className = `${className} ${classes.pink}`;
   }

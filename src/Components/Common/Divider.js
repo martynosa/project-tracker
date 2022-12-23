@@ -1,7 +1,6 @@
 import classes from './Divider.module.css';
 
 const Divider = ({ color }) => {
-  console.log(color);
   let className = classes.divider;
 
   switch (color) {
