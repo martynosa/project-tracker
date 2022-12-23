@@ -16,9 +16,10 @@
   --light-color: #dee2e6;
   --dark-color: #343a40;
   --violet-color: #845ef7;
-  --green-color: #51cf66;
   --blue-color: #339af0;
   --orange-color: #ff922b;
+  --green-color: #51cf66;
+  --grey-color: #adb5bd;
 
   --error-color: #ff6b6b;
   --input-bg-color: #dee2e6;
@@ -106,4 +107,5 @@
   --new-card-shadow: #1864ab;
   --inProgress-card-shadow: #d9480f;
   --completed-card-shadow: #2b8a3e;
+  --add-card-shadow: #495057;
 }

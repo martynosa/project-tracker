@@ -11,6 +11,7 @@ import useFetch from '../../Hooks/useFetch';
 import searchService from '../../helpers/searchService';
 
 import { useNotification } from '../../Contexts/NotificationContext';
+import AddCard from './AddCard';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -64,6 +65,8 @@ const Projects = () => {
       {isLoading && <Loading />}
       <div className={classes.projectsContainer}>
         <div className={classes.newContainer}>
+          <div className={`${classes.divider} ${classes.new}`}></div>
+          <AddCard />
           {newP.map((p) => (
             <Card
               key={p._id}
@@ -75,6 +78,7 @@ const Projects = () => {
         </div>
 
         <div className={classes.inProgressContainer}>
+          <div className={`${classes.divider} ${classes.inProgress}`}></div>
           {inProgressP.map((p) => (
             <Card
               key={p._id}
@@ -86,6 +90,7 @@ const Projects = () => {
         </div>
 
         <div className={classes.completedContainer}>
+          <div className={`${classes.divider} ${classes.completed}`}></div>
           {completedP.map((p) => (
             <Card
               key={p._id}
