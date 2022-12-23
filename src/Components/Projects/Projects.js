@@ -64,44 +64,46 @@ const Projects = () => {
     <div className={classes.container}>
       <Search searchHandler={searchHandler} />
       {isLoading && <Loading />}
-      <div className={classes.projectsContainer}>
-        <div className={classes.newContainer}>
-          <Divider color={'blue'} />
-          <AddCard />
-          {newP.map((p) => (
-            <Card
-              key={p._id}
-              project={p}
-              updateProject={updateP}
-              deleteProject={deleteP}
-            />
-          ))}
-        </div>
+      {!isLoading && (
+        <div className={classes.projectsContainer}>
+          <div className={classes.newContainer}>
+            <Divider color={'blue'} />
+            <AddCard />
+            {newP.map((p) => (
+              <Card
+                key={p._id}
+                project={p}
+                updateProject={updateP}
+                deleteProject={deleteP}
+              />
+            ))}
+          </div>
 
-        <div className={classes.inProgressContainer}>
-          <Divider color={'orange'} />
-          {inProgressP.map((p) => (
-            <Card
-              key={p._id}
-              project={p}
-              updateProject={updateP}
-              deleteProject={deleteP}
-            />
-          ))}
-        </div>
+          <div className={classes.inProgressContainer}>
+            <Divider color={'orange'} />
+            {inProgressP.map((p) => (
+              <Card
+                key={p._id}
+                project={p}
+                updateProject={updateP}
+                deleteProject={deleteP}
+              />
+            ))}
+          </div>
 
-        <div className={classes.completedContainer}>
-          <Divider color={'green'} />
-          {completedP.map((p) => (
-            <Card
-              key={p._id}
-              project={p}
-              updateProject={updateP}
-              deleteProject={deleteP}
-            />
-          ))}
+          <div className={classes.completedContainer}>
+            <Divider color={'green'} />
+            {completedP.map((p) => (
+              <Card
+                key={p._id}
+                project={p}
+                updateProject={updateP}
+                deleteProject={deleteP}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
