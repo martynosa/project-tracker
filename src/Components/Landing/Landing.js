@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import classes from './Landing.module.css';
-import Button from './Common/Button';
+import Button from '../Common/Button';
 
 const Landing = () => {
   const navigate = useNavigate();
