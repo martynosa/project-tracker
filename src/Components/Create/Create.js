@@ -4,9 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import classes from './Create.module.css';
 import {
   defaultErr,
-  descriptionValidator,
   keywordsValidator,
-  nameValidator,
+  lengthValidator,
 } from '../../helpers/validators';
 import InputGroup from '../Common/InputGroup';
 import DescriptionGroup from './DescriptionGroup';
@@ -34,13 +33,13 @@ const Create = () => {
 
   const nameHandler = (e) => {
     const name = e.target.value.trim().toLowerCase();
-    setNameErr(nameValidator(name));
+    setNameErr(lengthValidator(name, 3));
     setName(name);
   };
 
   const descriptionHandler = (e) => {
     const description = e.target.value.trim();
-    setDescriptionErr(descriptionValidator(description));
+    setDescriptionErr(lengthValidator(description, 10));
     setDescription(description);
   };
 
@@ -58,9 +57,9 @@ const Create = () => {
 
   const onSumbitHandler = async (e) => {
     e.preventDefault();
-    const nameValidationErr = nameValidator(name);
+    const nameValidationErr = lengthValidator(name, 3);
     const keywordsValidationErr = keywordsValidator(keywords);
-    const descriptionValidationErr = descriptionValidator(description);
+    const descriptionValidationErr = lengthValidator(description, 10);
     setNameErr(nameValidationErr);
     setKeywordsErr(keywordsValidationErr);
     setDescriptionErr(descriptionValidationErr);

@@ -4,8 +4,8 @@ import classes from './KeywordGroup.module.css';
 import Button from '../Common/Button';
 import {
   defaultErr,
-  keywordValidator,
   dupKeywordValidator,
+  lengthValidator,
 } from '../../helpers/validators';
 
 const KeywordGroup = ({ addKeyword, keywords }) => {
@@ -14,12 +14,12 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
 
   const keywordChangeHandler = (e) => {
     const keyword = e.target.value.trim().toLowerCase();
-    setKeywordErr(keywordValidator(keyword));
+    setKeywordErr(lengthValidator(keyword, 3));
     setKeyword(keyword);
   };
 
   const addHandler = () => {
-    const keywordValidationErr = keywordValidator(keyword);
+    const keywordValidationErr = lengthValidator(keyword, 3);
     const dupKeywordValidationErr = dupKeywordValidator(keyword, keywords);
     if (keywordValidationErr.status) {
       setKeywordErr(keywordValidationErr);

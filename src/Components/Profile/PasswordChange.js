@@ -7,7 +7,7 @@ import InputGroup from '../Common/InputGroup';
 
 import {
   defaultErr,
-  passwordValidator,
+  lengthValidator,
   rePasswordValidator,
 } from '../../helpers/validators';
 
@@ -29,12 +29,12 @@ const PasswordChange = () => {
 
   const passwordHandler = (e) => {
     const password = e.target.value.trim();
-    setPasswordErr(passwordValidator(password));
+    setPasswordErr(lengthValidator(password, 6));
     setPassword(password);
   };
   const newPasswordHandler = (e) => {
     const newPassword = e.target.value.trim();
-    setNewPasswordErr(passwordValidator(newPassword));
+    setNewPasswordErr(lengthValidator(newPassword, 6));
     setNewPassword(newPassword);
   };
   const newRePasswordHandler = (e) => {
@@ -45,8 +45,8 @@ const PasswordChange = () => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    const passwordValidationErr = passwordValidator(password);
-    const newPasswordValidationErr = passwordValidator(newPassword);
+    const passwordValidationErr = lengthValidator(password, 6);
+    const newPasswordValidationErr = lengthValidator(newPassword, 6);
     const newRePasswordValidationErr = rePasswordValidator(
       newPassword,
       newRePassword

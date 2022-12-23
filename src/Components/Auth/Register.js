@@ -9,8 +9,7 @@ import AuthLink from './AuthLink';
 import {
   defaultErr,
   emailValidator,
-  nameValidator,
-  passwordValidator,
+  lengthValidator,
   rePasswordValidator,
 } from '../../helpers/validators';
 
@@ -44,13 +43,13 @@ const Register = () => {
 
   const nameHandler = (e) => {
     const name = e.target.value;
-    setNameErr(nameValidator(name));
+    setNameErr(lengthValidator(name, 3));
     setName(name);
   };
 
   const passwordHandler = (e) => {
     const password = e.target.value.trim();
-    setPasswordErr(passwordValidator(password));
+    setPasswordErr(lengthValidator(password, 6));
     setPassword(password);
   };
 
@@ -63,8 +62,8 @@ const Register = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     const emailValidationErr = emailValidator(email);
-    const nameValidationErr = nameValidator(name);
-    const passwordValidationErr = passwordValidator(password);
+    const nameValidationErr = lengthValidator(name, 3);
+    const passwordValidationErr = lengthValidator(password, 6);
     const rePasswordValidationErr = rePasswordValidator(password, rePassword);
     setEmailErr(emailValidationErr);
     setNameErr(nameValidationErr);

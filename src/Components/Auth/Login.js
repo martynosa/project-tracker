@@ -8,7 +8,7 @@ import AuthLink from './AuthLink';
 import {
   defaultErr,
   emailValidator,
-  passwordValidator,
+  lengthValidator,
 } from '../../helpers/validators';
 
 import { useNotification } from '../../Contexts/NotificationContext';
@@ -37,14 +37,14 @@ const Login = () => {
 
   const passwordHandler = (e) => {
     const password = e.target.value.trim();
-    setPasswordErr(passwordValidator(password));
+    setPasswordErr(lengthValidator(password, 6));
     setPassword(password);
   };
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     const emailValidationErr = emailValidator(email);
-    const passwordValidationErr = passwordValidator(password);
+    const passwordValidationErr = lengthValidator(password, 6);
     setEmailErr(emailValidationErr);
     setPasswordErr(passwordValidationErr);
 
