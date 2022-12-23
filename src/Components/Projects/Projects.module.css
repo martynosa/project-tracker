@@ -7,22 +7,3 @@
   justify-content: flex-start;
   gap: var(--bg-gap);
 }
-
-.projectsContainer {
-  max-width: 128rem;
-  padding: var(--default-2v-pd);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  column-gap: var(--bg-gap);
-}
-
-@media (max-width: 768px) {
-  .container {
-    gap: var(--default-gap);
-  }
-
-  .projectsContainer {
-    grid-template-columns: 1fr;
-  }
-}

@@ -1,21 +1,24 @@
+import { useNavigate } from 'react-router-dom';
+
 import classes from './Card.module.css';
-import Tag from '../Common/Tag';
+import Tag from '../../Common/Tag';
+import LoadingCard from './LoadingCard';
 
-import useFetch from '../../Hooks/useFetch';
-import URL from '../../environment';
+import useFetch from '../../../Hooks/useFetch';
+import URL from '../../../environment';
 
-import { useNotification } from '../../Contexts/NotificationContext';
+import { useNotification } from '../../../Contexts/NotificationContext';
 
 const Card = ({ project, updateProject, deleteProject }) => {
   const { _id, name, description, keywords, status } = project;
 
+  const navigate = useNavigate();
   const { sendRequest, setIsLoading, isLoading } = useFetch();
-
   const { openNotification } = useNotification();
 
-  let cardClassName = isLoading
-    ? `${classes.card} ${classes[status]} ${classes.loading}`
-    : `${classes.card} ${classes[status]}`;
+  const toDetails = () => {
+    navigate(`/projects/${_id}`);
+  };
 
   const deleteHandler = async () => {
     try {
@@ -75,8 +78,10 @@ const Card = ({ project, updateProject, deleteProject }) => {
     }
   };
 
+  if (isLoading) return <LoadingCard />;
+
   return (
-    <div className={cardClassName}>
+    <div className={`${classes.card} ${classes[status]}`} onClick={toDetails}>
       <header className={classes.header}>
         <h3 className={classes.title}>{name}</h3>
         <button

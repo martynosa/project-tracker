@@ -5,12 +5,12 @@ import classes from './AddCard.module.css';
 const AddCard = () => {
   const navigate = useNavigate();
 
-  const navigateTo = () => {
+  const toCreate = () => {
     navigate('/create');
   };
 
   return (
-    <div className={classes.card} onClick={navigateTo}>
+    <div className={classes.card} onClick={toCreate}>
       <ion-icon name="add"></ion-icon>
     </div>
   );

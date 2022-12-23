@@ -1,0 +1,14 @@
+.projectsContainer {
+  max-width: 128rem;
+  padding: var(--default-2v-pd);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  column-gap: var(--bg-gap);
+}
+
+@media (max-width: 768px) {
+  .projectsContainer {
+    grid-template-columns: 1fr;
+  }
+}

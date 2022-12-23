@@ -2,17 +2,15 @@ import { useState, useEffect } from 'react';
 
 import classes from './Projects.module.css';
 
-import Card from './Card';
 import Search from './Search';
-import Loading from '../Common/Loading';
-import Divider from '../Common/Divider';
+import LoadingContainer from './Containers/LoadingContainer';
+import ProjectsContainer from './Containers/ProjectsContainer';
 
 import URL from '../../environment';
 import useFetch from '../../Hooks/useFetch';
 import searchService from '../../helpers/searchService';
 
 import { useNotification } from '../../Contexts/NotificationContext';
-import AddCard from './AddCard';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -22,13 +20,9 @@ const Projects = () => {
   const { sendRequest, isLoading, setIsLoading } = useFetch();
   const { openNotification } = useNotification();
 
-  const filteredP = searchService(projects, searchQuery);
+  const filteredProjects = searchService(projects, searchQuery);
 
-  const newP = filteredP.filter((p) => p.status === 'new');
-  const inProgressP = filteredP.filter((p) => p.status === 'inProgress');
-  const completedP = filteredP.filter((p) => p.status === 'completed');
-
-  const updateP = (project) => {
+  const updateProject = (project) => {
     setProjects((state) => {
       const newState = state.filter((p) => p._id !== project._id);
       newState.push(project);
@@ -36,7 +30,7 @@ const Projects = () => {
     });
   };
 
-  const deleteP = (projectId) => {
+  const deleteProject = (projectId) => {
     setProjects((state) => {
       return state.filter((p) => p._id !== projectId);
     });
@@ -63,46 +57,13 @@ const Projects = () => {
   return (
     <div className={classes.container}>
       <Search searchHandler={searchHandler} />
-      {isLoading && <Loading />}
+      {isLoading && <LoadingContainer />}
       {!isLoading && (
-        <div className={classes.projectsContainer}>
-          <div className={classes.newContainer}>
-            <Divider color={'blue'} />
-            <AddCard />
-            {newP.map((p) => (
-              <Card
-                key={p._id}
-                project={p}
-                updateProject={updateP}
-                deleteProject={deleteP}
-              />
-            ))}
-          </div>
-
-          <div className={classes.inProgressContainer}>
-            <Divider color={'orange'} />
-            {inProgressP.map((p) => (
-              <Card
-                key={p._id}
-                project={p}
-                updateProject={updateP}
-                deleteProject={deleteP}
-              />
-            ))}
-          </div>
-
-          <div className={classes.completedContainer}>
-            <Divider color={'green'} />
-            {completedP.map((p) => (
-              <Card
-                key={p._id}
-                project={p}
-                updateProject={updateP}
-                deleteProject={deleteP}
-              />
-            ))}
-          </div>
-        </div>
+        <ProjectsContainer
+          projects={filteredProjects}
+          updateProject={updateProject}
+          deleteProject={deleteProject}
+        />
       )}
     </div>
   );

@@ -27,6 +27,7 @@ function App() {
 
         <Route element={<GuestGuard />}>
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<Projects />} />
           <Route path="/create" element={<Create />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
