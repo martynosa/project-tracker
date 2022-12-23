@@ -6,7 +6,7 @@
 }
 
 .searchGroup ion-icon {
-  font-size: var(--md-fs);
+  font-size: var(--fs-24);
 }
 
 .searchInput {

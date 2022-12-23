@@ -7,36 +7,6 @@
   margin-bottom: var(--m-24);
 }
 
-.header {
-  font-size: var(--md-fs);
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-bottom: var(--m-12);
-}
-
-.title {
-  text-transform: uppercase;
-  overflow: hidden;
-}
-
-.description {
-  margin-bottom: var(--m-12);
-  overflow: hidden;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--sm-gap);
-
-  overflow: hidden;
-  margin-bottom: var(--m-12);
-}
-
 .card:hover {
   background-color: var(--violet-color);
   transform: translate(-6px, 6px);
@@ -59,11 +29,47 @@
   box-shadow: -6px 6px 0 var(--completed-card-shadow);
 }
 
+.add {
+  text-align: center;
+  font-size: var(--fs-24);
+  padding: var(--default-2v-pd);
+  background-color: var(--grey-color);
+  box-shadow: -6px 6px 0 var(--add-card-shadow);
+}
+
 .loading {
-  color: var(--loading-font-color);
-  background-color: var(--loading-bg-color) !important;
+  height: 16.6rem;
+  background-color: var(--loading-bg-color);
   transform: translate(-6px, 6px);
-  box-shadow: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: var(--m-12);
+}
+
+.title {
+  font-size: var(--fs-24);
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.description {
+  margin-bottom: var(--m-12);
+  overflow: hidden;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sm-gap);
+
+  overflow: hidden;
+  margin-bottom: var(--m-12);
 }
 
 .btnGroup {
@@ -74,7 +80,7 @@
 .btn:link,
 .btn:visited {
   color: inherit;
-  font-size: var(--md-fs);
+  font-size: var(--fs-24);
   background-color: transparent;
   padding: var(--sm-2v-pd);
   border-radius: var(--default-brdr-rd);
@@ -82,16 +88,11 @@
   transition: var(--animation);
 }
 
-.trash {
-  font-size: var(--md-fs);
-}
-
 .trash:hover {
   transform: translateX(-6px) scale(1.1);
 }
 
 .back {
-  font-size: var(--md-fs);
   margin-left: 2.4rem;
   margin-right: auto;
 }
@@ -101,7 +102,6 @@
 }
 
 .forward {
-  font-size: var(--md-fs);
   margin-right: 2.4rem;
   margin-left: auto;
 }

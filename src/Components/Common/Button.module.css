@@ -2,7 +2,7 @@
 .btn,
 .btn:link,
 .btn:visited {
-  color: inherit;
+  color: var(--dark-color);
   text-transform: uppercase;
   text-decoration: none;
   background-color: transparent;
@@ -44,7 +44,6 @@
 .orangeBtn {
   background-color: var(--orange-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--orange-btn-shdw-color);
-  color: var(--dark-color);
 }
 
 .orangeBtn:hover,
@@ -58,7 +57,6 @@
 .greenBtn {
   background-color: var(--green-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--green-btn-shdw-color);
-  color: var(--dark-color);
 }
 
 .greenBtn:hover,

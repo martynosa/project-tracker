@@ -12,7 +12,7 @@
 
 .main {
   width: 50%;
-  font-size: var(--mx-fs);
+  font-size: var(--fs-52);
   font-weight: var(--md-weight);
   margin-bottom: var(--m-12);
 }
@@ -25,7 +25,7 @@
 }
 
 .secondary {
-  font-size: var(--md-fs);
+  font-size: var(--fs-24);
   margin-bottom: var(--m-48);
 }
 
@@ -36,7 +36,7 @@
   }
 
   .main {
-    font-size: var(--bg-fs);
+    font-size: var(--fs-48);
   }
 
   .imgBox {

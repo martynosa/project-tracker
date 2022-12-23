@@ -15,6 +15,8 @@ import { useNotification } from '../../Contexts/NotificationContext';
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
+  const loading = true;
+
   const [searchQuery, setSearchQuery] = useState('');
 
   const { sendRequest, isLoading, setIsLoading } = useFetch();

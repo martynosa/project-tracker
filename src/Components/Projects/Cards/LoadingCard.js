@@ -1,7 +1,7 @@
-import classes from './LoadingCard.module.css';
+import classes from './Card.module.css';
 
 const AddCard = () => {
-  return <div className={classes.loadingCard}></div>;
+  return <div className={`${classes.card} ${classes.loading}`}></div>;
 };
 
 export default AddCard;

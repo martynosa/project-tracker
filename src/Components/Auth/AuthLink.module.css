@@ -1,5 +1,5 @@
 .linkGroup {
-  font-size: var(--sm-fs);
+  font-size: var(--fs-14);
 
   display: flex;
   gap: var(--sm-gap);

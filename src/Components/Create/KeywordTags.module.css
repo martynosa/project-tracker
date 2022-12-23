@@ -13,6 +13,6 @@
 
 .errorMessage {
   color: var(--error-color);
-  font-size: var(--mn-fs);
+  font-size: var(--fs-12);
   margin-top: var(--m-03);
 }

@@ -5,16 +5,16 @@
   --animation: all 0.3s ease-in-out;
 
   /* FONT_SIZE */
-  --mx-fs: 5.2rem;
-  --bg-fs: 4.8rem;
-  --md-fs: 2.4rem;
-  --default-fs: 1.6rem;
-  --sm-fs: 1.4rem;
-  --mn-fs: 1.2rem;
+  --fs-52: 5.2rem;
+  --fs-48: 4.8rem;
+  --fs-24: 2.4rem;
+  --fs-default: 1.6rem;
+  --fs-14: 1.4rem;
+  --fs-12: 1.2rem;
 
   /* COLOR */
   --light-color: #dee2e6;
-  --dark-color: #343a40;
+  --dark-color: #212529;
   --violet-color: #845ef7;
   --blue-color: #339af0;
   --orange-color: #ff922b;

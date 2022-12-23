@@ -14,7 +14,7 @@
 }
 
 .photoInputGroup label {
-  font-size: var(--default-fs);
+  font-size: var(--fs-default);
   text-transform: uppercase;
 
   display: flex;
