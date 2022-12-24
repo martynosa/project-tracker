@@ -29,14 +29,6 @@ body {
   font-family: 'Rubik', sans-serif;
   line-height: 1;
   font-size: var(--fs-default);
-
-  /* LIGHT THEME */
-  /* color: #495057;
-  background-color: #f1f3f5; */
-
-  /* DARK THEME */
-  color: var(--light-color);
-  background-color: var(--dark-bg-color);
 }
 
 ::-webkit-scrollbar {
@@ -48,4 +40,15 @@ body {
   border-radius: 16px;
 
   border: 3px solid var(--dark-bg-color);
+}
+
+/* TEST */
+.darkTheme {
+  color: var(--light-color);
+  background-color: var(--dark-bg-color);
+}
+
+.lightTheme {
+  color: var(--dark-color);
+  background-color: var(--light-bg-color);
 }
