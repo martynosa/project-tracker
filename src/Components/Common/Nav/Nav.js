@@ -1,10 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
-
-import classes from './Nav.module.css';
+import { useLocation } from 'react-router-dom';
 
 import { useAuth } from '../../../Contexts/AuthContext';
 
 import OuterNav from './OuterNav';
+import BackNav from './BackNav';
 import InnerNav from './InnerNav';
 
 const Nav = () => {
@@ -12,20 +11,11 @@ const Nav = () => {
 
   const { isAuth } = useAuth();
 
-  const backNav = (
-    <nav className={classes.nav}>
-      <Link to="/" className={classes.link}>
-        <ion-icon name="arrow-round-back"></ion-icon>
-        Back
-      </Link>
-    </nav>
-  );
-
   return (
     <>
       {isAuth && <InnerNav />}
-      {(location.pathname === '/login' || location.pathname === '/register') &&
-        backNav}
+      {(location.pathname === '/login' ||
+        location.pathname === '/register') && <BackNav />}
       {location.pathname === '/' && <OuterNav />}
     </>
   );
