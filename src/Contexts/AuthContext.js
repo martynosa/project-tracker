@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const authContext = createContext();
 
@@ -10,7 +10,6 @@ export const AuthProvider = ({ children }) => {
 
   const login = (currUser) => {
     setUser(currUser);
-    localStorage.setItem('project-tracker', JSON.stringify(currUser));
   };
 
   const logout = () => {
@@ -24,13 +23,29 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
+  const updateTheme = (isDark) => {
+    setUser((prevState) => {
+      return { ...prevState, isDark: isDark };
+    });
+  };
+
   const value = {
     user,
     isAuth,
     login,
     logout,
     updatePhoto,
+    updateTheme,
   };
+
+  useEffect(() => {
+    if (!user) {
+      localStorage.removeItem('project-tracker');
+      return;
+    }
+
+    localStorage.setItem('project-tracker', JSON.stringify(user));
+  }, [user]);
 
   return <authContext.Provider value={value}>{children}</authContext.Provider>;
 };

@@ -6,6 +6,7 @@ import Button from '../Common/Button';
 
 import InputGroup from '../Common/InputGroup';
 import AuthLink from './AuthLink';
+import Divider from '../Common/Divider';
 import {
   defaultErr,
   emailValidator,
@@ -95,6 +96,7 @@ const Register = () => {
 
   return (
     <div className={classes.container}>
+      <Divider color={'orange'} />
       <form className={classes.form} onSubmit={onSubmitHandler}>
         <InputGroup
           label={'email'}

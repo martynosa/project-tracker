@@ -27,7 +27,7 @@ const UploadPhoto = () => {
       const photoUrl = await sendRequest({
         url: `${URL.AUTH_URL}/uploadPhoto`,
         method: 'POST',
-        isAuthorized: true,
+        isAuthenticated: true,
         photo: formData,
       });
       updatePhoto(photoUrl);

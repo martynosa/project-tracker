@@ -77,7 +77,7 @@ const Create = () => {
         url: `${URL.ITEM_URL}`,
         method: 'POST',
         body: { name, keywords, description },
-        isAuthorized: true,
+        isAuthenticated: true,
       });
       navigate('/projects');
       openNotification('success', `${createdItem.name} created.`);

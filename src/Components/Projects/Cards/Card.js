@@ -25,7 +25,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
       await sendRequest({
         url: `${URL.ITEM_URL}/${_id}`,
         method: 'DELETE',
-        isAuthorized: true,
+        isAuthenticated: true,
       });
       deleteProject(_id);
       openNotification('success', 'Project deleted.');
@@ -68,7 +68,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
         url: `${URL.ITEM_URL}/${_id}`,
         method: 'PUT',
         body: { status: updatedStatus },
-        isAuthorized: true,
+        isAuthenticated: true,
       });
       updateProject(newProject);
       openNotification('success', message);

@@ -67,7 +67,7 @@ const PasswordChange = () => {
         url: `${URL.AUTH_URL}/updatePassword`,
         method: 'PATCH',
         body: { password, newPassword, newRePassword },
-        isAuthorized: true,
+        isAuthenticated: true,
       });
       setPassword('');
       setNewPassword('');

@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Landing from './Components/Landing/Landing';
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
-import Nav from './Components/Common/Nav';
+import Nav from './Components/Common/Nav/Nav';
 import Notification from './Components/Common/Notification';
 import Projects from './Components/Projects/Projects';
 import UserGuard from './Guards/UserGuard';

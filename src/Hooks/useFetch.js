@@ -7,7 +7,7 @@ const useFetch = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const sendRequest = useCallback(
-    async ({ url, method, headers, body, photo, isAuthorized }) => {
+    async ({ url, method, headers, body, photo, isAuthenticated }) => {
       setIsLoading(true);
 
       const options = {
@@ -21,7 +21,7 @@ const useFetch = () => {
         options.headers = {};
       }
 
-      if (isAuthorized) {
+      if (isAuthenticated) {
         options.headers = { ...options.headers, token: user.token };
       }
 
@@ -36,7 +36,7 @@ const useFetch = () => {
       setIsLoading(false);
       return result.data;
     },
-    [user]
+    [user?.token]
   );
 
   return { sendRequest, isLoading, setIsLoading };

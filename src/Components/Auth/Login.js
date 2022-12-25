@@ -5,6 +5,7 @@ import classes from './Auth.module.css';
 import Button from '../Common/Button';
 import InputGroup from '../Common/InputGroup';
 import AuthLink from './AuthLink';
+import Divider from '../Common/Divider';
 import {
   defaultErr,
   emailValidator,
@@ -67,6 +68,7 @@ const Login = () => {
 
   return (
     <div className={classes.container}>
+      <Divider color={'violet'} />
       <form className={classes.form} onSubmit={onSubmitHandler}>
         <InputGroup
           label={'email'}

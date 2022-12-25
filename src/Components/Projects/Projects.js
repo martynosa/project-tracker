@@ -43,7 +43,7 @@ const Projects = () => {
   useEffect(() => {
     sendRequest({
       url: `${URL.ITEM_URL}`,
-      isAuthorized: true,
+      isAuthenticated: true,
     })
       .then((data) => {
         setProjects(data);

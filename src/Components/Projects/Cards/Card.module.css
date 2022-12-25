@@ -59,7 +59,7 @@
 
 .description {
   margin-bottom: var(--m-12);
-  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .tags {

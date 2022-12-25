@@ -1,0 +1,25 @@
+.themeButton {
+  height: 3rem;
+  width: 3rem;
+  color: var(--dark-color);
+  font-size: var(--fs-24);
+  background-color: transparent;
+  border: none;
+  transition: var(--animation);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+
+.themeButton:hover {
+  color: var(--hvr-color);
+}
+
+.isDark {
+  color: var(--orange-color);
+}
+
+.isLoading {
+  opacity: 0;
+}
