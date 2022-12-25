@@ -59,8 +59,10 @@ const OuterNav = () => {
           <ion-icon name="pizza"></ion-icon>
           Omnifood
         </a>
+        <div className={classes.theme}>
+          <ThemeButton onClick={changeThemeHandler} isDark={isDark} />
+        </div>
       </div>
-      <ThemeButton onClick={changeThemeHandler} isDark={isDark} />
     </nav>
   );
 };

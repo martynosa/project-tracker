@@ -37,25 +37,15 @@ const InnerNav = () => {
   return (
     <nav className={classes.nav}>
       <div className={classes.innerLinks}>
-        <div className={classes.pageLinks}>
-          <NavLink
-            to="/projects"
-            className={({ isActive }) =>
-              isActive ? `${classes.active} ${classes.link}` : classes.link
-            }
-            end
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            to="/create"
-            className={({ isActive }) =>
-              isActive ? `${classes.active} ${classes.link}` : classes.link
-            }
-          >
-            Create project
-          </NavLink>
-        </div>
+        <NavLink
+          to="/projects"
+          className={({ isActive }) =>
+            isActive ? `${classes.active} ${classes.link}` : classes.link
+          }
+          end
+        >
+          Projects
+        </NavLink>
 
         <div className={classes.userLinks}>
           <ThemeButton
