@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import classes from './Card.module.css';
 import Tag from '../../Common/Tag';
