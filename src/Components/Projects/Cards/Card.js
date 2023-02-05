@@ -12,12 +12,13 @@ import { useNotification } from '../../../Contexts/NotificationContext';
 const Card = ({ project, updateProject, deleteProject }) => {
   const { _id, name, description, keywords, status } = project;
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { sendRequest, setIsLoading, isLoading } = useFetch();
   const { openNotification } = useNotification();
 
   const toDetails = () => {
-    navigate(`/projects/${_id}`);
+    // navigate(`/projects/${_id}`);
+    return;
   };
 
   const deleteHandler = async () => {
