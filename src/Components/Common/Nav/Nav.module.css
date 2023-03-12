@@ -84,11 +84,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
-
-  .theme {
-    margin-left: 0;
-    margin-right: auto;
-  }
 }
 
 @media (max-width: 420px) {
