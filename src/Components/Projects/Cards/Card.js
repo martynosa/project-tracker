@@ -3,6 +3,11 @@
 import classes from './Card.module.css';
 import Tag from '../../Common/Tag';
 import LoadingCard from './LoadingCard';
+import {
+  largeArrowForwardSVG,
+  largeArrowBackSVG,
+  trashSVG,
+} from '../../../helpers/svgIcons';
 
 import useFetch from '../../../Hooks/useFetch';
 import URL from '../../../environment';
@@ -90,7 +95,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
           onClick={deleteHandler}
           disabled={isLoading}
         >
-          <ion-icon name="trash"></ion-icon>
+          {trashSVG}
         </button>
       </header>
 
@@ -109,7 +114,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
             onClick={() => changeStatus('degrade')}
             disabled={isLoading}
           >
-            <ion-icon name="arrow-back"></ion-icon>
+            {largeArrowBackSVG}
           </button>
         )}
 
@@ -119,7 +124,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
             onClick={() => changeStatus('upgrade')}
             disabled={isLoading}
           >
-            <ion-icon name="arrow-forward"></ion-icon>
+            {largeArrowForwardSVG}
           </button>
         )}
       </div>

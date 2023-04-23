@@ -8,6 +8,7 @@ import { useNotification } from '../../../Contexts/NotificationContext';
 import URL from '../../../environment';
 
 import ThemeButton from '../ThemeButton';
+import { kanbanSVG } from '../../../helpers/svgIcons';
 
 const InnerNav = () => {
   const { user, logout, updateTheme } = useAuth();
@@ -44,6 +45,7 @@ const InnerNav = () => {
           }
           end
         >
+          {kanbanSVG}
           Projects
         </NavLink>
 

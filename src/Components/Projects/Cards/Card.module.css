@@ -30,11 +30,13 @@
 }
 
 .add {
-  text-align: center;
-  font-size: var(--fs-24);
   padding: var(--default-2v-pd);
   background-color: var(--grey-color);
   box-shadow: -6px 6px 0 var(--add-card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sm-gap);
 }
 
 .loading {

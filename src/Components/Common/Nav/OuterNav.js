@@ -3,6 +3,7 @@ import classes from './Nav.module.css';
 import { useTheme } from '../../../Contexts/ThemeContext';
 
 import ThemeButton from '../ThemeButton';
+import { linkedinSVG, githubSVG } from '../../../helpers/svgIcons';
 
 const OuterNav = () => {
   const { isDark, setIsDark } = useTheme();
@@ -20,7 +21,7 @@ const OuterNav = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <ion-icon name="logo-linkedin"></ion-icon>
+          {linkedinSVG}
           LinkedIn
         </a>
         <a
@@ -29,7 +30,7 @@ const OuterNav = () => {
           target="_blank"
           rel="noreferrer"
         >
-          <ion-icon name="logo-github"></ion-icon>
+          {githubSVG}
           Github
         </a>
 

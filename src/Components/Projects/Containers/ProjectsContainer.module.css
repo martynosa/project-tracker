@@ -7,6 +7,12 @@
   column-gap: var(--bg-gap);
 }
 
+.emptyMessage {
+  text-align: center;
+  color: var(--grey-color);
+  letter-spacing: 4px;
+}
+
 @media (max-width: 768px) {
   .projectsContainer {
     grid-template-columns: 1fr;

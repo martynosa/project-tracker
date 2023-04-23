@@ -7,6 +7,7 @@ import {
   dupKeywordValidator,
   lengthValidator,
 } from '../../helpers/validators';
+import { plusSVG } from '../../helpers/svgIcons';
 
 const KeywordGroup = ({ addKeyword, keywords }) => {
   const [keyword, setKeyword] = useState('');
@@ -53,7 +54,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
         onClick={addHandler}
         helperClass={classes.keywordBtn}
       >
-        <ion-icon name="add"></ion-icon> Add
+        {plusSVG} Add
       </Button>
     </div>
   );

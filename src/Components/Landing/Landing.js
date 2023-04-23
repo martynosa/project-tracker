@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import classes from './Landing.module.css';
 import Button from '../Common/Button';
+import { arrowDownRightSVG, arrowUpRightSVG } from '../../helpers/svgIcons';
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -22,12 +23,14 @@ const Landing = () => {
         </p>
 
         <div className={classes.btnBox}>
-          <Button color={'purple'} onClick={getStartedHandler}>
-            use locally
+          <Button color={'violet'} onClick={getStartedHandler}>
+            Use locally
+            {arrowDownRightSVG}
           </Button>
 
           <Button color={'orange'} onClick={getStartedHandler}>
-            Get started&nbsp;<ion-icon name="arrow-round-forward"></ion-icon>
+            Get started
+            {arrowUpRightSVG}
           </Button>
         </div>
       </div>

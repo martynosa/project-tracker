@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom';
 
 import classes from './Nav.module.css';
 
+import { arrowBackSVG } from '../../../helpers/svgIcons';
+
 const BackNav = () => {
   return (
     <nav className={classes.nav}>
       <Link to="/" className={classes.link}>
-        <ion-icon name="arrow-round-back"></ion-icon>
+        {arrowBackSVG}
         Back
       </Link>
     </nav>

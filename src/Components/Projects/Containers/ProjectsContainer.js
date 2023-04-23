@@ -14,6 +14,7 @@ const ProjectsContainer = ({ projects, updateProject, deleteProject }) => {
       <div>
         <Divider color={'blue'} />
         <AddCard />
+        {newP.length === 0 && <p className={classes.emptyMessage}>...</p>}
         {newP.map((p) => (
           <Card
             key={p._id}
@@ -26,6 +27,9 @@ const ProjectsContainer = ({ projects, updateProject, deleteProject }) => {
 
       <div>
         <Divider color={'orange'} />
+        {inProgressP.length === 0 && (
+          <p className={classes.emptyMessage}>...</p>
+        )}
         {inProgressP.map((p) => (
           <Card
             key={p._id}
@@ -38,6 +42,7 @@ const ProjectsContainer = ({ projects, updateProject, deleteProject }) => {
 
       <div>
         <Divider color={'green'} />
+        {completedP.length === 0 && <p className={classes.emptyMessage}>...</p>}
         {completedP.map((p) => (
           <Card
             key={p._id}

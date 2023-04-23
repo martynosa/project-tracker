@@ -2,6 +2,8 @@ import { useNotification } from '../../Contexts/NotificationContext';
 
 import classes from './Notification.module.css';
 
+import { checkmarkSVG, crossSVG } from '../../helpers/svgIcons';
+
 const Notification = () => {
   const { notificationSettings } = useNotification();
   let { isOpen, status, message } = notificationSettings;
@@ -12,11 +14,11 @@ const Notification = () => {
   switch (status) {
     case 'success':
       className = `${classes.notification} ${classes.success}`;
-      icon = <ion-icon name="checkmark"></ion-icon>;
+      icon = checkmarkSVG;
       break;
     case 'fail':
       className = `${classes.notification} ${classes.fail}`;
-      icon = <ion-icon name="close"></ion-icon>;
+      icon = crossSVG;
       break;
     default:
       className = '';
