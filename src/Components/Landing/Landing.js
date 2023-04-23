@@ -12,7 +12,7 @@ const Landing = () => {
 
   return (
     <section className={classes.container}>
-      <div className={classes.headerBox}>
+      <div>
         <h1 className={classes.main}>
           Reach new productivity<span>peaks</span>
         </h1>
@@ -20,9 +20,16 @@ const Landing = () => {
         <p className={classes.secondary}>
           Create, track and manage your projects with ease.
         </p>
-        <Button color={'orange'} onClick={getStartedHandler}>
-          Get started&nbsp;<ion-icon name="arrow-round-forward"></ion-icon>
-        </Button>
+
+        <div className={classes.btnBox}>
+          <Button color={'purple'} onClick={getStartedHandler}>
+            use locally
+          </Button>
+
+          <Button color={'orange'} onClick={getStartedHandler}>
+            Get started&nbsp;<ion-icon name="arrow-round-forward"></ion-icon>
+          </Button>
+        </div>
       </div>
 
       <div className={classes.imgBox}>

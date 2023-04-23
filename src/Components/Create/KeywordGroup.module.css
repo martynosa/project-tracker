@@ -35,10 +35,5 @@
 }
 
 .keywordBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--sm-gap);
-
   margin-top: var(--m-06);
 }
