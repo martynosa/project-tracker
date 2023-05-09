@@ -9,7 +9,7 @@ const OuterNav = () => {
   const { isDark, toggleOfflineTheme } = useTheme();
 
   return (
-    <nav className={`${classes.nav} ${classes.outer}`}>
+    <nav className={classes.nav}>
       <div className={classes.externalLinks}>
         <a
           className={classes.link}
@@ -30,7 +30,7 @@ const OuterNav = () => {
           Github
         </a>
 
-        <div className={classes.theme}>
+        <div className={`${classes.link} ${classes.theme}`}>
           <ThemeButton onClick={toggleOfflineTheme} isDark={isDark} />
         </div>
       </div>

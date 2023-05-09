@@ -37,6 +37,8 @@
   text-decoration: none;
 
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: var(--sm-gap);
 
   cursor: pointer;
@@ -83,6 +85,11 @@
   .externalLinks {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .theme {
+    margin-left: unset;
+    margin-right: unset;
   }
 }
 
