@@ -1,7 +1,7 @@
-.container {
+.hero {
+  min-height: 100vh;
   max-width: 128rem;
   margin: 0 auto;
-  min-height: calc(100vh - (var(--nav-height) + var(--notification-height)));
   padding: var(--bg-2v-pd);
 
   display: flex;
@@ -36,47 +36,10 @@
   gap: 0.6rem;
 }
 
-/* @media (max-width: 1280px) {
-  .container {
-    max-width: 64rem;
-    flex-direction: column;
-  }
+.featuresContainer {
+  min-height: 100vh;
+  background-color: var(--violet-color);
 
-  .main {
-    font-size: var(--fs-48);
-  }
-
-  .imgBox {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    max-width: 48rem;
-  }
-}
-
-@media (max-width: 420px) {
-  .container {
-    max-width: 32rem;
-  }
-} */
-
-/* testing */
-
-.heroContainer {
-  /* background-color: antiquewhite; */
-  min-height: calc(100vh - (var(--nav-height) + var(--notification-height)));
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.heroContainer > div {
-  max-width: 128rem;
-  margin: 0 auto;
   padding: var(--bg-2v-pd);
 
   display: flex;
@@ -85,13 +48,55 @@
   gap: var(--bg-gap);
 }
 
-.featuresContainer {
-  height: 100vh;
-  background-color: aqua;
+.features h2 {
+  text-align: center;
+  font-size: var(--fs-24);
+  text-transform: uppercase;
+  font-weight: var(--mx-weight);
+  margin-bottom: var(--m-12);
+}
+
+.features .list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--bg-gap);
+}
+
+.card {
+  width: 28rem;
+  color: var(--dark-color);
+  padding: var(--md-2v-pd);
+  border-radius: var(--default-brdr-rd);
+  transition: var(--animation);
+  background-color: antiquewhite;
+
+  background-color: var(--light-color);
+  box-shadow: -6px 6px 0 var(--grey-color);
+}
+
+.card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: var(--m-12);
+}
+
+.card .title {
+  font-size: var(--fs-24);
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.card .description {
+  margin-bottom: var(--m-12);
+  overflow-wrap: break-word;
 }
 
 @media (max-width: 1280px) {
-  .heroContainer > div {
+  .hero,
+  .features .list {
     max-width: 64rem;
     flex-direction: column;
   }

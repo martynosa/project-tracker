@@ -78,10 +78,6 @@
 }
 
 @media (max-width: 768px) {
-  .nav {
-    height: unset;
-  }
-
   .externalLinks {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -95,7 +91,10 @@
 
 @media (max-width: 420px) {
   .innerLinks {
-    flex-direction: column;
+    font-size: var(--fs-14);
+  }
+
+  .userLinks {
     gap: var(--sm-gap);
   }
 }
