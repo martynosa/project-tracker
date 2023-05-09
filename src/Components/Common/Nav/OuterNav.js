@@ -6,11 +6,7 @@ import ThemeButton from '../ThemeButton';
 import { linkedinSVG, githubSVG } from '../../../helpers/svgIcons';
 
 const OuterNav = () => {
-  const { isDark, setIsDark } = useTheme();
-
-  const changeThemeHandler = () => {
-    setIsDark(!isDark);
-  };
+  const { isDark, toggleOfflineTheme } = useTheme();
 
   return (
     <nav className={`${classes.nav} ${classes.outer}`}>
@@ -35,7 +31,7 @@ const OuterNav = () => {
         </a>
 
         <div className={classes.theme}>
-          <ThemeButton onClick={changeThemeHandler} isDark={isDark} />
+          <ThemeButton onClick={toggleOfflineTheme} isDark={isDark} />
         </div>
       </div>
     </nav>

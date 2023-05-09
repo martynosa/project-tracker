@@ -3,13 +3,18 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const authContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const pastUser = localStorage.getItem('project-tracker');
-  const [user, setUser] = useState(JSON.parse(pastUser));
+  const pastUser = JSON.parse(localStorage.getItem('project-tracker'));
+
+  const [user, setUser] = useState(pastUser);
+  const [isLocal, setIsLocal] = useState(
+    pastUser !== null ? !pastUser.hasOwnProperty('token') : true
+  );
 
   const isAuth = !!user;
 
-  const login = (currUser) => {
+  const login = (currUser, isLocal) => {
     setUser(currUser);
+    setIsLocal(isLocal);
   };
 
   const logout = () => {
@@ -32,6 +37,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     user,
     isAuth,
+    isLocal,
     login,
     logout,
     updatePhoto,

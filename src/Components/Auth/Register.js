@@ -85,7 +85,7 @@ const Register = () => {
         method: 'POST',
         body: { email, name, password, rePassword },
       });
-      login(user);
+      login(user, false);
       navigate('/projects');
       openNotification('success', `Welcome ${user.name}.`);
     } catch (error) {

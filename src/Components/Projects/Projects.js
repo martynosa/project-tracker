@@ -8,6 +8,7 @@ import ProjectsContainer from './Containers/ProjectsContainer';
 
 import URL from '../../environment';
 import useFetch from '../../Hooks/useFetch';
+import { useAuth } from '../../Contexts/AuthContext';
 import searchService from '../../helpers/searchService';
 
 import { useNotification } from '../../Contexts/NotificationContext';
@@ -16,6 +17,8 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   const [searchQuery, setSearchQuery] = useState('');
+
+  const { isLocal } = useAuth();
 
   const { sendRequest, isLoading, setIsLoading } = useFetch();
   const { openNotification } = useNotification();
@@ -41,18 +44,21 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    sendRequest({
-      url: `${URL.ITEM_URL}`,
-      isAuthenticated: true,
-    })
-      .then((data) => {
-        setProjects(data);
+    console.log(isLocal);
+    if (!isLocal) {
+      sendRequest({
+        url: `${URL.ITEM_URL}`,
+        isAuthenticated: true,
       })
-      .catch((error) => {
-        setIsLoading(false);
-        openNotification('fail', error.message);
-      });
-  }, [sendRequest, setIsLoading, openNotification]);
+        .then((data) => {
+          setProjects(data);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          openNotification('fail', error.message);
+        });
+    }
+  }, [sendRequest, setIsLoading, openNotification, isLocal]);
 
   return (
     <div className={classes.container}>

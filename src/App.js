@@ -10,6 +10,7 @@ import UserGuard from './Guards/UserGuard';
 import GuestGuard from './Guards/GuesGuard';
 import Profile from './Components/Profile/Profile';
 import Create from './Components/Create/Create';
+import LocalAccount from './Components/Auth/LocalAccount';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/local" element={<LocalAccount />} />
         </Route>
 
         <Route element={<GuestGuard />}>

@@ -57,7 +57,7 @@ const Login = () => {
         method: 'POST',
         body: { email, password },
       });
-      login(user);
+      login(user, false);
       navigate('/projects');
       openNotification('success', `Welcome ${user.name}.`);
     } catch (error) {

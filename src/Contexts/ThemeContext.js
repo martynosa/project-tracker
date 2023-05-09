@@ -10,9 +10,12 @@ export const ThemeProvider = ({ children }) => {
 
   const [isDark, setIsDark] = useState(true);
 
+  const toggleOfflineTheme = () => setIsDark(!isDark);
+
   const value = {
     isDark,
     setIsDark,
+    toggleOfflineTheme,
   };
 
   useEffect(() => {

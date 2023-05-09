@@ -15,7 +15,8 @@ const Nav = () => {
     <>
       {isAuth && <InnerNav />}
       {(location.pathname === '/login' ||
-        location.pathname === '/register') && <BackNav />}
+        location.pathname === '/register' ||
+        location.pathname === '/local') && <BackNav />}
       {location.pathname === '/' && <OuterNav />}
     </>
   );
