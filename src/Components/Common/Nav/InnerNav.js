@@ -8,7 +8,11 @@ import { useNotification } from '../../../Contexts/NotificationContext';
 import URL from '../../../environment';
 
 import ThemeButton from '../ThemeButton';
-import { defaultUserSVG, kanbanSVG } from '../../../helpers/svgIcons';
+import {
+  defaultUserSVG,
+  kanbanSVG,
+  logoutSVG,
+} from '../../../helpers/svgIcons';
 
 const InnerNav = () => {
   const { user, logout, updateTheme } = useAuth();
@@ -77,6 +81,7 @@ const InnerNav = () => {
             className={`${classes.link} ${classes.logout}`}
             onClick={logoutHandler}
           >
+            {logoutSVG}
             Logout
           </p>
         </div>
