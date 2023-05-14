@@ -3,31 +3,19 @@ import { NavLink } from 'react-router-dom';
 import classes from './Nav.module.css';
 
 import { useAuth } from '../../../Contexts/AuthContext';
-import { useTheme } from '../../../Contexts/ThemeContext';
 import useFetch from '../../../Hooks/useFetch';
 import { useNotification } from '../../../Contexts/NotificationContext';
 import URL from '../../../environment';
 
 import ThemeButton from '../ThemeButton';
-import {
-  defaultUserSVG,
-  kanbanSVG,
-  localUserSVG,
-} from '../../../helpers/svgIcons';
+import { defaultUserSVG, kanbanSVG } from '../../../helpers/svgIcons';
 
 const InnerNav = () => {
-  const { user, isLocal, logout, updateTheme } = useAuth();
-  const { isDark, toggleOfflineTheme } = useTheme();
+  const { user, logout, updateTheme } = useAuth();
   const { sendRequest, isLoading, setIsLoading } = useFetch();
   const { openNotification } = useNotification();
 
   const changeThemeHandler = async () => {
-    if (isLocal) {
-      updateTheme(!isDark);
-      toggleOfflineTheme();
-      return;
-    }
-
     try {
       const newTheme = await sendRequest({
         url: `${URL.AUTH_URL}/updateTheme`,
@@ -75,12 +63,11 @@ const InnerNav = () => {
                 : `${classes.link} ${classes.name}`
             }
           >
-            {isLocal && localUserSVG}
-            {user.profilePhoto === 'default' && defaultUserSVG}
-            {!isLocal && user.profilePhoto !== 'default' && (
+            {user.photo === 'default' && defaultUserSVG}
+            {user.photo !== 'default' && (
               <img
                 className={classes.photo}
-                src={`${URL.PHOTO_URL}/${user?.photo}`}
+                src={`${URL.PHOTO_URL}/${user.photo}`}
                 alt="employee's mugshot"
               ></img>
             )}

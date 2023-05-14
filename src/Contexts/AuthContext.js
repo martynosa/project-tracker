@@ -6,15 +6,11 @@ export const AuthProvider = ({ children }) => {
   const pastUser = JSON.parse(localStorage.getItem('project-tracker'));
 
   const [user, setUser] = useState(pastUser);
-  const [isLocal, setIsLocal] = useState(
-    pastUser !== null ? !pastUser.hasOwnProperty('token') : true
-  );
 
   const isAuth = !!user;
 
-  const login = (currUser, isLocal) => {
+  const login = (currUser) => {
     setUser(currUser);
-    setIsLocal(isLocal);
   };
 
   const logout = () => {
@@ -37,7 +33,6 @@ export const AuthProvider = ({ children }) => {
   const value = {
     user,
     isAuth,
-    isLocal,
     login,
     logout,
     updatePhoto,
