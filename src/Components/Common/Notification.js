@@ -25,19 +25,14 @@ const Notification = () => {
       icon = null;
   }
 
-  if (isOpen) {
-    return (
-      <div className={`${classes.notificationContainer} ${classes.show}`}>
-        <div className={className}>
-          {icon}
-          {message}
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className={classes.notificationContainer}>
+    <div
+      className={
+        isOpen
+          ? `${classes.notificationContainer} ${classes.show}`
+          : classes.notificationContainer
+      }
+    >
       <div className={className}>
         {icon}
         {message}

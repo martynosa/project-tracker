@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  useCallback,
-  useEffect,
-} from 'react';
+import { createContext, useContext, useState, useCallback } from 'react';
 
 const notificationContext = createContext();
 
@@ -20,21 +14,14 @@ export const NotificationProvider = ({ children }) => {
 
   const openNotification = useCallback((status, message) => {
     setNotificationSettings({ isOpen: true, status, message });
-  }, []);
-
-  const value = { notificationSettings, openNotification };
-
-  useEffect(() => {
-    const notificationTimer = setTimeout(() => {
+    setTimeout(() => {
       setNotificationSettings((prevState) => {
         return { ...prevState, isOpen: false };
       });
     }, 2000);
+  }, []);
 
-    return () => {
-      clearTimeout(notificationTimer);
-    };
-  }, [notificationSettings]);
+  const value = { notificationSettings, openNotification };
 
   return (
     <notificationContext.Provider value={value}>

@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import classes from './Nav.module.css';
 
 import { useAuth } from '../../../Contexts/AuthContext';
-import useFetch from '../../../Hooks/useFetch';
 import { useNotification } from '../../../Contexts/NotificationContext';
 import URL from '../../../environment';
 
+import { useState } from 'react';
 import ThemeButton from '../ThemeButton';
 import {
   defaultUserSVG,
@@ -15,16 +15,16 @@ import {
 } from '../../../helpers/svgIcons';
 
 const InnerNav = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const { user, logout, updateTheme } = useAuth();
-  const { sendRequest, isLoading, setIsLoading } = useFetch();
   const { openNotification } = useNotification();
 
   const changeThemeHandler = async () => {
     try {
-      const newTheme = await sendRequest({
-        url: `${URL.AUTH_URL}/updateTheme`,
+      const newTheme = fetch(`${URL.AUTH_URL}/updateTheme`, {
         method: 'PATCH',
-        isAuthenticated: true,
+        headers: { 'Content-Type': 'application/json', token: user.token },
         body: { isDark: !user.isDark },
       });
       updateTheme(newTheme);
