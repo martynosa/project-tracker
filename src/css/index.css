@@ -31,15 +31,19 @@ body {
   font-size: var(--fs-default);
 }
 
+footer {
+  text-align: center;
+  padding: var(--sm-2v-pd);
+}
+
 ::-webkit-scrollbar {
   width: 1.2rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--violet-color);
+  background-color: var(--grey-color);
 }
 
-/* TEST */
 .darkTheme {
   color: var(--light-color);
   background-color: var(--dark-bg-color);

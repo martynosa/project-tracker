@@ -49,6 +49,7 @@
 }
 
 .features h2 {
+  color: var(--light-color);
   text-align: center;
   font-size: var(--fs-24);
   text-transform: uppercase;
@@ -69,10 +70,8 @@
   padding: var(--md-2v-pd);
   border-radius: var(--default-brdr-rd);
   transition: var(--animation);
-  background-color: antiquewhite;
 
   background-color: var(--light-color);
-  box-shadow: -6px 6px 0 var(--grey-color);
 }
 
 .card .header {
@@ -92,6 +91,21 @@
 .card .description {
   margin-bottom: var(--m-12);
   overflow-wrap: break-word;
+}
+
+.blue {
+  background-color: var(--blue-color);
+  box-shadow: -6px 6px 0 var(--new-card-shadow);
+}
+
+.orange {
+  background-color: var(--orange-color);
+  box-shadow: -6px 6px 0 var(--inProgress-card-shadow);
+}
+
+.green {
+  background-color: var(--green-color);
+  box-shadow: -6px 6px 0 var(--completed-card-shadow);
 }
 
 @media (max-width: 1280px) {
