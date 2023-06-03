@@ -17,4 +17,8 @@
   .projectsContainer {
     grid-template-columns: 1fr;
   }
+
+  .projectsContainer div {
+    margin-bottom: var(--m-12);
+  }
 }

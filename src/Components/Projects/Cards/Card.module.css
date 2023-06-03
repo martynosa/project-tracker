@@ -30,6 +30,7 @@
 }
 
 .add {
+  text-transform: uppercase;
   padding: var(--default-2v-pd);
   background-color: var(--grey-color);
   box-shadow: -6px 6px 0 var(--add-card-shadow);
@@ -45,18 +46,11 @@
   transform: translate(-6px, 6px);
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-bottom: var(--m-12);
-}
-
 .title {
   font-size: var(--fs-24);
   text-transform: uppercase;
   overflow: hidden;
+  margin-bottom: var(--m-12);
 }
 
 .description {
@@ -88,10 +82,6 @@
   border-radius: var(--default-brdr-rd);
   border: none;
   transition: var(--animation);
-}
-
-.trash:hover {
-  transform: translateX(-6px) scale(1.1);
 }
 
 .back {

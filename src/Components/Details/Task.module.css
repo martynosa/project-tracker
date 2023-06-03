@@ -1,0 +1,25 @@
+.task {
+  display: grid;
+  grid-template-columns: 1fr 6fr 2fr 1fr;
+  gap: var(--sm-gap);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--m-24);
+}
+
+.task button {
+  font-size: var(--fs-12);
+}
+
+.task p {
+  display: flex;
+  gap: var(--sm-gap);
+}
+
+.task svg {
+  color: var(--green-color);
+}
+
+.task.inProgress svg {
+  color: var(--orange-color);
+}

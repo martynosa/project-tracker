@@ -173,8 +173,8 @@ export const largePlusSVG = (
 export const trashSVG = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width="16"
+    height="16"
     fill="currentColor"
     className="bi bi-trash-fill"
     viewBox="0 0 16 16"
@@ -193,6 +193,32 @@ export const checkmarkSVG = (
     viewBox="0 0 16 16"
   >
     <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+  </svg>
+);
+
+export const largeCheckmarkSVG = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="currentColor"
+    className="bi bi-check"
+    viewBox="0 0 16 16"
+  >
+    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+  </svg>
+);
+
+export const largeExclamationMark = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="currentColor"
+    className="bi bi-exclamation"
+    viewBox="0 0 16 16"
+  >
+    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.553.553 0 0 1-1.1 0L7.1 4.995z" />
   </svg>
 );
 

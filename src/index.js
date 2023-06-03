@@ -6,6 +6,7 @@ import './css/index.css';
 import { NotificationProvider } from './Contexts/NotificationContext';
 import { AuthProvider } from './Contexts/AuthContext';
 import { ThemeProvider } from './Contexts/ThemeContext';
+import { ProjectsProvider } from './Contexts/ProjectsContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,9 +14,11 @@ root.render(
     <BrowserRouter>
       <NotificationProvider>
         <AuthProvider>
-          <ThemeProvider>
-            <App />
-          </ThemeProvider>
+          <ProjectsProvider>
+            <ThemeProvider>
+              <App />
+            </ThemeProvider>
+          </ProjectsProvider>
         </AuthProvider>
       </NotificationProvider>
     </BrowserRouter>

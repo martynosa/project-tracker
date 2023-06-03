@@ -8,33 +8,19 @@ import ProjectsContainer from './Containers/ProjectsContainer';
 
 import URL from '../../environment';
 import useFetch from '../../Hooks/useFetch';
+import { useProjects } from '../../Contexts/ProjectsContext';
 import searchService from '../../helpers/searchService';
 
 import { useNotification } from '../../Contexts/NotificationContext';
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
-
+  const { projects, setProjects } = useProjects();
   const [searchQuery, setSearchQuery] = useState('');
 
   const { sendRequest, isLoading, setIsLoading } = useFetch();
   const { openNotification } = useNotification();
 
   const filteredProjects = searchService(projects, searchQuery);
-
-  const updateProject = (project) => {
-    setProjects((state) => {
-      const newState = state.filter((p) => p._id !== project._id);
-      newState.push(project);
-      return newState;
-    });
-  };
-
-  const deleteProject = (projectId) => {
-    setProjects((state) => {
-      return state.filter((p) => p._id !== projectId);
-    });
-  };
 
   const searchHandler = (e) => {
     setSearchQuery(e.target.value);
@@ -52,19 +38,13 @@ const Projects = () => {
         setIsLoading(false);
         openNotification('fail', error.message);
       });
-  }, [sendRequest, setIsLoading, openNotification]);
+  }, [sendRequest, setIsLoading, openNotification, setProjects]);
 
   return (
     <div className={classes.container}>
       <Search searchHandler={searchHandler} />
       {isLoading && <LoadingContainer />}
-      {!isLoading && (
-        <ProjectsContainer
-          projects={filteredProjects}
-          updateProject={updateProject}
-          deleteProject={deleteProject}
-        />
-      )}
+      {!isLoading && <ProjectsContainer projects={filteredProjects} />}
     </div>
   );
 };

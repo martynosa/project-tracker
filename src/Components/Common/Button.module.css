@@ -54,7 +54,7 @@
   outline: none;
 }
 
-/* green*/
+/* green */
 .greenBtn {
   background-color: var(--green-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--green-btn-shdw-color);
@@ -64,6 +64,19 @@
 .greenBtn:active,
 .greenBtn:focus-visible {
   background-color: var(--green-btn-hvr-color);
+  outline: none;
+}
+
+/* red */
+.redBtn {
+  background-color: var(--red-btn-bg-color);
+  box-shadow: 0 0.6rem 0 var(--red-btn-shdw-color);
+}
+
+.redBtn:hover,
+.redBtn:active,
+.redBtn:focus-visible {
+  background-color: var(--red-btn-hvr-color);
   outline: none;
 }
 

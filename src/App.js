@@ -10,6 +10,7 @@ import UserGuard from './Guards/UserGuard';
 import GuestGuard from './Guards/GuesGuard';
 import Profile from './Components/Profile/Profile';
 import Create from './Components/Create/Create';
+import Details from './Components/Details/Details';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
 
         <Route element={<GuestGuard />}>
           <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<Projects />} />
+          <Route path="/projects/:id" element={<Details />} />
           <Route path="/create" element={<Create />} />
           <Route path="/profile" element={<Profile />} />
         </Route>

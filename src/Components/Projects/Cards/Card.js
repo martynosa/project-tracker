@@ -1,4 +1,4 @@
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import classes from './Card.module.css';
 import Tag from '../../Common/Tag';
@@ -6,39 +6,26 @@ import LoadingCard from './LoadingCard';
 import {
   largeArrowForwardSVG,
   largeArrowBackSVG,
-  trashSVG,
 } from '../../../helpers/svgIcons';
 
-import useFetch from '../../../Hooks/useFetch';
 import URL from '../../../environment';
+import useFetch from '../../../Hooks/useFetch';
+import { useProjects } from '../../../Contexts/ProjectsContext';
 
 import { useNotification } from '../../../Contexts/NotificationContext';
 
-const Card = ({ project, updateProject, deleteProject }) => {
+const Card = ({ project }) => {
   const { _id, name, description, keywords, status } = project;
 
-  // const navigate = useNavigate();
+  const { updateProject } = useProjects();
+
+  const navigate = useNavigate();
   const { sendRequest, setIsLoading, isLoading } = useFetch();
   const { openNotification } = useNotification();
 
   const toDetails = () => {
-    // navigate(`/projects/${_id}`);
+    navigate(`/projects/${_id}`);
     return;
-  };
-
-  const deleteHandler = async () => {
-    try {
-      await sendRequest({
-        url: `${URL.ITEM_URL}/${_id}`,
-        method: 'DELETE',
-        isAuthenticated: true,
-      });
-      deleteProject(_id);
-      openNotification('success', 'Project deleted.');
-    } catch (error) {
-      setIsLoading(false);
-      openNotification('fail', error.message);
-    }
   };
 
   const changeStatus = async (type) => {
@@ -84,20 +71,21 @@ const Card = ({ project, updateProject, deleteProject }) => {
     }
   };
 
+  const upgradeStatus = (e) => {
+    e.stopPropagation();
+    changeStatus('upgrade');
+  };
+
+  const degradeStatus = (e) => {
+    e.stopPropagation();
+    changeStatus('degrade');
+  };
+
   if (isLoading) return <LoadingCard />;
 
   return (
     <div className={`${classes.card} ${classes[status]}`} onClick={toDetails}>
-      <header className={classes.header}>
-        <h3 className={classes.title}>{name}</h3>
-        <button
-          className={`${classes.btn} ${classes.trash}`}
-          onClick={deleteHandler}
-          disabled={isLoading}
-        >
-          {trashSVG}
-        </button>
-      </header>
+      <h3 className={classes.title}>{name}</h3>
 
       <p className={classes.description}>{description}</p>
 
@@ -111,7 +99,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
         {status !== 'new' && (
           <button
             className={`${classes.btn} ${classes.back}`}
-            onClick={() => changeStatus('degrade')}
+            onClick={degradeStatus}
             disabled={isLoading}
           >
             {largeArrowBackSVG}
@@ -121,7 +109,7 @@ const Card = ({ project, updateProject, deleteProject }) => {
         {status !== 'completed' && (
           <button
             className={`${classes.btn} ${classes.forward}`}
-            onClick={() => changeStatus('upgrade')}
+            onClick={upgradeStatus}
             disabled={isLoading}
           >
             {largeArrowForwardSVG}

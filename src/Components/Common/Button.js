@@ -15,6 +15,9 @@ const Button = ({ type, color, onClick, isLoading, helperClass, children }) => {
     case 'violet':
       className = `${classes.btn} ${classes.violetBtn}`;
       break;
+    case 'red':
+      className = `${classes.btn} ${classes.redBtn}`;
+      break;
     default:
       className = `${classes.btn} ${classes.violetBtn}`;
   }
