@@ -24,7 +24,7 @@
 }
 
 .loading {
-  height: 24rem;
+  height: 18rem;
   width: 32rem;
   background-color: var(--loading-bg-color);
   border-radius: var(--default-brdr-rd);
