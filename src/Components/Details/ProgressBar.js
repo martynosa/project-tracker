@@ -7,7 +7,9 @@ const ProgressBar = ({ tasks, status }) => {
   if (completedTasks && tasks) {
     if (completedTasks.length !== 0 || tasks.length !== 0) {
       completedTasks = tasks.filter((t) => t.isCompleted === true);
-      projectProgress = (completedTasks.length * 100) / tasks.length;
+      projectProgress = Math.floor(
+        (completedTasks.length * 100) / tasks.length
+      );
     }
   }
 

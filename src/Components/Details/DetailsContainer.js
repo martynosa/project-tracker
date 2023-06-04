@@ -21,7 +21,9 @@ const DetailsContainer = ({ project, openModalHandler }) => {
           {trashSVG}
         </Button>
       </div>
-      <p className={classes[project.status]}>{statusTransformer(project)}</p>
+      <p className={classes[project.status]}>
+        {statusTransformer(project.status)}
+      </p>
       <ProgressBar tasks={project.tasks} status={project.status} />
       <p>{project.description}</p>
       <div className={classes.keywords}>
