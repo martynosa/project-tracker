@@ -1,0 +1,19 @@
+.dialog {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: var(--grey-color);
+  padding: var(--default-2v-pd);
+  border-radius: var(--default-brdr-rd);
+  border: none;
+}
+
+.dialog p {
+  margin-bottom: var(--m-12);
+}
+
+.dialog div {
+  display: flex;
+  gap: var(--sm-gap);
+  margin-bottom: var(--m-06);
+}

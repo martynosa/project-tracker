@@ -1,0 +1,50 @@
+.header {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: var(--sm-gap);
+  align-items: flex-start;
+}
+
+.header h2 {
+  max-width: 32rem;
+  word-wrap: break-word;
+}
+
+.details {
+  width: 42rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--md-gap);
+  margin-bottom: var(--m-48);
+}
+
+.details h2 {
+  font-size: var(--fs-24);
+}
+
+.details p {
+  color: var(--grey-color);
+  word-wrap: break-word;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sm-gap);
+}
+
+/* statuses */
+.new {
+  text-transform: capitalize;
+  color: var(--blue-color) !important;
+}
+
+.inProgress {
+  text-transform: capitalize;
+  color: var(--orange-color) !important;
+}
+
+.completed {
+  text-transform: capitalize;
+  color: var(--green-color) !important;
+}

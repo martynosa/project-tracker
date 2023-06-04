@@ -1,56 +1,31 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
 import classes from './Details.module.css';
 import Divider from '../Common/Divider';
-import Tag from '../Common/Tag';
-import Button from '../Common/Button';
-import { plusSVG, trashSVG } from '../../helpers/svgIcons';
-import { useNavigate, useParams } from 'react-router-dom';
-import useFetch from '../../Hooks/useFetch';
+import DetailsContainer from './DetailsContainer';
+import DeleteDialog from './DeleteDialog';
+import TasksContainer from './TasksContainer';
+import { lengthValidator } from '../../helpers/validators';
+import { dividerColorPicker } from '../../helpers/misc';
+
 import URL from '../../environment';
-import { useProjects } from '../../Contexts/ProjectsContext';
+import useFetch from '../../Hooks/useFetch';
 
 import { useNotification } from '../../Contexts/NotificationContext';
-import Task from './Task';
-import InputGroup from '../Common/InputGroup';
-import { lengthValidator } from '../../helpers/validators';
 
 const Details = () => {
+  const { id } = useParams();
+  const [project, setProject] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const HTMLDialog = useRef();
+
+  const navigate = useNavigate();
+
+  const { sendRequest, isLoading, setIsLoading } = useFetch();
+  const { openNotification } = useNotification();
 
   const openModalHandler = () => setIsModalOpen(true);
   const closeModalHandler = () => setIsModalOpen(false);
-
-  useEffect(() => {
-    isModalOpen ? HTMLDialog.current.showModal() : HTMLDialog.current.close();
-  }, [isModalOpen]);
-
-  const { id } = useParams();
-  const [project, setProject] = useState();
-  const { sendRequest, isLoading, setIsLoading } = useFetch();
-  const { deleteProject } = useProjects();
-  const { openNotification } = useNotification();
-  const navigate = useNavigate();
-
-  const [taskDescription, setTaskDescription] = useState();
-  const [taskDescriptionErr, setTaskDescriptionErr] = useState();
-
-  const dividerColorPicker = (project) => {
-    let color = 'blue';
-    if (!project) return color;
-    if (project.status === 'inProgress') color = 'orange';
-    if (project.status === 'completed') color = 'green';
-    return color;
-  };
-
-  const statusTransformer = (project) => {
-    if (!project) return '';
-
-    if (project.status === 'new' || project.status === 'completed')
-      return project.status;
-
-    return 'in progress';
-  };
 
   const deleteHandler = async () => {
     try {
@@ -59,7 +34,6 @@ const Details = () => {
         method: 'DELETE',
         isAuthenticated: true,
       });
-      deleteProject(id);
       navigate('/projects');
       openNotification('success', 'Project deleted.');
     } catch (error) {
@@ -68,9 +42,8 @@ const Details = () => {
     }
   };
 
-  const createTaskHandler = async () => {
+  const createTaskHandler = async (taskDescription) => {
     const taskValidationErr = lengthValidator(taskDescription, 3);
-    setTaskDescriptionErr(taskValidationErr);
 
     if (taskValidationErr.status) return;
 
@@ -126,12 +99,6 @@ const Details = () => {
     }
   };
 
-  const taskHandler = (e) => {
-    const taskDescription = e.target.value.trim();
-    setTaskDescriptionErr(lengthValidator(taskDescription, 3));
-    setTaskDescription(taskDescription);
-  };
-
   useEffect(() => {
     sendRequest({
       url: `${URL.ITEM_URL}/${id}`,
@@ -146,68 +113,28 @@ const Details = () => {
 
   return (
     <>
-      <dialog ref={HTMLDialog} className={classes.dialog}>
-        <p>Are you sure you want to delete the project?</p>
-        <div>
-          <Button color={'grey'} onClick={closeModalHandler}>
-            close
-          </Button>
-          <Button color={'red'} onClick={deleteHandler} isLoading={isLoading}>
-            delete
-          </Button>
-        </div>
-      </dialog>
+      <DeleteDialog
+        isModalOpen={isModalOpen}
+        closeModalHandler={closeModalHandler}
+        deleteHandler={deleteHandler}
+        isLoading={isLoading}
+      />
 
       <div className={classes.container}>
         <Divider color={dividerColorPicker(project)} />
 
-        <div className={classes.details}>
-          <div className={classes.header}>
-            <h2>{project?.name}</h2>
-            <Button
-              color={'red'}
-              onClick={openModalHandler}
-              isLoading={isLoading}
-            >
-              {trashSVG}
-            </Button>
-          </div>
-          <p className={classes[project?.status]}>
-            {statusTransformer(project)}
-          </p>
-          <p>{project?.description}</p>
-          <div className={classes.keywords}>
-            {project?.keywords.map((k) => (
-              <Tag key={k} keyword={k} />
-            ))}
-          </div>
-        </div>
-        <div className={classes.table}>
-          <ul>
-            {project?.tasks.map((t) => (
-              <Task
-                key={t.id}
-                task={t}
-                deleteTaskHandler={deleteTaskHandler}
-                updateTaskHandler={updateTaskHandler}
-              />
-            ))}
-          </ul>
+        <DetailsContainer
+          project={project}
+          openModalHandler={openModalHandler}
+        />
 
-          <InputGroup
-            label={'Add task'}
-            type={'text'}
-            onChangeHandler={taskHandler}
-            error={taskDescriptionErr}
-          />
-          <Button
-            color={'grey'}
-            helperClass={classes.addTask}
-            onClick={createTaskHandler}
-          >
-            {plusSVG} Add task
-          </Button>
-        </div>
+        <TasksContainer
+          id={id}
+          tasks={project?.tasks}
+          createTaskHandler={createTaskHandler}
+          deleteTaskHandler={deleteTaskHandler}
+          updateTaskHandler={updateTaskHandler}
+        />
       </div>
     </>
   );

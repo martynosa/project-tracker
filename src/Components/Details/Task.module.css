@@ -1,9 +1,8 @@
 .task {
   display: grid;
   grid-template-columns: 1fr 6fr 2fr 1fr;
-  gap: var(--sm-gap);
   align-items: center;
-  justify-content: center;
+  gap: var(--sm-gap);
   margin-bottom: var(--m-24);
 }
 
@@ -12,8 +11,8 @@
 }
 
 .task p {
-  display: flex;
-  gap: var(--sm-gap);
+  min-width: 16rem;
+  word-wrap: break-word;
 }
 
 .task svg {

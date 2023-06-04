@@ -1,9 +1,10 @@
+import classes from './Task.module.css';
+
+import Button from '../Common/Button';
 import {
   largeCheckmarkSVG,
   largeExclamationMark,
 } from '../../helpers/svgIcons';
-import Button from '../Common/Button';
-import classes from './Task.module.css';
 
 const Task = ({ task, deleteTaskHandler, updateTaskHandler }) => {
   return (
@@ -20,7 +21,7 @@ const Task = ({ task, deleteTaskHandler, updateTaskHandler }) => {
         color={task.isCompleted ? 'green' : 'orange'}
         onClick={() => updateTaskHandler(task)}
       >
-        {task.isCompleted ? 'completed' : 'in progress'}
+        {task.isCompleted ? 'completed' : 'working'}
       </Button>
       <Button color={'red'} onClick={() => deleteTaskHandler(task)}>
         delete
