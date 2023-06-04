@@ -3,10 +3,10 @@ import { useState } from 'react';
 import classes from './TasksContainer.module.css';
 
 import Task from './Task';
-import InputGroup from '../Common/InputGroup';
-import Button from '../Common/Button';
-import { plusSVG } from '../../helpers/svgIcons';
-import { lengthValidator } from '../../helpers/validators';
+import InputGroup from '../../../Common/InputGroup';
+import Button from '../../../Common/Button';
+import { plusSVG } from '../../../../helpers/svgIcons';
+import { lengthValidator } from '../../../../helpers/validators';
 
 const TasksContainer = ({
   project,

@@ -1,10 +1,10 @@
 import classes from './Task.module.css';
 
-import Button from '../Common/Button';
+import Button from '../../../Common/Button';
 import {
   largeCheckmarkSVG,
   largeExclamationMark,
-} from '../../helpers/svgIcons';
+} from '../../../../helpers/svgIcons';
 
 const Task = ({ task, deleteTaskHandler, updateTaskHandler }) => {
   return (

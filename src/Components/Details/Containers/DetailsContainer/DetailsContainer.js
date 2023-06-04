@@ -1,9 +1,9 @@
 import classes from './DetailsContainer.module.css';
 
-import Button from '../Common/Button';
-import Tag from '../Common/Tag';
-import { trashSVG } from '../../helpers/svgIcons';
-import { statusTransformer } from '../../helpers/misc';
+import Button from '../../../Common/Button';
+import Tag from '../../../Common/Tag';
+import { trashSVG } from '../../../../helpers/svgIcons';
+import { statusTransformer } from '../../../../helpers/misc';
 import ProgressBar from './ProgressBar';
 
 const DetailsContainer = ({ project, openModalHandler }) => {

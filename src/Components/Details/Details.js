@@ -3,9 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import classes from './Details.module.css';
 import Divider from '../Common/Divider';
-import DetailsContainer from './DetailsContainer';
-import DeleteDialog from './DeleteDialog';
-import TasksContainer from './TasksContainer';
+import DetailsContainer from './Containers/DetailsContainer/DetailsContainer';
+import DeleteDialog from './Containers/DetailsContainer/DeleteDialog';
+import TasksContainer from './Containers/TasksCointainer/TasksContainer';
 import { lengthValidator } from '../../helpers/validators';
 import { dividerColorPicker } from '../../helpers/misc';
 
