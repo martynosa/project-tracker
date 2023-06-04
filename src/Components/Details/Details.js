@@ -58,6 +58,7 @@ const Details = () => {
         },
       });
       setProject(updatedProject);
+      console.log(updatedProject.tasks);
       openNotification('success', 'Task added.');
     } catch (error) {
       setIsLoading(false);
@@ -71,7 +72,7 @@ const Details = () => {
         url: `${URL.ITEM_URL}/${id}/tasks`,
         method: 'DELETE',
         isAuthenticated: true,
-        body: { taskId: taskToDelete.id },
+        body: { taskId: taskToDelete._id },
       });
       setProject(updatedProject);
       openNotification('success', 'Task deleted.');
@@ -88,7 +89,7 @@ const Details = () => {
         method: 'PUT',
         isAuthenticated: true,
         body: {
-          taskId: taskToUpdate.id,
+          taskId: taskToUpdate._id,
           isCompleted: !taskToUpdate.isCompleted,
         },
       });

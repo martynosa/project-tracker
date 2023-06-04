@@ -57,13 +57,13 @@ const Card = ({ project }) => {
     }
 
     try {
-      const newProject = await sendRequest({
+      const updatedProject = await sendRequest({
         url: `${URL.ITEM_URL}/${_id}`,
         method: 'PUT',
         body: { status: updatedStatus },
         isAuthenticated: true,
       });
-      updateProject(newProject);
+      updateProject(updatedProject);
       openNotification('success', message);
     } catch (error) {
       setIsLoading(false);

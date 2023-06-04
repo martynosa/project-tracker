@@ -8,7 +8,6 @@ export const dividerColorPicker = (project) => {
 };
 
 export const statusTransformer = (status) => {
-  console.log(status);
   if (!status) return '';
 
   if (status === 'new' || status === 'completed') return status;
