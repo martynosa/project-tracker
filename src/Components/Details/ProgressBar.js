@@ -17,7 +17,9 @@ const ProgressBar = ({ tasks, status }) => {
     <div className={classes.progressBar}>
       <p>{projectProgress}%</p>
       <div
-        className={classes[status]}
+        className={
+          projectProgress === 100 ? classes.completed : classes[status]
+        }
         style={{ width: `${projectProgress}%` }}
       ></div>
     </div>
