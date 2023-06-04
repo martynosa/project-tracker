@@ -3,6 +3,9 @@
   grid-template-columns: 1fr 6fr 2fr 1fr;
   align-items: center;
   gap: var(--sm-gap);
+}
+
+.task:not(:last-child) {
   margin-bottom: var(--m-24);
 }
 

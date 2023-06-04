@@ -7,6 +7,7 @@
 
 .table ul {
   list-style: none;
+  margin-bottom: var(--m-24);
 }
 
 .addTaskInputGroup {
@@ -20,4 +21,11 @@
   align-self: flex-end;
   font-size: var(--fs-12);
   margin-bottom: var(--m-24);
+}
+
+.loading {
+  height: 24rem;
+  width: 32rem;
+  background-color: var(--loading-bg-color);
+  border-radius: var(--default-brdr-rd);
 }

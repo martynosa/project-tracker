@@ -33,7 +33,6 @@
   gap: var(--sm-gap);
 }
 
-/* statuses */
 .new {
   text-transform: capitalize;
   color: var(--blue-color) !important;
@@ -47,4 +46,10 @@
 .completed {
   text-transform: capitalize;
   color: var(--green-color) !important;
+}
+
+.loading {
+  height: 16rem;
+  background-color: var(--loading-bg-color);
+  border-radius: var(--default-brdr-rd);
 }

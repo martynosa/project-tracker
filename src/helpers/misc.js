@@ -1,5 +1,5 @@
 export const dividerColorPicker = (project) => {
-  let color = 'blue';
+  let color = 'loading';
   if (!project) return color;
   if (project.status === 'inProgress') color = 'orange';
   if (project.status === 'completed') color = 'green';

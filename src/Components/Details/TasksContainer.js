@@ -9,7 +9,7 @@ import { plusSVG } from '../../helpers/svgIcons';
 import { lengthValidator } from '../../helpers/validators';
 
 const TasksContainer = ({
-  tasks,
+  project,
   createTaskHandler,
   deleteTaskHandler,
   updateTaskHandler,
@@ -23,10 +23,37 @@ const TasksContainer = ({
     setTaskDescription(taskDescription);
   };
 
+  const handleTaskCreation = () =>
+    createTaskHandler(taskDescription, setTaskDescriptionErr);
+
+  if (!project) {
+    return (
+      <div className={classes.table}>
+        <ul className={classes.loading}></ul>
+        <div className={classes.addTaskInputGroup}>
+          <InputGroup
+            label={'Add task'}
+            type={'text'}
+            onChangeHandler={taskHandler}
+            error={taskDescriptionErr}
+          />
+          <Button
+            color={'grey'}
+            helperClass={classes.addTask}
+            onClick={() => createTaskHandler(taskDescription)}
+            isLoading={!project}
+          >
+            {plusSVG} Add task
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={classes.table}>
       <ul>
-        {tasks?.map((t) => (
+        {project.tasks.map((t) => (
           <Task
             key={t.id}
             task={t}
@@ -46,7 +73,7 @@ const TasksContainer = ({
         <Button
           color={'grey'}
           helperClass={classes.addTask}
-          onClick={() => createTaskHandler(taskDescription)}
+          onClick={handleTaskCreation}
         >
           {plusSVG} Add task
         </Button>

@@ -42,8 +42,9 @@ const Details = () => {
     }
   };
 
-  const createTaskHandler = async (taskDescription) => {
+  const createTaskHandler = async (taskDescription, setTaskDescriptionErr) => {
     const taskValidationErr = lengthValidator(taskDescription, 3);
+    setTaskDescriptionErr(taskValidationErr);
 
     if (taskValidationErr.status) return;
 
@@ -130,7 +131,7 @@ const Details = () => {
 
         <TasksContainer
           id={id}
-          tasks={project?.tasks}
+          project={project}
           createTaskHandler={createTaskHandler}
           deleteTaskHandler={deleteTaskHandler}
           updateTaskHandler={updateTaskHandler}

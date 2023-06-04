@@ -1,0 +1,26 @@
+.progressBar {
+  width: 100%;
+  border-radius: var(--default-brdr-rd);
+}
+
+.progressBar div {
+  height: 1rem;
+  border-radius: var(--default-brdr-rd);
+}
+
+.progressBar p {
+  font-size: var(--fs-14);
+  text-align: center;
+}
+
+.new {
+  background-color: var(--blue-color);
+}
+
+.inProgress {
+  background-color: var(--orange-color);
+}
+
+.completed {
+  background-color: var(--green-color);
+}

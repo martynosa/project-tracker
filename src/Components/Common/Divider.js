@@ -16,6 +16,9 @@ const Divider = ({ color }) => {
     case 'violet':
       className = `${className} ${classes.violet}`;
       break;
+    case 'loading':
+      className = `${className} ${classes.loading}`;
+      break;
     default:
       className = `${className} ${classes.violet}`;
   }
