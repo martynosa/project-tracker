@@ -7,7 +7,7 @@ import { statusTransformer } from '../../helpers/misc';
 
 const DetailsContainer = ({ project, openModalHandler }) => {
   return (
-    <div className={classes.details}>
+    <div className={classes.detailsContainer}>
       <div className={classes.header}>
         <h2>{project?.name}</h2>
         <Button color={'red'} onClick={openModalHandler}>
