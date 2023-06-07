@@ -8,7 +8,9 @@ const themeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const { user } = useAuth();
 
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
 
   const toggleOfflineTheme = () => setIsDark(!isDark);
 

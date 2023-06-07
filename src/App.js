@@ -11,16 +11,16 @@ import GuestGuard from './Guards/GuesGuard';
 import Profile from './Components/Profile/Profile';
 import Create from './Components/Create/Create';
 import Details from './Components/Details/Details';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 function App() {
-  useEffect(() => {
-    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
-      ? 'dark'
-      : 'light';
+  // useEffect(() => {
+  //   const preferredTheme = window.matchMedia(
+  //     '(prefers-color-scheme: dark)'
+  //   ).matches;
 
-    console.log(preferredTheme);
-  }, []);
+  //   console.log(preferredTheme);
+  // }, []);
 
   return (
     <>
