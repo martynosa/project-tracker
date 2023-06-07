@@ -89,6 +89,7 @@
 }
 
 .card .description {
+  min-height: 1.6rem;
   margin-bottom: var(--m-12);
   overflow-wrap: break-word;
 }
@@ -108,7 +109,7 @@
   box-shadow: -6px 6px 0 var(--completed-card-shadow);
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 960px) {
   .hero,
   .features .list {
     max-width: 64rem;

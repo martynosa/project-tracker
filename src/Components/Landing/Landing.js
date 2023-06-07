@@ -51,7 +51,7 @@ const Landing = () => {
               </header>
               <p className={classes.description}>
                 Keep track of your projects and their progress by easily
-                categorizing them into new, in progress, or completed.
+                categorizing them into new, in progress or completed.
               </p>
             </div>
             <div className={`${classes.card} ${classes.orange}`}>
@@ -70,8 +70,7 @@ const Landing = () => {
                 </h3>
               </header>
               <p className={classes.description}>
-                Simple and intuitive interface that lets you focus on your work
-                without any distractions
+                Lets you focus on your work without any distractions
               </p>
             </div>
           </div>
