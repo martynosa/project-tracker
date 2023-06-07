@@ -54,38 +54,36 @@ const InnerNav = () => {
           Projects
         </NavLink>
 
-        <div className={classes.userLinks}>
-          <ThemeButton
-            onClick={changeThemeHandler}
-            isDark={user.isDark}
-            isLoading={isLoading}
-          />
-          <NavLink
-            to="/profile"
-            className={({ isActive }) =>
-              isActive
-                ? `${classes.active} ${classes.link} ${classes.name}`
-                : `${classes.link} ${classes.name}`
-            }
-          >
-            {user.photo === 'default' && defaultUserSVG}
-            {user.photo !== 'default' && (
-              <img
-                className={classes.photo}
-                src={`${URL.PHOTO_URL}/${user.photo}`}
-                alt="employee's mugshot"
-              ></img>
-            )}
-            {user?.name}
-          </NavLink>
-          <p
-            className={`${classes.link} ${classes.logout}`}
-            onClick={logoutHandler}
-          >
-            {logoutSVG}
-            Logout
-          </p>
-        </div>
+        <ThemeButton
+          onClick={changeThemeHandler}
+          isDark={user.isDark}
+          isLoading={isLoading}
+        />
+        <NavLink
+          to="/profile"
+          className={({ isActive }) =>
+            isActive
+              ? `${classes.active} ${classes.link} ${classes.name}`
+              : `${classes.link} ${classes.name}`
+          }
+        >
+          {user.photo === 'default' && defaultUserSVG}
+          {user.photo !== 'default' && (
+            <img
+              className={classes.photo}
+              src={`${URL.PHOTO_URL}/${user.photo}`}
+              alt="employee's mugshot"
+            ></img>
+          )}
+          {user?.name}
+        </NavLink>
+        <p
+          className={`${classes.link} ${classes.logout}`}
+          onClick={logoutHandler}
+        >
+          {logoutSVG}
+          Logout
+        </p>
       </div>
     </nav>
   );

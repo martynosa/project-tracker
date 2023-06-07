@@ -28,7 +28,13 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: var(--default-gap);
+}
+
+.innerLinks a:first-child {
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .link {
@@ -52,12 +58,6 @@
 .link:focus-visible {
   outline: none;
   box-shadow: var(--focus-shdw);
-}
-
-.userLinks {
-  display: flex;
-  align-items: center;
-  gap: var(--default-gap);
 }
 
 .photo {
@@ -92,9 +92,5 @@
 @media (max-width: 420px) {
   .innerLinks {
     font-size: var(--fs-14);
-  }
-
-  .userLinks {
-    gap: var(--sm-gap);
   }
 }
