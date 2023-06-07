@@ -11,8 +11,17 @@ import GuestGuard from './Guards/GuesGuard';
 import Profile from './Components/Profile/Profile';
 import Create from './Components/Create/Create';
 import Details from './Components/Details/Details';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
+      ? 'dark'
+      : 'light';
+
+    console.log(preferredTheme);
+  }, []);
+
   return (
     <>
       <Nav />
