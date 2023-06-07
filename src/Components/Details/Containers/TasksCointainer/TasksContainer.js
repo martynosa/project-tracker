@@ -55,7 +55,7 @@ const TasksContainer = ({
       <ul>
         {project.tasks.map((t) => (
           <Task
-            key={t.id}
+            key={t._id}
             task={t}
             deleteTaskHandler={deleteTaskHandler}
             updateTaskHandler={updateTaskHandler}
