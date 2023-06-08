@@ -4,7 +4,6 @@ import { useAuth } from '../../../Contexts/AuthContext';
 
 import OuterNav from './OuterNav';
 import BackNav from './BackNav';
-import InnerNav from './InnerNav';
 import Hamburger from './Hamburger';
 
 const Nav = () => {
