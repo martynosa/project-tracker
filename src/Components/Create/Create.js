@@ -12,7 +12,7 @@ import DescriptionGroup from './DescriptionGroup';
 import KeywordGroup from './KeywordGroup';
 import Button from '../Common/Button';
 import KeywordTags from './KeywordTags';
-import Divider from '../Common/Divider';
+import PageTitle from '../Common/PageTitle';
 
 import { useNotification } from '../../Contexts/NotificationContext';
 import URL from '../../environment';
@@ -89,8 +89,8 @@ const Create = () => {
 
   return (
     <div className={classes.container}>
+      <PageTitle color={'green'}>create task</PageTitle>
       <form className={classes.form} onSubmit={onSumbitHandler}>
-        <Divider color={'green'} />
         <InputGroup
           label={'name'}
           onChangeHandler={nameHandler}

@@ -31,6 +31,11 @@ body {
   font-size: var(--fs-default);
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 footer {
   text-align: center;
   padding: var(--sm-2v-pd);
@@ -56,4 +61,9 @@ footer {
 
 svg {
   fill: currentColor;
+}
+
+/* not sure if this is needed */
+.no-scroll {
+  overflow: hidden;
 }

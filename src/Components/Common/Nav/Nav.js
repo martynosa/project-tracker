@@ -5,6 +5,7 @@ import { useAuth } from '../../../Contexts/AuthContext';
 import OuterNav from './OuterNav';
 import BackNav from './BackNav';
 import InnerNav from './InnerNav';
+import Hamburger from './Hamburger';
 
 const Nav = () => {
   const location = useLocation();
@@ -13,7 +14,7 @@ const Nav = () => {
 
   return (
     <>
-      {isAuth && <InnerNav />}
+      {isAuth && <Hamburger />}
       {location.pathname === '/login' ||
         (location.pathname === '/register' && <BackNav />)}
       {location.pathname === '/' && <OuterNav />}

@@ -60,13 +60,6 @@
   box-shadow: var(--focus-shdw);
 }
 
-.photo {
-  height: 3.2rem;
-  width: 3.2rem;
-  border-radius: 50%;
-  border: 3px solid var(--orange-color);
-}
-
 .name {
   color: var(--orange-color);
   display: flex;
@@ -92,5 +85,89 @@
 @media (max-width: 420px) {
   .innerLinks {
     font-size: var(--fs-14);
+  }
+}
+
+/* testing hamburger */
+
+.hamburger {
+  position: absolute;
+  right: 0px;
+
+  transition: var(--animation);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+
+  gap: var(--md-gap);
+  background-color: #dee2e6;
+  padding: var(--default-2v-pd);
+
+  height: 100vh;
+  z-index: 999;
+}
+
+.hamburger .linksGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--md-gap);
+}
+
+.burgerBtn {
+  z-index: 999;
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  font-size: 3.2rem;
+}
+
+.burgerBtnClose {
+  font-size: 3.2rem;
+}
+
+.close {
+  transform: translate(100%);
+  opacity: 0;
+}
+
+.whoAmI {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sm-gap);
+}
+
+.whoAmI div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sm-gap);
+}
+
+.whoAmI p {
+  font-size: var(--fs-24);
+  color: var(--dark-color);
+}
+
+.photo {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  border: 4px solid var(--orange-color);
+}
+
+@media (max-width: 420px) {
+  .photo {
+    height: 3.2rem;
+    width: 3.2rem;
+    border: 2px solid var(--orange-color);
+  }
+
+  .whoAmI p {
+    font-size: var(--fs-18);
   }
 }

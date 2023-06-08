@@ -1,0 +1,38 @@
+.pageTitle {
+  font-size: var(--fs-24);
+  text-transform: uppercase;
+  border-radius: var(--default-brdr-rd);
+  padding: var(--default-2v-pd);
+  margin-bottom: var(--m-12);
+
+  display: flex;
+  align-items: center;
+  gap: var(--sm-gap);
+  margin-bottom: var(--m-24);
+}
+
+.pageTitle div {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--default-brdr-rd);
+}
+
+.blue {
+  background-color: var(--blue-color);
+}
+
+.orange {
+  background-color: var(--orange-color);
+}
+
+.green {
+  background-color: var(--green-color);
+}
+
+.violet {
+  background-color: var(--violet-color);
+}
+
+.loading {
+  background-color: var(--loading-bg-color);
+}

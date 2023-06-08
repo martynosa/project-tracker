@@ -1,7 +1,16 @@
-.uploadPhotoform {
+.container {
+  min-height: calc(100vh - (var(--nav-height) + var(--notification-height)));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  width: 32rem;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  margin-bottom: var(--m-48);
 }
 
 .photoInputGroup {

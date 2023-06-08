@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
 import classes from './PasswordChange.module.css';
-import Button from '../Common/Button';
 
+import Button from '../Common/Button';
 import InputGroup from '../Common/InputGroup';
+import PageTitle from '../Common/PageTitle';
 
 import {
   defaultErr,
@@ -80,35 +81,39 @@ const PasswordChange = () => {
   };
 
   return (
-    <form className={classes.passwordForm} onSubmit={onSubmitHandler}>
-      <InputGroup
-        label={'password'}
-        type={'password'}
-        onChangeHandler={passwordHandler}
-        error={passwordErr}
-        value={password}
-      />
+    <section className={classes.container}>
+      <PageTitle color={'orange'}>password change</PageTitle>
 
-      <InputGroup
-        label={'new password'}
-        type={'password'}
-        onChangeHandler={newPasswordHandler}
-        error={newPasswordErr}
-        value={newPassword}
-      />
+      <form className={classes.form} onSubmit={onSubmitHandler}>
+        <InputGroup
+          label={'password'}
+          type={'password'}
+          onChangeHandler={passwordHandler}
+          error={passwordErr}
+          value={password}
+        />
 
-      <InputGroup
-        label={'repeat new password'}
-        type={'password'}
-        onChangeHandler={newRePasswordHandler}
-        error={newRePasswordErr}
-        value={newRePassword}
-      />
+        <InputGroup
+          label={'new password'}
+          type={'password'}
+          onChangeHandler={newPasswordHandler}
+          error={newPasswordErr}
+          value={newPassword}
+        />
 
-      <Button type={'submit'} color="orange" isLoading={isLoading}>
-        Change password
-      </Button>
-    </form>
+        <InputGroup
+          label={'repeat new password'}
+          type={'password'}
+          onChangeHandler={newRePasswordHandler}
+          error={newRePasswordErr}
+          value={newRePassword}
+        />
+
+        <Button type={'submit'} color="orange" isLoading={isLoading}>
+          Change password
+        </Button>
+      </form>
+    </section>
   );
 };
 

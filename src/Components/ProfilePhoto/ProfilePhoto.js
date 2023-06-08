@@ -1,13 +1,14 @@
-import classes from './UploadPhoto.module.css';
+import classes from './ProfilePhoto.module.css';
+
 import Button from '../Common/Button';
+import PageTitle from '../Common/PageTitle';
 
 import { useNotification } from '../../Contexts/NotificationContext';
-
 import { useAuth } from '../../Contexts/AuthContext';
 import URL from '../../environment';
 import useFetch from '../../Hooks/useFetch';
 
-const UploadPhoto = () => {
+const ProfilePhoto = () => {
   const { updatePhoto } = useAuth();
   const { sendRequest, isLoading, setIsLoading } = useFetch();
 
@@ -39,21 +40,25 @@ const UploadPhoto = () => {
   };
 
   return (
-    <form className={classes.uploadPhotoform} onSubmit={onSubmitHandler}>
-      <div className={classes.photoInputGroup}>
-        <label htmlFor="photo">Select photo</label>
-        <input id="photo" type="file" name="photo" />
-      </div>
-      <Button
-        type={'submit'}
-        color="violet"
-        isLoading={isLoading}
-        helperClass={classes.uploadBtn}
-      >
-        Upload
-      </Button>
-    </form>
+    <section className={classes.container}>
+      <PageTitle color={'violet'}>profile photo</PageTitle>
+
+      <form className={classes.form} onSubmit={onSubmitHandler}>
+        <div className={classes.photoInputGroup}>
+          <label htmlFor="photo">Select photo</label>
+          <input id="photo" type="file" name="photo" />
+        </div>
+        <Button
+          type={'submit'}
+          color="violet"
+          isLoading={isLoading}
+          helperClass={classes.uploadBtn}
+        >
+          Upload
+        </Button>
+      </form>
+    </section>
   );
 };
 
-export default UploadPhoto;
+export default ProfilePhoto;
