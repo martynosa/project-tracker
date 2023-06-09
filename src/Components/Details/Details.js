@@ -58,7 +58,6 @@ const Details = () => {
         },
       });
       setProject(updatedProject);
-      console.log(updatedProject.tasks);
       openNotification('success', 'Task added.');
     } catch (error) {
       setIsLoading(false);
