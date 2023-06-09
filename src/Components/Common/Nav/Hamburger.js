@@ -9,7 +9,11 @@ import { useNotification } from '../../../Contexts/NotificationContext';
 import URL from '../../../environment';
 
 import ThemeButton from '../ThemeButton';
-import { defaultUserSVG } from '../../../helpers/svgIcons';
+import {
+  largeCrossSVG,
+  defaultUserSVG,
+  hamburgerSVG,
+} from '../../../helpers/svgIcons';
 
 const Hamburger = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,13 +54,13 @@ const Hamburger = () => {
           className={classes.burgerBtn}
           onClick={() => setIsMenuOpen(true)}
         >
-          open
+          {hamburgerSVG}
         </button>
       )}
       <nav
         className={
           !isMenuOpen
-            ? `${classes.hamburger} ${classes.close}`
+            ? `${classes.hamburger} ${classes.closed}`
             : `${classes.hamburger}`
         }
       >
@@ -122,7 +126,7 @@ const Hamburger = () => {
           className={`${classes.burgerBtnClose}`}
           onClick={() => setIsMenuOpen(false)}
         >
-          close
+          {largeCrossSVG}
         </button>
       </nav>
     </>
