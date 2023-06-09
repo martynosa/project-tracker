@@ -33,6 +33,23 @@
   gap: var(--sm-gap);
 }
 
+.created,
+.updated {
+  font-size: var(--fs-12);
+}
+
+.created {
+  margin-bottom: var(--m-03);
+}
+
+.created span {
+  color: var(--green-color);
+}
+
+.updated span {
+  color: var(--orange-color);
+}
+
 .new {
   text-transform: capitalize;
   color: var(--blue-color) !important;

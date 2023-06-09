@@ -32,6 +32,7 @@ const Projects = () => {
       isAuthenticated: true,
     })
       .then((data) => {
+        console.log(data);
         setProjects(data);
       })
       .catch((error) => {

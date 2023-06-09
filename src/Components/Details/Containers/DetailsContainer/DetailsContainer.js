@@ -13,6 +13,9 @@ const DetailsContainer = ({ project, openModalHandler }) => {
     );
   }
 
+  const createdAt = project.createdAt.split('.')[0].split('T');
+  const updatedAt = project.updatedAt.split('.')[0].split('T');
+
   return (
     <div className={classes.detailsContainer}>
       <div className={classes.header}>
@@ -30,6 +33,14 @@ const DetailsContainer = ({ project, openModalHandler }) => {
         {project.keywords.map((k) => (
           <Tag key={k} keyword={k} />
         ))}
+      </div>
+      <div>
+        <p className={classes.created}>
+          <span>Created:</span> {`${createdAt[0]} at ${createdAt[1]}`}
+        </p>
+        <p className={classes.updated}>
+          <span>Updated:</span> {`${updatedAt[0]} at ${updatedAt[1]}`}
+        </p>
       </div>
     </div>
   );
