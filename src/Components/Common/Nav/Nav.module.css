@@ -93,7 +93,7 @@
 .hamburger {
   position: absolute;
   top: 18px;
-  right: 24px;
+  left: 24px;
 
   transition: var(--animation);
 
@@ -121,8 +121,8 @@
 .burgerBtn {
   z-index: 999;
   position: absolute;
-  right: 24px;
   top: 18px;
+  left: 24px;
   border: none;
   color: inherit;
   background-color: transparent;
@@ -140,7 +140,7 @@
 }
 
 .closed {
-  transform: translateX(100%);
+  transform: translateX(-100%);
   opacity: 0;
 }
 
