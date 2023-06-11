@@ -5,11 +5,7 @@ const Search = ({ searchHandler }) => {
   return (
     <div className={classes.searchGroup}>
       {searchSVG}
-      <input
-        className={classes.searchInput}
-        placeholder="Search ..."
-        onChange={searchHandler}
-      />
+      <input placeholder="Search ..." onChange={searchHandler} />
     </div>
   );
 };

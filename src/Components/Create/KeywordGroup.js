@@ -37,7 +37,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
   };
 
   return (
-    <div className={classes.keywordGroup}>
+    <div className={classes.keywordsGroup}>
       <label htmlFor="keyword">Keyword</label>
       <input
         id="keyword"
@@ -49,11 +49,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
       {keywordErr.status && (
         <p className={classes.errorMessage}>{keywordErr.message}</p>
       )}
-      <Button
-        color={'violet'}
-        onClick={addHandler}
-        helperClass={classes.keywordBtn}
-      >
+      <Button color={'violet'} onClick={addHandler}>
         {plusSVG} Add
       </Button>
     </div>

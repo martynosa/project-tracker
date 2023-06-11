@@ -5,7 +5,7 @@
   gap: var(--sm-gap);
 }
 
-.searchInput {
+.searchGroup input {
   background-color: var(--input-bg-color);
   border-radius: var(--default-brdr-rd);
   padding: var(--default-2v-pd);
@@ -14,7 +14,7 @@
   transition: var(--animation);
 }
 
-.searchInput:focus {
+.searchGroup input:focus {
   outline: none;
   box-shadow: var(--focus-shdw);
 }

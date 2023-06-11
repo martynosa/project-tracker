@@ -5,12 +5,12 @@ import { useTheme } from '../../../Contexts/ThemeContext';
 import ThemeButton from '../ThemeButton';
 import { linkedinSVG, githubSVG } from '../../../helpers/svgIcons';
 
-const OuterNav = () => {
+const ExternalNav = () => {
   const { isDark, toggleOfflineTheme } = useTheme();
 
   return (
     <nav className={classes.nav}>
-      <div className={classes.externalLinks}>
+      <div className={classes.externalLinksGroup}>
         <a
           className={classes.link}
           href="https://www.linkedin.com/in/martynosa/"
@@ -30,12 +30,10 @@ const OuterNav = () => {
           Github
         </a>
 
-        <div className={`${classes.link} ${classes.theme}`}>
-          <ThemeButton onClick={toggleOfflineTheme} isDark={isDark} />
-        </div>
+        <ThemeButton onClick={toggleOfflineTheme} isDark={isDark} />
       </div>
     </nav>
   );
 };
 
-export default OuterNav;
+export default ExternalNav;

@@ -1,6 +1,6 @@
 import classes from './Button.module.css';
 
-const Button = ({ type, color, onClick, isLoading, helperClass, children }) => {
+const Button = ({ type, color, onClick, isLoading, children }) => {
   const typeBtn = type || 'button';
 
   let className = classes.btn;
@@ -22,7 +22,6 @@ const Button = ({ type, color, onClick, isLoading, helperClass, children }) => {
       className = `${classes.btn} ${classes.violetBtn}`;
   }
 
-  if (helperClass) className = `${className} ${helperClass}`;
   if (isLoading) className = `${className} ${classes.loading}`;
 
   return (

@@ -2,6 +2,8 @@
   color: var(--violet-color) !important;
 }
 
+/* external + back */
+
 .nav {
   height: var(--nav-height);
   padding: var(--default-2v-pd);
@@ -11,7 +13,7 @@
   justify-content: space-between;
 }
 
-.externalLinks {
+.externalLinksGroup {
   width: 100%;
   display: flex;
   align-items: center;
@@ -19,22 +21,9 @@
   gap: var(--default-gap);
 }
 
-.theme {
+.externalLinksGroup button {
   margin-left: auto;
   margin-right: 0;
-}
-
-.innerLinks {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--default-gap);
-}
-
-.innerLinks a:first-child {
-  margin-left: 0;
-  margin-right: auto;
 }
 
 .link {
@@ -55,11 +44,6 @@
   color: var(--hvr-color);
 }
 
-.link:focus-visible {
-  outline: none;
-  box-shadow: var(--focus-shdw);
-}
-
 .name {
   color: var(--orange-color);
   display: flex;
@@ -71,24 +55,18 @@
 }
 
 @media (max-width: 768px) {
-  .externalLinks {
+  .externalLinksGroup {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .theme {
+  .externalLinksGroup button {
     margin-left: unset;
     margin-right: unset;
   }
 }
 
-@media (max-width: 420px) {
-  .innerLinks {
-    font-size: var(--fs-14);
-  }
-}
-
-/* testing hamburger */
+/* hamburger */
 
 .hamburger {
   position: absolute;
@@ -103,7 +81,7 @@
   justify-content: flex-start;
 
   gap: var(--md-gap);
-  background-color: var(--hamburger-bg-color);
+  background-color: var(--menu-bg-color);
   color: var(--dark-color);
   padding: var(--default-2v-pd);
   border-radius: var(--default-brdr-rd);
@@ -118,7 +96,7 @@
   gap: var(--md-gap);
 }
 
-.burgerBtn {
+.hamburgerBtn {
   z-index: 999;
   position: absolute;
   top: 18px;
@@ -128,14 +106,14 @@
   background-color: transparent;
 }
 
-.burgerBtnClose {
+.hamburgerBtnClose {
   font-size: 3.2rem;
   border: none;
   background-color: transparent;
   transition: var(--animation);
 }
-.burgerBtn:hover,
-.burgerBtnClose:hover {
+.hamburgerBtn:hover,
+.hamburgerBtnClose:hover {
   color: var(--hvr-color);
 }
 
@@ -164,7 +142,7 @@
   color: var(--dark-color);
 }
 
-.photo {
+.whoAmI img {
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
@@ -172,7 +150,7 @@
 }
 
 @media (max-width: 420px) {
-  .photo {
+  .whoAmI img {
     height: 3.2rem;
     width: 3.2rem;
     border: 2px solid var(--orange-color);

@@ -51,7 +51,7 @@ const Hamburger = () => {
     <>
       {!isMenuOpen && (
         <button
-          className={classes.burgerBtn}
+          className={classes.hamburgerBtn}
           onClick={() => setIsMenuOpen(true)}
         >
           {hamburgerSVG}
@@ -69,7 +69,6 @@ const Hamburger = () => {
             {user.photo === 'default' && defaultUserSVG}
             {user.photo !== 'default' && (
               <img
-                className={classes.photo}
                 src={`${URL.PHOTO_URL}/${user.photo}`}
                 alt="employee's mugshot"
               ></img>
@@ -123,7 +122,7 @@ const Hamburger = () => {
         </div>
 
         <button
-          className={`${classes.burgerBtnClose}`}
+          className={`${classes.hamburgerBtnClose}`}
           onClick={() => setIsMenuOpen(false)}
         >
           {largeCrossSVG}

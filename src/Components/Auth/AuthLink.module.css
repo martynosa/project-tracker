@@ -16,11 +16,6 @@
   transition: var(--animation);
 }
 
-.link:focus-visible {
-  outline: none;
-  box-shadow: var(--focus-shdw);
-}
-
 /* VIOLET LINK*/
 .violetLink {
   color: var(--violet-btn-bg-color);

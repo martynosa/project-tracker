@@ -16,9 +16,7 @@ import PasswordChange from './Components/PasswordChange/PasswordChange';
 function App() {
   return (
     <>
-      <div className="no-scroll">
-        <Nav />
-      </div>
+      <Nav />
 
       <Notification />
 

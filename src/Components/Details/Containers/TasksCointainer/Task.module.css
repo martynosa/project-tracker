@@ -5,10 +5,6 @@
   gap: var(--sm-gap);
 }
 
-.task:not(:last-child) {
-  margin-bottom: var(--m-24);
-}
-
 .task button {
   font-size: var(--fs-12);
 }

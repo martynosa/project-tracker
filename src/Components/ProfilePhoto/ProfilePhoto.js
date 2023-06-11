@@ -48,12 +48,7 @@ const ProfilePhoto = () => {
           <label htmlFor="photo">Select photo</label>
           <input id="photo" type="file" name="photo" />
         </div>
-        <Button
-          type={'submit'}
-          color="violet"
-          isLoading={isLoading}
-          helperClass={classes.uploadBtn}
-        >
+        <Button type={'submit'} color="violet" isLoading={isLoading}>
           Upload
         </Button>
       </form>

@@ -1,4 +1,4 @@
-.keywordGroup {
+.keywordsGroup {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -7,11 +7,11 @@
   margin-bottom: var(--m-24);
 }
 
-.keywordGroup label {
+.keywordsGroup label {
   text-transform: capitalize;
 }
 
-.keywordGroup input {
+.keywordsGroup input {
   background-color: var(--input-bg-color);
   border-radius: var(--default-brdr-rd);
   padding: var(--default-2v-pd);
@@ -19,7 +19,11 @@
   transition: var(--animation);
 }
 
-.keywordGroup input:focus {
+.keywordsGroup button {
+  margin-top: var(--m-06);
+}
+
+.keywordsGroup input:focus {
   outline: none;
   box-shadow: var(--focus-shdw);
 }
@@ -32,8 +36,4 @@
   color: var(--error-color);
   font-size: var(--fs-12);
   margin-top: var(--m-03);
-}
-
-.keywordBtn {
-  margin-top: var(--m-06);
 }

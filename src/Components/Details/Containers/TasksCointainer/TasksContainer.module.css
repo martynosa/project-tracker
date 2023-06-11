@@ -3,29 +3,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: var(--m-24);
 }
 
 .table ul {
   list-style: none;
   margin-bottom: var(--m-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--default-gap);
 }
 
-.addTaskInputGroup {
+.inputGroup {
   width: 32rem;
   display: flex;
   flex-direction: column;
 }
 
-.addTask {
+.inputGroup button {
   width: unset;
   align-self: flex-end;
   font-size: var(--fs-12);
-  margin-bottom: var(--m-24);
 }
 
 .loading {
-  height: 18rem;
   width: 32rem;
+  height: 16rem;
   background-color: var(--loading-bg-color);
   border-radius: var(--default-brdr-rd);
 }

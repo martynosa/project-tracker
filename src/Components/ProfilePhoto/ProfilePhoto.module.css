@@ -11,13 +11,13 @@
   width: 32rem;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  gap: var(--sm-gap);
 }
 
 .photoInputGroup {
   background-color: var(--input-bg-color);
   color: var(--dark-color);
-  border-top-left-radius: 0.6rem;
-  border-bottom-left-radius: 0.6rem;
+  border-radius: var(--default-brdr-rd);
   padding: var(--default-2v-pd);
   transform: translateY(6px);
 }
@@ -33,9 +33,4 @@
 
 .photoInputGroup input {
   display: none;
-}
-
-.uploadBtn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }

@@ -3,6 +3,9 @@
   border: none;
   transition: var(--animation);
   opacity: 1;
+
+  display: flex;
+  justify-content: center;
 }
 
 .themeButton:hover {

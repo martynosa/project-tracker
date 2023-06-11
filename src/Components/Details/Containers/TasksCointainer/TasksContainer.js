@@ -27,27 +27,7 @@ const TasksContainer = ({
     createTaskHandler(taskDescription, setTaskDescriptionErr);
 
   if (!project) {
-    return (
-      <div className={classes.table}>
-        <ul className={classes.loading}></ul>
-        <div className={classes.addTaskInputGroup}>
-          <InputGroup
-            label={'Add task'}
-            type={'text'}
-            onChangeHandler={taskHandler}
-            error={taskDescriptionErr}
-          />
-          <Button
-            color={'grey'}
-            helperClass={classes.addTask}
-            onClick={() => createTaskHandler(taskDescription)}
-            isLoading={!project}
-          >
-            {plusSVG} Add task
-          </Button>
-        </div>
-      </div>
-    );
+    return <div className={`${classes.table} ${classes.loading}`}></div>;
   }
 
   return (
@@ -63,18 +43,14 @@ const TasksContainer = ({
         ))}
       </ul>
 
-      <div className={classes.addTaskInputGroup}>
+      <div className={classes.inputGroup}>
         <InputGroup
           label={'Add task'}
           type={'text'}
           onChangeHandler={taskHandler}
           error={taskDescriptionErr}
         />
-        <Button
-          color={'grey'}
-          helperClass={classes.addTask}
-          onClick={handleTaskCreation}
-        >
+        <Button color={'grey'} onClick={handleTaskCreation}>
           {plusSVG} Add task
         </Button>
       </div>

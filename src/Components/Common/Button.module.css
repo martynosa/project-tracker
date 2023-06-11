@@ -23,11 +23,6 @@
   box-shadow: none;
 }
 
-.btn:focus-visible {
-  outline: none;
-  box-shadow: var(--focus-shdw);
-}
-
 /* violet */
 .violetBtn {
   background-color: var(--violet-btn-bg-color);
@@ -35,8 +30,7 @@
 }
 
 .violetBtn:hover,
-.violetBtn:active,
-.violetBtn:focus-visible {
+.violetBtn:active {
   background-color: var(--violet-btn-hvr-color);
   outline: none;
 }
@@ -48,8 +42,7 @@
 }
 
 .orangeBtn:hover,
-.orangeBtn:active,
-.orangeBtn:focus-visible {
+.orangeBtn:active {
   background-color: var(--orange-btn-hvr-color);
   outline: none;
 }
@@ -61,8 +54,7 @@
 }
 
 .greenBtn:hover,
-.greenBtn:active,
-.greenBtn:focus-visible {
+.greenBtn:active {
   background-color: var(--green-btn-hvr-color);
   outline: none;
 }
@@ -74,8 +66,7 @@
 }
 
 .redBtn:hover,
-.redBtn:active,
-.redBtn:focus-visible {
+.redBtn:active {
   background-color: var(--red-btn-hvr-color);
   outline: none;
 }

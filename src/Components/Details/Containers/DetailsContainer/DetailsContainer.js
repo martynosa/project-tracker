@@ -29,7 +29,7 @@ const DetailsContainer = ({ project, openModalHandler }) => {
       </p>
       <ProgressBar tasks={project.tasks} status={project.status} />
       <p>{project.description}</p>
-      <div className={classes.keywords}>
+      <div className={classes.keywordsContainer}>
         {project.keywords.map((k) => (
           <Tag key={k} keyword={k} />
         ))}

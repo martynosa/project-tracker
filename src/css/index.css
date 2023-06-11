@@ -62,8 +62,3 @@ footer {
 svg {
   fill: currentColor;
 }
-
-/* not sure if this is needed */
-.no-scroll {
-  overflow: hidden;
-}
