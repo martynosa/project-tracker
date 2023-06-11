@@ -8,22 +8,8 @@ const Notification = () => {
   const { notificationSettings } = useNotification();
   let { isOpen, status, message } = notificationSettings;
 
-  let className = '';
-  let icon = null;
-
-  switch (status) {
-    case 'success':
-      className = `${classes.notification} ${classes.success}`;
-      icon = checkmarkSVG;
-      break;
-    case 'fail':
-      className = `${classes.notification} ${classes.fail}`;
-      icon = crossSVG;
-      break;
-    default:
-      className = '';
-      icon = null;
-  }
+  let className = status === 'success' ? classes.success : classes.fail;
+  let icon = status === 'success' ? checkmarkSVG : crossSVG;
 
   return (
     <div

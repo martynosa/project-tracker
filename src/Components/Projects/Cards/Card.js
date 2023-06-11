@@ -89,11 +89,11 @@ const Card = ({ project }) => {
 
       <p className={classes.description}>{description}</p>
 
-      <div className={classes.tags}>
+      <ul>
         {keywords.map((k, index) => (
           <Tag key={`${_id}-${index}`} keyword={k} />
         ))}
-      </div>
+      </ul>
 
       <div className={classes.btnGroup}>
         {status !== 'new' && (

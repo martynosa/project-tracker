@@ -14,8 +14,8 @@ const Nav = () => {
   return (
     <>
       {isAuth && <Hamburger />}
-      {location.pathname === '/login' ||
-        (location.pathname === '/register' && <BackNav />)}
+      {(location.pathname === '/login' ||
+        location.pathname === '/register') && <BackNav />}
       {location.pathname === '/' && <ExternalNav />}
     </>
   );

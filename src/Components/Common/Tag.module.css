@@ -1,4 +1,5 @@
 .tag {
+  font-size: var(--fs-12);
   text-transform: uppercase;
   color: var(--light-color);
   padding: var(--sm-2v-pd);

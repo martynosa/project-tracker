@@ -99,7 +99,7 @@ const Register = () => {
     <div className={classes.container}>
       <PageTitle color={'orange'}>register</PageTitle>
 
-      <form className={classes.form} onSubmit={onSubmitHandler}>
+      <form onSubmit={onSubmitHandler}>
         <InputGroup
           label={'email'}
           onChangeHandler={emailHandler}

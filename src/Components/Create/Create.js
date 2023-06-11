@@ -90,7 +90,7 @@ const Create = () => {
   return (
     <div className={classes.container}>
       <PageTitle color={'green'}>create task</PageTitle>
-      <form className={classes.form} onSubmit={onSumbitHandler}>
+      <form onSubmit={onSumbitHandler}>
         <InputGroup
           label={'name'}
           onChangeHandler={nameHandler}

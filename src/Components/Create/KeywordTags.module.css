@@ -1,11 +1,12 @@
-.keywordTagGroup {
+.keywordsGroup {
   display: flex;
   flex-direction: column;
 
   margin-bottom: var(--m-24);
 }
 
-.keywordTagList {
+.keywordsGroup ul {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: var(--sm-gap);

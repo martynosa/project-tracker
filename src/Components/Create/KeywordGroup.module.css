@@ -1,4 +1,4 @@
-.keywordsGroup {
+.keywordGroup {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -7,11 +7,11 @@
   margin-bottom: var(--m-24);
 }
 
-.keywordsGroup label {
+.keywordGroup label {
   text-transform: capitalize;
 }
 
-.keywordsGroup input {
+.keywordGroup input {
   background-color: var(--input-bg-color);
   border-radius: var(--default-brdr-rd);
   padding: var(--default-2v-pd);
@@ -19,11 +19,11 @@
   transition: var(--animation);
 }
 
-.keywordsGroup button {
+.keywordGroup button {
   margin-top: var(--m-06);
 }
 
-.keywordsGroup input:focus {
+.keywordGroup input:focus {
   outline: none;
   box-shadow: var(--focus-shdw);
 }

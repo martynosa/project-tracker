@@ -29,11 +29,11 @@ const DetailsContainer = ({ project, openModalHandler }) => {
       </p>
       <ProgressBar tasks={project.tasks} status={project.status} />
       <p>{project.description}</p>
-      <div className={classes.keywordsContainer}>
+      <ul>
         {project.keywords.map((k) => (
           <Tag key={k} keyword={k} />
         ))}
-      </div>
+      </ul>
       <div>
         <p className={classes.created}>
           <span>Created:</span> {`${createdAt[0]} at ${createdAt[1]}`}

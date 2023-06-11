@@ -50,9 +50,9 @@ const Tag = ({ keyword, removeKeyword }) => {
   };
 
   return (
-    <span className={className} onClick={removeHandler}>
+    <li className={className} onClick={removeHandler}>
       {keyword}
-    </span>
+    </li>
   );
 };
 

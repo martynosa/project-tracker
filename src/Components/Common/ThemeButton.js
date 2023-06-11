@@ -4,11 +4,10 @@ import { sunSVG, moonSVG } from '../../helpers/svgIcons';
 
 const ThemeButton = ({ onClick, isDark, isLoading }) => {
   let className = `${classes.themeButton}`;
-  let icon = moonSVG;
+  let icon = isDark ? sunSVG : moonSVG;
 
   if (isDark) {
     className = `${classes.themeButton} ${classes.isDark}`;
-    icon = sunSVG;
   }
 
   if (isLoading) {

@@ -16,7 +16,7 @@ const InputGroup = ({ label, type, onChangeHandler, error, value }) => {
         id={inputId}
         type={inputType}
         onChange={onChangeHandler}
-        className={errorStatus ? classes.errorInput : undefined}
+        className={errorStatus ? classes.errorInput : ''}
         value={value}
       />
       {errorStatus && <p className={classes.errorMessage}>{errorMessage}</p>}

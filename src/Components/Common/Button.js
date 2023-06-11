@@ -7,19 +7,19 @@ const Button = ({ type, color, onClick, isLoading, children }) => {
 
   switch (color) {
     case 'orange':
-      className = `${classes.btn} ${classes.orangeBtn}`;
+      className = `${classes.btn} ${classes.orange}`;
       break;
     case 'green':
-      className = `${classes.btn} ${classes.greenBtn}`;
+      className = `${classes.btn} ${classes.green}`;
       break;
     case 'violet':
-      className = `${classes.btn} ${classes.violetBtn}`;
+      className = `${classes.btn} ${classes.violet}`;
       break;
     case 'red':
-      className = `${classes.btn} ${classes.redBtn}`;
+      className = `${classes.btn} ${classes.red}`;
       break;
     default:
-      className = `${classes.btn} ${classes.violetBtn}`;
+      className = `${classes.btn} ${classes.violet}`;
   }
 
   if (isLoading) className = `${className} ${classes.loading}`;

@@ -23,7 +23,8 @@
   color: var(--grey-color);
 }
 
-.detailsContainer .keywordsContainer {
+.detailsContainer ul {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: var(--sm-gap);

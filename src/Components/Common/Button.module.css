@@ -24,49 +24,49 @@
 }
 
 /* violet */
-.violetBtn {
+.violet {
   background-color: var(--violet-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--violet-btn-shdw-color);
 }
 
-.violetBtn:hover,
-.violetBtn:active {
+.violet:hover,
+.violet:active {
   background-color: var(--violet-btn-hvr-color);
   outline: none;
 }
 
 /* orange */
-.orangeBtn {
+.orange {
   background-color: var(--orange-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--orange-btn-shdw-color);
 }
 
-.orangeBtn:hover,
-.orangeBtn:active {
+.orange:hover,
+.orange:active {
   background-color: var(--orange-btn-hvr-color);
   outline: none;
 }
 
 /* green */
-.greenBtn {
+.green {
   background-color: var(--green-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--green-btn-shdw-color);
 }
 
-.greenBtn:hover,
-.greenBtn:active {
+.green:hover,
+.green:active {
   background-color: var(--green-btn-hvr-color);
   outline: none;
 }
 
 /* red */
-.redBtn {
+.red {
   background-color: var(--red-btn-bg-color);
   box-shadow: 0 0.6rem 0 var(--red-btn-shdw-color);
 }
 
-.redBtn:hover,
-.redBtn:active {
+.red:hover,
+.red:active {
   background-color: var(--red-btn-hvr-color);
   outline: none;
 }

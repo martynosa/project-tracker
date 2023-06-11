@@ -17,19 +17,19 @@
 }
 
 /* VIOLET LINK*/
-.violetLink {
+.violet {
   color: var(--violet-btn-bg-color);
 }
 
-.violetLink:hover {
+.violet:hover {
   color: var(--violet-btn-hvr-color);
 }
 
 /* ORANGE LINK*/
-.orangeLink {
+.orange {
   color: var(--orange-btn-bg-color);
 }
 
-.orangeLink:hover {
+.orange:hover {
   color: var(--orange-btn-hvr-color);
 }

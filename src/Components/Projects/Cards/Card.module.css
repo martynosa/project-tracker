@@ -58,7 +58,8 @@
   overflow-wrap: break-word;
 }
 
-.tags {
+.card ul {
+  list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

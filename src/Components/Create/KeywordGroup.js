@@ -19,7 +19,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
     setKeyword(keyword);
   };
 
-  const addHandler = () => {
+  const addKeywordHandler = () => {
     const keywordValidationErr = lengthValidator(keyword, 3);
     const dupKeywordValidationErr = dupKeywordValidator(keyword, keywords);
     if (keywordValidationErr.status) {
@@ -37,7 +37,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
   };
 
   return (
-    <div className={classes.keywordsGroup}>
+    <div className={classes.keywordGroup}>
       <label htmlFor="keyword">Keyword</label>
       <input
         id="keyword"
@@ -49,7 +49,7 @@ const KeywordGroup = ({ addKeyword, keywords }) => {
       {keywordErr.status && (
         <p className={classes.errorMessage}>{keywordErr.message}</p>
       )}
-      <Button color={'violet'} onClick={addHandler}>
+      <Button color={'violet'} onClick={addKeywordHandler}>
         {plusSVG} Add
       </Button>
     </div>
