@@ -1,4 +1,4 @@
-.hero {
+.heroContainer > div {
   min-height: 100vh;
   max-width: 128rem;
   margin: 0 auto;
@@ -10,30 +10,31 @@
   gap: var(--bg-gap);
 }
 
-.main {
+.heroContainer > div h1 {
   width: 50%;
   font-size: var(--fs-52);
   font-weight: var(--md-weight);
   margin-bottom: var(--m-12);
 }
 
-.main span {
+.heroContainer > div h1 span {
   display: block;
   color: var(--violet-color);
   text-transform: uppercase;
   font-weight: var(--mx-weight);
 }
 
-.secondary {
+.heroContainer > div h2 {
   font-size: var(--fs-24);
   margin-bottom: var(--m-48);
 }
 
-.btnBox {
+.btnGroup {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  gap: 0.6rem;
+  gap: var(--md-gap);
 }
 
 .featuresContainer {
@@ -48,7 +49,7 @@
   gap: var(--bg-gap);
 }
 
-.features h2 {
+.featuresContainer > div h2 {
   color: var(--light-color);
   text-align: center;
   font-size: var(--fs-24);
@@ -57,15 +58,15 @@
   margin-bottom: var(--m-12);
 }
 
-.features .list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.featuresContainer ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: var(--bg-gap);
 }
 
 .card {
-  width: 28rem;
+  max-width: 34rem;
   color: var(--dark-color);
   padding: var(--md-2v-pd);
   border-radius: var(--default-brdr-rd);
@@ -74,7 +75,7 @@
   background-color: var(--light-color);
 }
 
-.card .header {
+.card header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,13 +83,13 @@
   margin-bottom: var(--m-12);
 }
 
-.card .title {
+.card header h3 {
   font-size: var(--fs-24);
   text-transform: uppercase;
   overflow: hidden;
 }
 
-.card .description {
+.card p {
   min-height: 1.6rem;
   margin-bottom: var(--m-12);
   overflow-wrap: break-word;
@@ -109,14 +110,28 @@
   box-shadow: -6px 6px 0 var(--completed-card-shadow);
 }
 
+.grey {
+  background-color: var(--grey-color);
+  box-shadow: -6px 6px 0 var(--add-card-shadow);
+}
+
+@media (max-width: 1280px) {
+  .featuresContainer ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 960px) {
-  .hero,
-  .features .list {
+  .heroContainer > div {
     max-width: 64rem;
     flex-direction: column;
   }
 
-  .main {
+  .featuresContainer ul {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContainer > div h1 {
     font-size: var(--fs-48);
   }
 }

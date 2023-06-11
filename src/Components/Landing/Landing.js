@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import classes from './Landing.module.css';
 import Button from '../Common/Button';
 import { arrowUpRightSVG } from '../../helpers/svgIcons';
+import AuthLink from '../Auth/AuthLink';
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -14,66 +15,81 @@ const Landing = () => {
   return (
     <>
       <section className={classes.heroContainer}>
-        <div className={classes.hero}>
+        <div>
           <div>
-            <h1 className={classes.main}>
+            <h1>
               Reach new productivity<span>peaks</span>
             </h1>
 
-            <p className={classes.secondary}>
+            <h2 className={classes.secondary}>
               Create, track and manage your projects with ease.
-            </p>
+            </h2>
 
-            <div className={classes.btnBox}>
+            <div className={classes.btnGroup}>
               <Button color={'orange'} onClick={getStartedHandler}>
                 Get started
                 {arrowUpRightSVG}
               </Button>
+              <AuthLink to={'login'} />
             </div>
           </div>
 
-          <div className={classes.imgBox}>
-            <img
-              className={classes.img}
-              src="../../imgs/landing-4.webp"
-              alt="people brainstorming"
-            />
+          <div>
+            <img src="../../imgs/landing-4.webp" alt="people brainstorming" />
           </div>
         </div>
       </section>
       <section className={classes.featuresContainer}>
-        <div className={classes.features}>
+        <div>
           <h2>features</h2>
-          <div className={classes.list}>
-            <div className={`${classes.card} ${classes.blue}`}>
-              <header className={classes.header}>
-                <h3 className={classes.title}>Status-based organization</h3>
+          <ul>
+            <li className={`${classes.card} ${classes.blue}`}>
+              <header>
+                <h3>Kanban-style Project Management</h3>
               </header>
-              <p className={classes.description}>
-                Keep track of your projects and their progress by easily
-                categorizing them into new, in progress or completed.
+              <p>
+                Effortlessly manage your projects using our intuitive
+                Kanban-style interface. Assign different statuses (new, in
+                progress, completed) to each project, allowing you to visualize
+                and track their progress easily. Stay organized and on top of
+                your tasks
               </p>
-            </div>
-            <div className={`${classes.card} ${classes.orange}`}>
-              <header className={classes.header}>
-                <h3 className={classes.title}>Task management</h3>
+            </li>
+            <li className={`${classes.card} ${classes.orange}`}>
+              <header>
+                <h3>Task Tracking and Progress Monitoring</h3>
               </header>
-              <p className={classes.description}>
-                Each project has its own subset of smaller tasks that you can
-                toggle to keep track of progress.
+              <p>
+                Break down your projects into smaller, manageable tasks. Track
+                the progress of each task within a project, ensuring clear
+                visibility and accountability. Stay informed about the status of
+                each task and make informed decisions based on real-time
+                updates.
               </p>
-            </div>
-            <div className={`${classes.card} ${classes.green}`}>
-              <header className={classes.header}>
-                <h3 className={classes.title}>
-                  Simple and intuitive interface
-                </h3>
+            </li>
+            <li className={`${classes.card} ${classes.green}`}>
+              <header>
+                <h3>User Profile Customization</h3>
               </header>
-              <p className={classes.description}>
-                Lets you focus on your work without any distractions
+              <p>
+                Create your personalized profile and make it your own. Upload a
+                profile picture to give your account a unique identity. Showcase
+                your professional image and enhance collaboration within the
+                platform.
               </p>
-            </div>
-          </div>
+            </li>
+            <li className={`${classes.card} ${classes.grey}`}>
+              <header>
+                <h3>Sleek and Intuitive User Interface</h3>
+              </header>
+              <p>
+                Enjoy a seamless project management experience with our
+                intuitive user interface. Navigate effortlessly, organize
+                projects efficiently, and stay in control. Our streamlined
+                design ensures a user-friendly and hassle-free experience.
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
       <footer>Made by martynosa for demo purposes.</footer>
