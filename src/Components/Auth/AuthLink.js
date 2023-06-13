@@ -2,11 +2,7 @@ import { Link } from 'react-router-dom';
 
 import classes from './AuthLink.module.css';
 
-import {
-  arrowBackSVG,
-  arrowForwardSVG,
-  arrowUpRightSVG,
-} from '../../helpers/svgIcons';
+import { arrowBackSVG, arrowForwardSVG } from '../../helpers/svgIcons';
 
 const AuthLink = ({ to }) => {
   const toLogin = (
