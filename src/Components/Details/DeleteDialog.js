@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 
 import classes from './DeleteDialog.module.css';
-import Button from '../../../Common/Button';
+import Button from '../Common/Button';
 
 const DeleteDialog = ({
   isModalOpen,

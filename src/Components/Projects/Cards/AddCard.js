@@ -7,12 +7,12 @@ import { largePlusSVG } from '../../../helpers/svgIcons';
 const AddCard = () => {
   const navigate = useNavigate();
 
-  const toCreate = () => {
+  const toCreateHandler = () => {
     navigate('/create');
   };
 
   return (
-    <div className={`${classes.card} ${classes.add}`} onClick={toCreate}>
+    <div className={`${classes.card} ${classes.add}`} onClick={toCreateHandler}>
       {largePlusSVG} Add project
     </div>
   );

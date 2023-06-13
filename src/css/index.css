@@ -28,7 +28,7 @@ html {
 body {
   font-family: 'Rubik', sans-serif;
   line-height: 1;
-  font-size: var(--fs-default);
+  font-size: var(--fs-16);
 }
 
 html,

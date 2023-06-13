@@ -8,14 +8,17 @@ import Button from '../../../Common/Button';
 import { plusSVG } from '../../../../helpers/svgIcons';
 import { lengthValidator } from '../../../../helpers/validators';
 
-const TasksContainer = ({
-  project,
-  createTaskHandler,
-  deleteTaskHandler,
-  updateTaskHandler,
-}) => {
+import URL from '../../../../environment';
+import useFetch from '../../../../Hooks/useFetch';
+
+import { useNotification } from '../../../../Contexts/NotificationContext';
+
+const TasksContainer = ({ project, setProject }) => {
   const [taskDescription, setTaskDescription] = useState();
   const [taskDescriptionErr, setTaskDescriptionErr] = useState();
+
+  const { sendRequest, setIsLoading } = useFetch();
+  const { openNotification } = useNotification();
 
   const taskHandler = (e) => {
     const taskDescription = e.target.value.trim();
@@ -23,8 +26,63 @@ const TasksContainer = ({
     setTaskDescription(taskDescription);
   };
 
-  const handleTaskCreation = () =>
-    createTaskHandler(taskDescription, setTaskDescriptionErr);
+  const createTaskHandler = async () => {
+    const taskValidationErr = lengthValidator(taskDescription, 3);
+    setTaskDescriptionErr(taskValidationErr);
+
+    if (taskValidationErr.status) return;
+
+    try {
+      const updatedProject = await sendRequest({
+        url: `${URL.ITEM_URL}/${project._id}/tasks`,
+        method: 'POST',
+        isAuthenticated: true,
+        body: {
+          description: taskDescription,
+        },
+      });
+      setProject(updatedProject);
+      openNotification('success', 'Task added.');
+    } catch (error) {
+      setIsLoading(false);
+      openNotification('fail', error.message);
+    }
+  };
+
+  const deleteTaskHandler = async (taskToDelete) => {
+    try {
+      const updatedProject = await sendRequest({
+        url: `${URL.ITEM_URL}/${project._id}/tasks`,
+        method: 'DELETE',
+        isAuthenticated: true,
+        body: { taskId: taskToDelete._id },
+      });
+      setProject(updatedProject);
+      openNotification('success', 'Task deleted.');
+    } catch (error) {
+      setIsLoading(false);
+      openNotification('fail', error.message);
+    }
+  };
+
+  const updateTaskHandler = async (taskToUpdate) => {
+    try {
+      const updatedProject = await sendRequest({
+        url: `${URL.ITEM_URL}/${project._id}/tasks`,
+        method: 'PUT',
+        isAuthenticated: true,
+        body: {
+          taskId: taskToUpdate._id,
+          isCompleted: !taskToUpdate.isCompleted,
+        },
+      });
+      setProject(updatedProject);
+      openNotification('success', 'Task updated.');
+    } catch (error) {
+      setIsLoading(false);
+      openNotification('fail', error.message);
+    }
+  };
 
   if (!project) {
     return <div className={`${classes.table} ${classes.loading}`}></div>;
@@ -50,7 +108,7 @@ const TasksContainer = ({
           onChangeHandler={taskHandler}
           error={taskDescriptionErr}
         />
-        <Button color={'grey'} onClick={handleTaskCreation}>
+        <Button color={'grey'} onClick={createTaskHandler}>
           {plusSVG} Add task
         </Button>
       </div>

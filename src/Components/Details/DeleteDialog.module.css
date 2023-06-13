@@ -4,7 +4,7 @@
   transform: translate(-50%, 50%);
   background-color: var(--grey-color);
   padding: var(--default-2v-pd);
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
   border: none;
 }
 

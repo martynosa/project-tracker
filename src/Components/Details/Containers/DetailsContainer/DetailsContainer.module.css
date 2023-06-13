@@ -21,6 +21,7 @@
 
 .detailsContainer p {
   color: var(--grey-color);
+  word-wrap: break-word;
 }
 
 .detailsContainer ul {
@@ -65,5 +66,5 @@
 .loading {
   height: 24rem;
   background-color: var(--loading-bg-color);
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
 }

@@ -4,9 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import classes from './Details.module.css';
 import PageTitle from '../Common/PageTitle';
 import DetailsContainer from './Containers/DetailsContainer/DetailsContainer';
-import DeleteDialog from './Containers/DetailsContainer/DeleteDialog';
+import DeleteDialog from './DeleteDialog';
 import TasksContainer from './Containers/TasksCointainer/TasksContainer';
-import { lengthValidator } from '../../helpers/validators';
 import { dividerColorPicker } from '../../helpers/misc';
 
 import URL from '../../environment';
@@ -27,7 +26,7 @@ const Details = () => {
   const openModalHandler = () => setIsModalOpen(true);
   const closeModalHandler = () => setIsModalOpen(false);
 
-  const deleteHandler = async () => {
+  const deleteProjectHandler = async () => {
     try {
       await sendRequest({
         url: `${URL.ITEM_URL}/${id}`,
@@ -42,64 +41,6 @@ const Details = () => {
     }
   };
 
-  const createTaskHandler = async (taskDescription, setTaskDescriptionErr) => {
-    const taskValidationErr = lengthValidator(taskDescription, 3);
-    setTaskDescriptionErr(taskValidationErr);
-
-    if (taskValidationErr.status) return;
-
-    try {
-      const updatedProject = await sendRequest({
-        url: `${URL.ITEM_URL}/${id}/tasks`,
-        method: 'POST',
-        isAuthenticated: true,
-        body: {
-          description: taskDescription,
-        },
-      });
-      setProject(updatedProject);
-      openNotification('success', 'Task added.');
-    } catch (error) {
-      setIsLoading(false);
-      openNotification('fail', error.message);
-    }
-  };
-
-  const deleteTaskHandler = async (taskToDelete) => {
-    try {
-      const updatedProject = await sendRequest({
-        url: `${URL.ITEM_URL}/${id}/tasks`,
-        method: 'DELETE',
-        isAuthenticated: true,
-        body: { taskId: taskToDelete._id },
-      });
-      setProject(updatedProject);
-      openNotification('success', 'Task deleted.');
-    } catch (error) {
-      setIsLoading(false);
-      openNotification('fail', error.message);
-    }
-  };
-
-  const updateTaskHandler = async (taskToUpdate) => {
-    try {
-      const updatedProject = await sendRequest({
-        url: `${URL.ITEM_URL}/${id}/tasks`,
-        method: 'PUT',
-        isAuthenticated: true,
-        body: {
-          taskId: taskToUpdate._id,
-          isCompleted: !taskToUpdate.isCompleted,
-        },
-      });
-      setProject(updatedProject);
-      openNotification('success', 'Task updated.');
-    } catch (error) {
-      setIsLoading(false);
-      openNotification('fail', error.message);
-    }
-  };
-
   useEffect(() => {
     sendRequest({
       url: `${URL.ITEM_URL}/${id}`,
@@ -108,16 +49,17 @@ const Details = () => {
       .then((data) => setProject(data))
       .catch((error) => {
         setIsLoading(false);
+        navigate('/projects');
         openNotification('fail', error.message);
       });
-  }, [id, openNotification, sendRequest, setIsLoading]);
+  }, [id, openNotification, navigate, sendRequest, setIsLoading]);
 
   return (
     <>
       <DeleteDialog
         isModalOpen={isModalOpen}
         closeModalHandler={closeModalHandler}
-        deleteHandler={deleteHandler}
+        deleteHandler={deleteProjectHandler}
         isLoading={isLoading}
       />
 
@@ -129,13 +71,7 @@ const Details = () => {
           openModalHandler={openModalHandler}
         />
 
-        <TasksContainer
-          id={id}
-          project={project}
-          createTaskHandler={createTaskHandler}
-          deleteTaskHandler={deleteTaskHandler}
-          updateTaskHandler={updateTaskHandler}
-        />
+        <TasksContainer project={project} setProject={setProject} />
       </div>
     </>
   );

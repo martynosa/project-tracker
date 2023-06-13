@@ -11,7 +11,7 @@
   font-size: var(--fs-14);
   color: var(--dark-color);
   padding: var(--sm-2v-pd);
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
 
   display: flex;
   align-items: center;

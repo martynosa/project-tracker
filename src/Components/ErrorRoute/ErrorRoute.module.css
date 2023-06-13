@@ -1,0 +1,24 @@
+.container {
+  min-height: calc(100vh - (var(--nav-height) + var(--notification-height)));
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container div {
+  width: 32rem;
+  padding: var(--default-2v-pd);
+}
+
+.container div h1 {
+  font-size: var(--fs-24);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: var(--m-12);
+}
+
+.container div h1 span {
+  color: var(--error-color);
+}

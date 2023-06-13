@@ -1,11 +1,11 @@
 .progressBar {
   width: 100%;
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
 }
 
 .progressBar div {
   height: 1rem;
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
 }
 
 .progressBar p {

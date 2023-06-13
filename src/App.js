@@ -12,6 +12,7 @@ import Create from './Components/Create/Create';
 import Details from './Components/Details/Details';
 import ProfilePhoto from './Components/ProfilePhoto/ProfilePhoto';
 import PasswordChange from './Components/PasswordChange/PasswordChange';
+import ErrorRoute from './Components/ErrorRoute/ErrorRoute';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
           <Route path="/password" element={<PasswordChange />} />
         </Route>
         {/* error route */}
-        <Route path="*" element={<Landing />} />
+        <Route path="*" element={<ErrorRoute />} />
       </Routes>
     </>
   );

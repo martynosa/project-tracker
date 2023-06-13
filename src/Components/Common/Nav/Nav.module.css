@@ -84,7 +84,7 @@
   background-color: var(--menu-bg-color);
   color: var(--dark-color);
   padding: var(--default-2v-pd);
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
 
   z-index: 999;
 }

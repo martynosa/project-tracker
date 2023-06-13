@@ -69,7 +69,7 @@
   max-width: 34rem;
   color: var(--dark-color);
   padding: var(--md-2v-pd);
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
   transition: var(--animation);
 
   background-color: var(--light-color);

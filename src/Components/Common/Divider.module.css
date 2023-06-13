@@ -2,7 +2,7 @@
   width: 60px;
   margin: 0 auto;
   height: 4px;
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
   margin-bottom: var(--m-12);
 }
 

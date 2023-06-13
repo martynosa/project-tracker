@@ -3,7 +3,7 @@
   text-transform: uppercase;
   color: var(--light-color);
   padding: var(--sm-2v-pd);
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
 }
 
 .red {

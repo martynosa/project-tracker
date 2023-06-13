@@ -15,7 +15,7 @@
   height: 100px;
   resize: none;
   background-color: var(--input-bg-color);
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
   padding: var(--default-2v-pd);
   border: none;
   transition: var(--animation);

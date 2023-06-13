@@ -17,13 +17,13 @@
 .inputGroup {
   background-color: var(--input-bg-color);
   color: var(--dark-color);
-  border-radius: var(--default-brdr-rd);
+  border-radius: var(--brdr-rd);
   padding: var(--default-2v-pd);
   transform: translateY(6px);
 }
 
 .inputGroup label {
-  font-size: var(--fs-default);
+  font-size: var(--fs-16);
   text-transform: uppercase;
 
   display: flex;

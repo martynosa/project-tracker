@@ -25,6 +25,9 @@ const Hamburger = () => {
 
   const pathname = useLocation();
 
+  const openMenuHandler = () => setIsMenuOpen(true);
+  const closeMenuHandler = () => setIsMenuOpen(false);
+
   const changeThemeHandler = async () => {
     try {
       const newTheme = await sendRequest({
@@ -45,15 +48,12 @@ const Hamburger = () => {
     openNotification('success', 'Logged out.');
   };
 
-  useEffect(() => setIsMenuOpen(false), [pathname]);
+  useEffect(() => closeMenuHandler(), [pathname]);
 
   return (
     <>
       {!isMenuOpen && (
-        <button
-          className={classes.hamburgerBtn}
-          onClick={() => setIsMenuOpen(true)}
-        >
+        <button className={classes.hamburgerBtn} onClick={openMenuHandler}>
           {hamburgerSVG}
         </button>
       )}
@@ -123,7 +123,7 @@ const Hamburger = () => {
 
         <button
           className={`${classes.hamburgerBtnClose}`}
-          onClick={() => setIsMenuOpen(false)}
+          onClick={closeMenuHandler}
         >
           {largeCrossSVG}
         </button>
