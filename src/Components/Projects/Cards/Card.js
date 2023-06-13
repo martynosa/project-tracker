@@ -23,7 +23,7 @@ const Card = ({ project }) => {
   const { sendRequest, setIsLoading, isLoading } = useFetch();
   const { openNotification } = useNotification();
 
-  const toDetails = () => {
+  const toDetailsHandler = () => {
     navigate(`/projects/${_id}`);
     return;
   };
@@ -84,7 +84,10 @@ const Card = ({ project }) => {
   if (isLoading) return <LoadingCard />;
 
   return (
-    <div className={`${classes.card} ${classes[status]}`} onClick={toDetails}>
+    <div
+      className={`${classes.card} ${classes[status]}`}
+      onClick={toDetailsHandler}
+    >
       <h3>{name}</h3>
 
       <p>{description}</p>
