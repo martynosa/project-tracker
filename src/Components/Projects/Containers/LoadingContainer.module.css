@@ -1,4 +1,4 @@
-.loadingContainer {
+.container {
   max-width: 128rem;
   padding: var(--default-2v-pd);
   display: grid;
@@ -8,7 +8,11 @@
 }
 
 @media (max-width: 768px) {
-  .loadingContainer {
+  .container {
     grid-template-columns: 1fr;
+  }
+
+  .container div {
+    margin-bottom: var(--m-12);
   }
 }

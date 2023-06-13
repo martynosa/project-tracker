@@ -71,12 +71,12 @@ const Card = ({ project }) => {
     }
   };
 
-  const upgradeStatus = (e) => {
+  const upgradeStatusHandler = (e) => {
     e.stopPropagation();
     changeStatus('upgrade');
   };
 
-  const degradeStatus = (e) => {
+  const degradeStatusHandler = (e) => {
     e.stopPropagation();
     changeStatus('degrade');
   };
@@ -85,9 +85,9 @@ const Card = ({ project }) => {
 
   return (
     <div className={`${classes.card} ${classes[status]}`} onClick={toDetails}>
-      <h3 className={classes.title}>{name}</h3>
+      <h3>{name}</h3>
 
-      <p className={classes.description}>{description}</p>
+      <p>{description}</p>
 
       <ul>
         {keywords.map((k, index) => (
@@ -98,8 +98,8 @@ const Card = ({ project }) => {
       <div className={classes.btnGroup}>
         {status !== 'new' && (
           <button
-            className={`${classes.btn} ${classes.back}`}
-            onClick={degradeStatus}
+            className={classes.back}
+            onClick={degradeStatusHandler}
             disabled={isLoading}
           >
             {largeArrowBackSVG}
@@ -108,8 +108,8 @@ const Card = ({ project }) => {
 
         {status !== 'completed' && (
           <button
-            className={`${classes.btn} ${classes.forward}`}
-            onClick={upgradeStatus}
+            className={classes.forward}
+            onClick={upgradeStatusHandler}
             disabled={isLoading}
           >
             {largeArrowForwardSVG}

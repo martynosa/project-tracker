@@ -46,14 +46,14 @@
   transform: translate(-6px, 6px);
 }
 
-.title {
+.card h3 {
   font-size: var(--fs-24);
   text-transform: uppercase;
   overflow: hidden;
   margin-bottom: var(--m-12);
 }
 
-.description {
+.card p {
   margin-bottom: var(--m-12);
   overflow-wrap: break-word;
 }
@@ -73,9 +73,9 @@
   display: flex;
 }
 
-.btn,
-.btn:link,
-.btn:visited {
+.btnGroup button,
+.btnGroup button:link,
+.btnGroup button:visited {
   color: inherit;
   font-size: var(--fs-24);
   background-color: transparent;

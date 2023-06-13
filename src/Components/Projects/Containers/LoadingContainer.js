@@ -6,7 +6,7 @@ import AddCard from '../Cards/AddCard';
 
 const LoadingContainer = () => {
   return (
-    <div className={classes.loadingContainer}>
+    <div className={classes.container}>
       <div>
         <Divider color={'blue'} />
         <AddCard />
@@ -16,6 +16,7 @@ const LoadingContainer = () => {
 
       <div>
         <Divider color={'orange'} />
+        <LoadingCard />
         <LoadingCard />
         <LoadingCard />
       </div>

@@ -1,4 +1,4 @@
-.projectsContainer {
+.container {
   max-width: 128rem;
   padding: var(--default-2v-pd);
   display: grid;
@@ -7,18 +7,18 @@
   column-gap: var(--bg-gap);
 }
 
-.emptyMessage {
+.noProjects {
   text-align: center;
   color: var(--grey-color);
   letter-spacing: 4px;
 }
 
 @media (max-width: 768px) {
-  .projectsContainer {
+  .container {
     grid-template-columns: 1fr;
   }
 
-  .projectsContainer div {
+  .container div {
     margin-bottom: var(--m-12);
   }
 }

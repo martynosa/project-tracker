@@ -10,11 +10,11 @@ const ProjectsContainer = ({ projects }) => {
   const completedP = projects.filter((p) => p.status === 'completed');
 
   return (
-    <div className={classes.projectsContainer}>
+    <div className={classes.container}>
       <div>
         <Divider color={'blue'} />
         <AddCard />
-        {newP.length === 0 && <p className={classes.emptyMessage}>...</p>}
+        {newP.length === 0 && <p className={classes.noProjects}>...</p>}
         {newP.map((p) => (
           <Card key={p._id} project={p} />
         ))}
@@ -22,9 +22,7 @@ const ProjectsContainer = ({ projects }) => {
 
       <div>
         <Divider color={'orange'} />
-        {inProgressP.length === 0 && (
-          <p className={classes.emptyMessage}>...</p>
-        )}
+        {inProgressP.length === 0 && <p className={classes.noProjects}>...</p>}
         {inProgressP.map((p) => (
           <Card key={p._id} project={p} />
         ))}
@@ -32,7 +30,7 @@ const ProjectsContainer = ({ projects }) => {
 
       <div>
         <Divider color={'green'} />
-        {completedP.length === 0 && <p className={classes.emptyMessage}>...</p>}
+        {completedP.length === 0 && <p className={classes.noProjects}>...</p>}
         {completedP.map((p) => (
           <Card key={p._id} project={p} />
         ))}
