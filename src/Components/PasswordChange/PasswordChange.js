@@ -84,7 +84,7 @@ const PasswordChange = () => {
     <section className={classes.container}>
       <PageTitle color={'orange'}>password change</PageTitle>
 
-      <form className={classes.form} onSubmit={onSubmitHandler}>
+      <form onSubmit={onSubmitHandler}>
         <InputGroup
           label={'password'}
           type={'password'}

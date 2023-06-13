@@ -43,8 +43,8 @@ const ProfilePhoto = () => {
     <section className={classes.container}>
       <PageTitle color={'violet'}>profile photo</PageTitle>
 
-      <form className={classes.form} onSubmit={onSubmitHandler}>
-        <div className={classes.photoInputGroup}>
+      <form onSubmit={onSubmitHandler}>
+        <div className={classes.inputGroup}>
           <label htmlFor="photo">Select photo</label>
           <input id="photo" type="file" name="photo" />
         </div>
