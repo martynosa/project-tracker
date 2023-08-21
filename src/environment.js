@@ -1,4 +1,4 @@
-const HOST = "https://project-tracker-server.onrender.com/";
+const HOST = "https://project-tracker-server.onrender.com";
 
 const AUTH_URL = `${HOST}/auth`;
 const PHOTO_URL = `${HOST}/users`;
