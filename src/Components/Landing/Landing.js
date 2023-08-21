@@ -1,15 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-import classes from './Landing.module.css';
-import Button from '../Common/Button';
-import { arrowUpRightSVG } from '../../helpers/svgIcons';
-import AuthLink from '../Auth/AuthLink';
+import classes from "./Landing.module.css";
+import Button from "../Common/Button";
+import { arrowUpRightSVG } from "../../helpers/svgIcons";
+import AuthLink from "../Auth/AuthLink";
 
 const Landing = () => {
   const navigate = useNavigate();
 
   const getStartedHandler = () => {
-    navigate('/register');
+    navigate("/register");
   };
 
   return (
@@ -26,16 +26,16 @@ const Landing = () => {
             </h2>
 
             <div className={classes.btnGroup}>
-              <Button color={'orange'} onClick={getStartedHandler}>
+              <Button color={"orange"} onClick={getStartedHandler}>
                 Get started
                 {arrowUpRightSVG}
               </Button>
-              <AuthLink to={'login'} />
+              <AuthLink to={"login"} />
             </div>
           </div>
 
           <div>
-            <img src="../../imgs/landing-4.webp" alt="people brainstorming" />
+            <img src="../../imgs/landing-2.webp" alt="people brainstorming" />
           </div>
         </div>
       </section>
