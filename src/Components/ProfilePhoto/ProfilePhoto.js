@@ -43,7 +43,7 @@ const ProfilePhoto = () => {
   return (
     <section className={classes.container}>
       <Comment>
-        File upload does not currently work due to Render free plant (no disk
+        File upload does not currently work due to Render free plan (no disk
         support).
       </Comment>
       <PageTitle color={'violet'}>profile photo</PageTitle>

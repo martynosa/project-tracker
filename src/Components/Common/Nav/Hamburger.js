@@ -52,6 +52,9 @@ const Hamburger = () => {
 
   return (
     <>
+      {isMenuOpen && (
+        <div className={classes.backdrop} onClick={closeMenuHandler}></div>
+      )}
       {!isMenuOpen && (
         <button className={classes.hamburgerBtn} onClick={openMenuHandler}>
           {hamburgerSVG}
