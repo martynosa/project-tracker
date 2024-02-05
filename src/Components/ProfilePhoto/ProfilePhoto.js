@@ -2,7 +2,6 @@ import classes from './ProfilePhoto.module.css';
 
 import Button from '../Common/Button';
 import PageTitle from '../Common/PageTitle';
-import Comment from '../Common/Comment';
 
 import { useNotification } from '../../Contexts/NotificationContext';
 import { useAuth } from '../../Contexts/AuthContext';
@@ -42,10 +41,6 @@ const ProfilePhoto = () => {
 
   return (
     <section className={classes.container}>
-      <Comment>
-        File upload does not currently work due to Render free plan (no disk
-        support).
-      </Comment>
       <PageTitle color={'violet'}>profile photo</PageTitle>
 
       <form onSubmit={onSubmitHandler}>

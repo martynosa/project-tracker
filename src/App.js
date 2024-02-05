@@ -14,12 +14,19 @@ import ProfilePhoto from './Components/ProfilePhoto/ProfilePhoto';
 import PasswordChange from './Components/PasswordChange/PasswordChange';
 import ErrorRoute from './Components/ErrorRoute/ErrorRoute';
 
+import Comment from './Components/Common/Comment';
+
 function App() {
   return (
     <>
       <Nav />
 
       <Notification />
+
+      <Comment>
+        File upload does not currently work due to Render free plan (no disk
+        support).
+      </Comment>
 
       <Routes>
         <Route element={<UserGuard />}>
