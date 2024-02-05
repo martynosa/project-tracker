@@ -1,4 +1,3 @@
-import { largeExclamationMark } from '../../helpers/svgIcons';
 import classes from './Comment.module.css';
 
 const Comment = ({ children }) => {
