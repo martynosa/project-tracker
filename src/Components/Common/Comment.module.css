@@ -10,5 +10,7 @@
 }
 
 .comment svg {
+  width: 32px;
+  height: 32px;
   color: var(--orange-color);
 }
