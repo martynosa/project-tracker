@@ -69,13 +69,15 @@ const Hamburger = () => {
       >
         <div className={classes.whoAmI}>
           <div>
-            {user.photo === 'default' && defaultUserSVG}
+            {defaultUserSVG}
+            {/* commented due to Render free plan limitation (no disk support) */}
+            {/* {user.photo === 'default' && defaultUserSVG}
             {user.photo !== 'default' && (
               <img
                 src={`${URL.PHOTO_URL}/${user.photo}`}
                 alt="employee's mugshot"
               ></img>
-            )}
+            )} */}
             <p>{user?.name}</p>
           </div>
           <ThemeButton
