@@ -1,0 +1,14 @@
+.comment {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: var(--fs-12);
+  color: var(--grey-color);
+
+  display: flex;
+  align-items: center;
+}
+
+.comment svg {
+  color: var(--orange-color);
+}
