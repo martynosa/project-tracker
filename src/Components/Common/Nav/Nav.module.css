@@ -69,16 +69,18 @@
 /* hamburger */
 
 .backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: transparent;
-  width: 100vw;
-  height: 100vh;
+  backdrop-filter: blur(6px);
+  min-width: 100vw;
+  min-height: 100vh;
+
+  z-index: 998;
 }
 
 .hamburger {
-  position: absolute;
+  position: fixed;
   top: 18px;
   left: 24px;
 

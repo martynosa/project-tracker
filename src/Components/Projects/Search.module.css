@@ -6,6 +6,7 @@
 }
 
 .searchGroup input {
+  max-width: 18rem;
   background-color: var(--input-bg-color);
   border-radius: var(--brdr-rd);
   padding: var(--default-2v-pd);
